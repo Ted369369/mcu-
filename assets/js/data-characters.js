@@ -4,13 +4,14 @@
    ============================================================ */
 
 window.MCU_CHAR_GROUPS = [
+  { id: 'avengers',  label: '復仇者與盟友',     color: '#f0b429' },
   { id: 'spidey',    label: '蜘蛛人與身邊的人', color: '#ff4757' },
   { id: 'spideyvil', label: '蜘蛛人的敵人',     color: '#a855f7' },
   { id: 'otherspidey', label: '其他宇宙的蜘蛛人', color: '#fb923c' },
-  { id: 'avengers',  label: '復仇者核心',       color: '#f0b429' },
   { id: 'cosmic',    label: '宇宙與銀河',       color: '#22d3ee' },
+  { id: 'street',    label: '街頭英雄',         color: '#f97316' },
   { id: 'newgen',    label: '新世代與多元宇宙', color: '#34d399' },
-  { id: 'bigbad',    label: '兩大魔王',         color: '#ef4444' }
+  { id: 'bigbad',    label: '反派與大魔王',     color: '#ef4444' }
 ];
 
 window.MCU_CHARACTERS = [
@@ -317,9 +318,13 @@ window.MCU_CHARACTERS = [
     '他與彼得的道德觀完全相反 —— 這條對立線是新片的看點之一。'
   ],
   arc: [
-    { entry: 'spider-man-4', text: '首度登上大銀幕。預告中開廂型車撞彼得，並對他說「你正在失控（losing it）」。' }
+    { entry: 'daredevil-netflix', text: '首度登場於《夜魔俠》第二季，與 Matt Murdock 就「該不該殺」正面衝突。' },
+    { entry: 'punisher-netflix', text: '個人影集：面對軍中創傷、家人之死，以及一樁牽連中情局的陰謀。' },
+    { entry: 'daredevil-born-again', text: '在 MCU 正史中回歸。' },
+    { entry: 'punisher-special', text: '2026 年 5 月的特別節目《制裁者：最後一殺》主演 —— 就在《蜘蛛人4》上映前兩個月。' },
+    { entry: 'spider-man-4', text: '首度登上大銀幕。預告中開廂型車撞彼得，並對他說「你正在失控（losing it）」。他與彼得「絕不殺人」的原則完全相反。', highlight: true }
   ],
-  appears: ['spider-man-4']
+  appears: ['daredevil-netflix', 'punisher-netflix', 'daredevil-born-again', 'punisher-special', 'spider-man-4']
 },
 
 /* ================= 其他宇宙的蜘蛛人 ================= */
@@ -559,9 +564,10 @@ window.MCU_CHARACTERS = [
     { entry: 'thor-3', text: '與索爾合作毀滅阿斯嘉以殺死海拉。' },
     { entry: 'infinity-war', text: '開場即被薩諾斯殺死。' },
     { entry: 'endgame', text: '時間搶劫中，2012 年的洛基變體帶著特斯拉方塊逃走 —— 這個分支直接導向影集《洛基》。' },
-    { entry: 'loki', text: '被 TVA 逮捕，捲入神聖時間線的真相。第一季結局 Sylvie 殺死留存者，開啟多元宇宙。第二季他犧牲自己成為「故事之神」。', highlight: true }
+    { entry: 'loki-s1', text: '被 TVA 逮捕，被迫直視自己的一生。他與 Sylvie 一同找到留存者 —— 她殺了他，多元宇宙就此開啟。', highlight: true },
+    { entry: 'loki-s2', text: '為了不讓所有分支時間線死去，他走向時間盡頭、親手撐起整個多元宇宙，成為「故事之神」。一個渴望王位的騙子，最後選擇了永恆的孤獨。', highlight: true }
   ],
-  appears: ['thor', 'avengers-1', 'thor-3', 'infinity-war', 'endgame', 'loki']
+  appears: ['thor', 'avengers-1', 'thor-3', 'infinity-war', 'endgame', 'loki-s1', 'loki-s2']
 },
 {
   id: 'black-widow-char', name: '娜塔莎 / 黑寡婦', en: 'Natasha Romanoff / Black Widow',
@@ -862,9 +868,10 @@ window.MCU_CHARACTERS = [
   tagline: '按下多元宇宙開關的人。',
   bio: '洛基的女性變體。在影集《洛基》第一季結局殺死留存者 —— 這正式開啟了多元宇宙，是整個傳奇的引爆點。',
   arc: [
-    { entry: 'loki', text: '第一季結局中殺死留存者，正式開啟多元宇宙 —— 整個多元宇宙傳奇的引爆點。', highlight: true }
+    { entry: 'loki-s1', text: '第一季結局中殺死留存者，正式開啟多元宇宙 —— 整個多元宇宙傳奇的引爆點。', highlight: true },
+    { entry: 'loki-s2', text: '在 TVA 崩解的過程中與洛基分道揚鑣，走自己的路。' }
   ],
-  appears: ['loki']
+  appears: ['loki-s1', 'loki-s2']
 },
 {
   id: 'kang', name: '留存者 / 征服者康', en: 'He Who Remains / Kang',
@@ -877,11 +884,11 @@ window.MCU_CHARACTERS = [
     '任何把康當成《末日之戰》反派的舊資料都已過時。'
   ],
   arc: [
-    { entry: 'loki', text: '以「留存者（He Who Remains）」身分登場，是康的一個變體。被 Sylvie 殺死後多元宇宙正式開啟。' },
-    { entry: 'quantumania', text: '在量子領域作為「征服者康」與蟻人對決。片尾出現「康議會」。' },
+    { entry: 'loki-s1', text: '以「留存者（He Who Remains）」身分登場，是康的一個變體。被 Sylvie 殺死後多元宇宙正式開啟。' },
+    { entry: 'quantumania', text: '在量子領域作為「征服者康」與蟻人對決，被 Scott 與 Hope 殺死。片尾出現「康議會」—— 數以千計的康變體。' },
     { entry: 'doomsday', text: '⚠ 已被棄用 —— 不要把康當成《末日之戰》的反派。', warning: true }
   ],
-  appears: ['loki', 'quantumania']
+  appears: ['loki-s1', 'quantumania']
 },
 {
   id: 'deadpool', name: '死侍', en: 'Deadpool',
@@ -942,9 +949,10 @@ window.MCU_CHARACTERS = [
   tagline: '在《黑豹2》引入的天才少女。',
   bio: '麻省理工的天才學生，自行打造出鋼鐵裝。在《黑豹2：汎達萬歲》中引入。',
   arc: [
-    { entry: 'wakanda-forever', text: '引入 —— 自行打造鋼鐵裝的天才少女。' }
+    { entry: 'wakanda-forever', text: '引入 —— 她打造的汎金屬偵測器直接引發汎達與 Talokan 的衝突。' },
+    { entry: 'ironheart', text: '個人影集：回到芝加哥，為籌措打造戰甲的資金而與「兜帽」的犯罪集團合作，捲入科技與魔法的對撞。', highlight: true }
   ],
-  appears: ['wakanda-forever']
+  appears: ['wakanda-forever', 'ironheart']
 },
 
 /* ================= 兩大魔王 ================= */

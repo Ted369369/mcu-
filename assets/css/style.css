@@ -449,6 +449,18 @@ p { margin: 0; }
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 
+/* ---------- Phases ---------- */
+.phase-block { margin-bottom: 42px; }
+.phase-block:last-child { margin-bottom: 0; }
+.phase-head {
+  display: flex; align-items: center; gap: 14px;
+  padding-bottom: 12px; margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.phase-head b { font-size: 1.22rem; font-weight: 900; letter-spacing: -.02em; }
+.phase-head span { display: block; font-size: .78rem; color: var(--text-3); font-weight: 700; margin-top: 2px; }
+.phase-desc { font-size: .9rem; color: var(--text-2); margin-bottom: 18px; max-width: 74ch; }
+
 /* ---------- Characters ---------- */
 .ch-card {
   background: var(--surface); border: 1px solid var(--line);

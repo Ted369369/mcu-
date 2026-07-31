@@ -21,15 +21,11 @@
   }
 
   /* ---------- 分類標籤 ---------- */
-  var SAGAS = [
-    { id: 'legacy',     label: '其他宇宙・舊蜘蛛人電影', sub: '2002–2014。因《無家日》大量引用，屬選看' },
-    { id: 'infinity',   label: '無限傳奇 Infinity Saga',  sub: '2008–2019。復仇者主線與蜘蛛人前兩集' },
-    { id: 'multiverse', label: '多元宇宙傳奇 Multiverse Saga', sub: '2021 至今。目前所在的階段，走向《末日之戰》' }
-  ];
+  var SAGAS = window.MCU_SAGAS;
 
   var REL = {
-    target:      { cls: 'b-target', label: '你要看的那部' },
-    core:        { cls: 'b-core',   label: '必看 5 部' },
+    target:      { cls: 'b-target', label: '最新上映' },
+    core:        { cls: 'b-core',   label: '主線必看' },
     recommended: { cls: 'b-rec',    label: '建議補' },
     optional:    { cls: 'b-opt',    label: '選看' },
     skippable:   { cls: 'b-skip',   label: '可跳過' }
@@ -41,10 +37,14 @@
   }
   function typeBadges(e) {
     var h = '';
-    if (e.type === 'series') h += '<span class="badge b-series">影集</span>';
-    if (e.saga === 'legacy') h += '<span class="badge b-legacy">其他宇宙</span>';
-    if (e.upcoming) h += '<span class="badge b-new">2025–26</span>';
-    if (e.warning) h += '<span class="badge b-warn">資訊已更新</span>';
+    if (e.type === 'series')  h += '<span class="badge b-series">影集' + (e.episodes ? ' ' + esc(e.episodes) : '') + '</span>';
+    if (e.type === 'special') h += '<span class="badge b-series">特別節目</span>';
+    if (e.type === 'oneshot') h += '<span class="badge b-new">One-Shot 短片</span>';
+    if (e.saga === 'sony')     h += '<span class="badge b-legacy">其他宇宙</span>';
+    if (e.saga === 'defenders')h += '<span class="badge b-legacy">捍衛者聯盟</span>';
+    if (e.saga === 'marveltv') h += '<span class="badge b-skip">正史地位模糊</span>';
+    if (e.upcoming) h += '<span class="badge b-new">尚未上映</span>';
+    if (e.warning)  h += '<span class="badge b-warn">資訊已更新</span>';
     return h;
   }
   function starStr(n) {
@@ -55,6 +55,14 @@
   function catLabel(id) {
     var c = window.MCU_CATS.filter(function (x) { return x.id === id; })[0];
     return c ? c.label : id;
+  }
+
+  /* 由 date 字串（"2021 / 07 / 09"、"2015–2018"、"2011"）推出可排序的鍵值，
+     讓同一年的電影與影集能照真正的上映先後排列 */
+  function relKey(e) {
+    var m = String(e.date || e.year).match(/(\d{4})\s*[\/年.-]?\s*(\d{1,2})?\s*[\/月.-]?\s*(\d{1,2})?/);
+    if (!m) return (e.year || 0) * 10000;
+    return (+m[1]) * 10000 + (m[2] ? +m[2] : 0) * 100 + (m[3] ? +m[3] : 0);
   }
 
   /* ---------- 狀態 ---------- */
@@ -92,11 +100,12 @@
     var sm4 = byId['spider-man-4'];
 
     var nav = [
-      { v: 'timeline',   g: 'list',   t: '完整時間線', d: '從 2002 到 2027，' + T.length + ' 部作品的劇情細節，可切換上映順序與劇情年代順序。' },
-      { v: 'characters', g: 'spider', t: '角色圖鑑',   d: C.length + ' 位角色，每一位都有自己的個人時間線 —— 用角色來理解劇情。' },
-      { v: 'concepts',   g: 'gauntlet', t: '核心概念', d: '彈指、多元宇宙、TVA、六顆無限寶石 —— 新手先讀這裡。' },
-      { v: 'sm4',        g: 'spider', t: '《蜘蛛人4》檔案', d: '劇情設定、完整卡司、上映資訊與已知的一切。' },
-      { v: 'guide',      g: 'bulb',   t: '觀影指南',   d: '5 部最低限度清單、觀影順序建議、影集取捨與分階段行動。' }
+      { v: 'timeline',   g: 'list',     t: '完整時間線', d: '從遠古的汎達到 2027 年的《秘密戰爭》，' + T.length + ' 部作品的完整劇情，可切換上映順序與劇情年代順序。' },
+      { v: 'phases',     g: 'star',     t: '六個階段',   d: '照漫威官方的「階段」與「傳奇」分類瀏覽 —— 理解 MCU 結構最快的角度。' },
+      { v: 'characters', g: 'spider',   t: '角色圖鑑',   d: C.length + ' 位角色，每一位都有自己的個人時間線 —— 用角色來理解劇情。' },
+      { v: 'concepts',   g: 'gauntlet', t: '核心概念',   d: '彈指、多元宇宙、TVA、量子領域、六顆無限寶石 —— 新手先讀這裡。' },
+      { v: 'sm4',        g: 'spider',   t: '《蜘蛛人4》檔案', d: '最新上映的一部：劇情設定、完整卡司與已知的一切。' },
+      { v: 'guide',      g: 'bulb',     t: '觀影指南',   d: '10 部主線精華清單、觀影順序比較、影集取捨與分階段建議。' }
     ].map(function (n) {
       return '<button class="kv" data-go="' + n.v + '">' +
         '<span class="ico" style="background:linear-gradient(140deg,var(--red),var(--blue))">' + G(n.g) + '</span>' +
@@ -106,18 +115,19 @@
     return '' +
     '<section class="hero">' + window.heroWebSVG() +
       '<div class="wrap hero-in">' +
-        '<span class="kicker"><span class="dot"></span>2026 / 07 / 31 上映・完整補課指南</span>' +
-        '<h1>從零開始看漫威，<br><span class="hl">一次補完《蜘蛛人4》</span>之前的所有劇情</h1>' +
-        '<p class="lede">沒看過任何一部漫威作品也沒關係。這裡有蜘蛛人三部曲、復仇者主線、' +
-          '舊蜘蛛人電影、影集與多元宇宙的完整劇情整理 —— 你可以照時間線讀，也可以挑一個角色慢慢跟。</p>' +
+        '<span class="kicker"><span class="dot"></span>2008–2027・六個階段・兩大傳奇</span>' +
+        '<h1>從零開始，<br>看懂<span class="hl">整個漫威電影宇宙</span></h1>' +
+        '<p class="lede">沒看過任何一部漫威作品也沒關係。這裡有全部 ' + T.length + ' 部作品的完整劇情 —— ' +
+          '電影、影集、特別節目、One-Shot 短片、捍衛者聯盟，還有《無家日》引用的舊蜘蛛人電影。' +
+          '你可以照時間線讀、照階段讀，也可以挑一個角色慢慢跟。</p>' +
         '<div class="hero-cta">' +
-          '<button class="btn btn-primary" data-go="guide">' + G('bulb') + '只想看最低限度的 5 部</button>' +
+          '<button class="btn btn-primary" data-go="guide">' + G('bulb') + '我是新手，該從哪看起？</button>' +
           '<button class="btn btn-ghost" data-go="timeline">' + G('list') + '看完整時間線</button>' +
         '</div>' +
         '<div class="hero-stats">' +
           '<div><b>' + T.length + '</b><span>部作品完整解說</span></div>' +
           '<div><b>' + C.length + '</b><span>位角色可點閱</span></div>' +
-          '<div><b>5</b><span>部就能無痛接軌</span></div>' +
+          '<div><b>6</b><span>個階段兩大傳奇</span></div>' +
           '<div><b>6</b><span>顆無限寶石去向</span></div>' +
         '</div>' +
       '</div>' +
@@ -131,7 +141,7 @@
 
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">最短路徑</span>' +
-      '<h2>時間有限？照這五部的順序看就夠了</h2>' +
+      '<h2>時間有限？這十部就是整個宇宙的骨架</h2>' +
       '<p class="sub">' + esc(window.MCU_PLAN_A.meta) + '。點任一部可以直接看該片的完整劇情。</p></div>' +
       '<div class="path">' + path + '</div>' +
       '<div class="tip">' + G('bulb') + '<div>' + esc(window.MCU_PLAN_A.tip) + '</div></div>' +
@@ -201,7 +211,7 @@
     } else if (state.order === 'release') {
       SAGAS.forEach(function (s) {
         var items = list.filter(function (e) { return e.saga === s.id; })
-          .sort(function (a, b) { return (a.year - b.year) || (a.no - b.no); });
+          .sort(function (a, b) { return relKey(a) - relKey(b) || a.no - b.no; });
         if (!items.length) return;
         html += '<div class="era-head"><b>' + esc(s.label) + '</b><span>' + esc(s.sub) + '</span></div>';
         html += items.map(function (e) {
@@ -335,6 +345,58 @@
       '<h2>組織與勢力</h2></div>' +
       '<div class="factions">' + facs + '</div>' +
     '</div></section>';
+  }
+
+  /* ============================================================
+     階段瀏覽
+     ============================================================ */
+  function renderPhases() {
+    var html = window.MCU_SAGAS.map(function (saga) {
+      var phases = window.MCU_PHASES.filter(function (p) { return p.saga === saga.id; });
+      if (!phases.length) return '';
+
+      var body = phases.map(function (p) {
+        var items = T.filter(function (e) { return e.phase === p.id; })
+          .sort(function (a, b) { return relKey(a) - relKey(b) || a.no - b.no; });
+        if (!items.length) return '';
+
+        var cards = items.map(function (e) {
+          return '<button class="card" data-entry="' + e.id + '">' +
+            '<div class="card-art">' + P(e, { center: true }) + '<div class="veil"></div>' +
+              '<div class="yr">' + esc(e.date || e.year) + '</div>' +
+              '<div class="tags">' + relBadge(e) + '</div>' +
+              '<div class="ttl"><b>' + esc(e.title) + '</b><i>' + esc(e.en) + '</i></div>' +
+            '</div>' +
+            '<div class="card-body"><span class="tagline">' + esc(e.tagline) + '</span>' +
+            '<p class="sum">' + esc(e.summary) + '</p>' +
+            '<div class="card-foot"><span>' + esc(e.type === 'film' ? '電影' : e.type === 'series' ? '影集' : e.type === 'special' ? '特別節目' : '短片') +
+            '</span><span class="more">看劇情' + G('chevron') + '</span></div></div>' +
+            '</button>';
+        }).join('');
+
+        return '<div class="phase-block">' +
+          '<div class="phase-head">' +
+            '<div><b>' + esc(p.label) + '</b><span>' + esc(p.years) + ' ・ ' + items.length + ' 部</span></div>' +
+          '</div>' +
+          '<p class="phase-desc">' + esc(p.desc) + '</p>' +
+          '<div class="grid grid-3">' + cards + '</div>' +
+        '</div>';
+      }).join('');
+
+      return '<section class="section"><div class="wrap">' +
+        '<div class="sec-head">' +
+          '<span class="eyebrow" style="color:' + saga.color + '">Saga</span>' +
+          '<h2>' + esc(saga.label) + '</h2>' +
+          '<p class="sub">' + esc(saga.sub) + '</p>' +
+        '</div>' + body +
+      '</div></section>';
+    }).join('');
+
+    return '<section class="section" style="padding-bottom:0"><div class="wrap">' +
+      '<div class="sec-head"><span class="eyebrow">Phases</span><h2>六個階段、兩大傳奇</h2>' +
+      '<p class="sub">漫威把作品分成「階段（Phase）」，再把階段歸進「傳奇（Saga）」。' +
+      '這是官方的分類方式，也是理解 MCU 結構最快的角度。</p></div>' +
+    '</div></section>' + html;
   }
 
   /* ============================================================
@@ -682,6 +744,7 @@
   var VIEWS = {
     home:       { render: renderHome,       title: '首頁' },
     timeline:   { render: renderTimeline,   title: '完整時間線' },
+    phases:     { render: renderPhases,     title: '六個階段' },
     characters: { render: renderCharacters, title: '角色圖鑑' },
     concepts:   { render: renderConcepts,   title: '核心概念' },
     sm4:        { render: renderSM4,        title: '蜘蛛人4 檔案' },
@@ -691,7 +754,7 @@
   function paint(view) {
     var v = VIEWS[view] || VIEWS.home;
     $('#app').innerHTML = v.render();
-    document.title = v.title + ' ｜ MCU 補課指南：蜘蛛人4 Brand New Day';
+    document.title = v.title + ' ｜ MCU 完全指南';
     $$('.nav a').forEach(function (a) {
       a.classList.toggle('on', a.getAttribute('data-go') === view);
     });
