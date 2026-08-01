@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MCU 完全指南｜漫威電影宇宙全解析</title>
-<meta name="description" content="從零開始看漫威。涵蓋六個階段、兩大傳奇的完整劇情整理 —— 40 部電影、近 30 部影集與特別節目、Marvel One-Shots、捍衛者聯盟與舊蜘蛛人電影，附完整時間線與角色圖鑑。">
+<title>The Complete MCU Guide</title>
+<meta name="description" content="Start Marvel from zero. Every film, series, special and short across six phases and two sagas — full plot detail, post-credit scenes, cast, a browsable timeline and a character index.">
 <meta name="author" content="Ted">
 <meta name="theme-color" content="#06070c">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="MCU 完全指南｜漫威電影宇宙全解析">
-<meta property="og:description" content="沒看過任何一部漫威也沒關係 —— 六個階段、兩大傳奇、每一部作品的完整劇情，可依時間線、階段或角色瀏覽。">
-<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="The Complete MCU Guide">
+<meta property="og:description" content="Never seen a single Marvel film? Six phases, two sagas, every work explained — browse by timeline, by phase, or by character.">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff4655'/%3E%3Cg fill='none' stroke='white' stroke-width='5' stroke-linecap='round'%3E%3Ccircle cx='50' cy='50' r='11'/%3E%3Cpath d='M39 44 18 28M39 50 14 50M40 57 17 70M61 44 82 28M61 50 86 50M60 57 83 70'/%3E%3C/g%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 <body>
 
@@ -23,32 +23,32 @@
   <div class="hdr-in">
     <a class="brand" href="#/home">
       <span id="brandGlyph"></span>
-      <span><b>MCU 完全指南</b> <span>漫威電影宇宙</span></span>
+      <span><b>The Complete MCU Guide</b> <span>Marvel Cinematic Universe</span></span>
     </a>
 
     <nav class="nav" id="nav">
-      <a href="#/home"       data-go="home">首頁</a>
-      <a href="#/timeline"   data-go="timeline">時間線</a>
-      <a href="#/phases"     data-go="phases">階段</a>
-      <a href="#/characters" data-go="characters">角色</a>
-      <a href="#/concepts"   data-go="concepts">概念</a>
-      <a href="#/sm4"        data-go="sm4">蜘蛛人4</a>
-      <a href="#/guide"      data-go="guide">指南</a>
+      <a href="#/home"       data-go="home">Home</a>
+      <a href="#/timeline"   data-go="timeline">Timeline</a>
+      <a href="#/phases"     data-go="phases">Phases</a>
+      <a href="#/characters" data-go="characters">Characters</a>
+      <a href="#/concepts"   data-go="concepts">Concepts</a>
+      <a href="#/sm4"        data-go="sm4">Spider-Man 4</a>
+      <a href="#/guide"      data-go="guide">Watch Guide</a>
     </nav>
 
     <div class="hdr-search" style="position:relative">
       <span id="searchIcon"></span>
-      <input id="q" type="search" placeholder="搜尋作品、角色、名詞…　按 /" autocomplete="off" aria-label="搜尋">
+      <input id="q" type="search" placeholder="Search films, characters, terms…  press /" autocomplete="off" aria-label="Search">
       <div class="results" id="results" role="listbox"></div>
     </div>
 
-    <a class="prog" id="progWrap" href="#/timeline" aria-label="觀看進度">
+    <a class="prog" id="progWrap" href="#/timeline" aria-label="Watch progress">
       <span class="prog-track"><span class="prog-bar" id="progBar"></span></span>
       <span class="prog-txt" id="progTxt">0 / 0</span>
     </a>
 
-    <button class="iconbtn" id="themeBtn" aria-label="切換主題"></button>
-    <button class="burger" id="burger" aria-label="選單"></button>
+    <button class="iconbtn" id="themeBtn" aria-label="Toggle theme"></button>
+    <button class="burger" id="burger" aria-label="Menu"></button>
   </div>
 </header>
 
@@ -58,27 +58,30 @@
   <div class="wrap">
     <div class="ftr-in">
       <div>
-        <div class="brand"><span id="ftrGlyph"></span><span><b>MCU 完全指南</b></span></div>
-        <p>為完全沒接觸過漫威的新手整理的漫威電影宇宙全解析。涵蓋六個階段、兩大傳奇 ——
-           40 部電影、近 30 部影集與特別節目、Marvel One-Shots、捍衛者聯盟，
-           以及《無家日》引用的舊蜘蛛人電影。</p>
+        <div class="brand"><span id="ftrGlyph"></span><span><b>The Complete MCU Guide</b></span></div>
+        <p>A newcomer's guide to the Marvel Cinematic Universe, covering six phases and two sagas —
+           40 films, nearly 30 series and specials, the Marvel One-Shots, the Defenders Saga,
+           and the older Spider-Man films that No Way Home draws on.</p>
       </div>
       <div class="ftr-links">
-        <a href="#/timeline">完整時間線</a>
-        <a href="#/phases">六個階段</a>
-        <a href="#/characters">角色圖鑑</a>
-        <a href="#/concepts">核心概念與無限寶石</a>
-        <a href="#/sm4">《蜘蛛人4》檔案</a>
-        <a href="#/guide">觀影指南與注意事項</a>
+        <a href="#/timeline">Full Timeline</a>
+        <a href="#/phases">The Six Phases</a>
+        <a href="#/characters">Character Index</a>
+        <a href="#/concepts">Concepts &amp; Infinity Stones</a>
+        <a href="#/sm4">Spider-Man 4 Dossier</a>
+        <a href="#/guide">Watch Guide &amp; Caveats</a>
       </div>
     </div>
 
     <div class="ftr-note">
-      本站為非營利的個人整理與粉絲導讀，與 Marvel Studios、Sony Pictures、The Walt Disney Company 均無關聯，
-      亦未獲其授權或背書。所有作品名稱、角色名稱與商標均屬各自權利人所有。
-      站內所有圖像皆為本站自繪的原創向量圖形，不含任何電影劇照或宣傳素材。<br>
-      2025–2026 年作品的劇情細節多屬上映前後的早期資訊，最終請以正片為準；詳見
-      <a href="#/guide" style="color:var(--red);font-weight:800">觀影指南的「注意事項」</a>。
+      This is a non-commercial fan reference. It is not affiliated with, authorised by, or endorsed by
+      Marvel Studios, Sony Pictures or The Walt Disney Company. All titles, character names and
+      trademarks belong to their respective owners.
+      Every image on this site is original vector artwork drawn for it — no film stills or promotional
+      material are used.<br>
+      Details for 2026–2027 titles come from trailers, official synopses and press coverage and may
+      change; see the
+      <a href="#/guide" style="color:var(--red);font-weight:800">caveats in the Watch Guide</a>.
     </div>
   </div>
 </footer>
@@ -87,16 +90,16 @@
   <div class="sheet" id="sheet"></div>
 </div>
 
-<button class="totop" id="totop" aria-label="回到頂端"></button>
+<button class="totop" id="totop" aria-label="Back to top"></button>
 
-<script src="assets/js/data-details.js?v=8"></script>
-<script src="assets/js/data-works-1.js?v=8"></script>
-<script src="assets/js/data-works-2.js?v=8"></script>
-<script src="assets/js/data-works-3.js?v=8"></script>
-<script src="assets/js/data-characters.js?v=8"></script>
-<script src="assets/js/data-characters-2.js?v=8"></script>
-<script src="assets/js/data-extra.js?v=8"></script>
-<script src="assets/js/art.js?v=8"></script>
-<script src="assets/js/app.js?v=8"></script>
+<script src="assets/js/data-details.js?v=11"></script>
+<script src="assets/js/data-works-1.js?v=11"></script>
+<script src="assets/js/data-works-2.js?v=11"></script>
+<script src="assets/js/data-works-3.js?v=11"></script>
+<script src="assets/js/data-characters.js?v=11"></script>
+<script src="assets/js/data-characters-2.js?v=11"></script>
+<script src="assets/js/data-extra.js?v=11"></script>
+<script src="assets/js/art.js?v=11"></script>
+<script src="assets/js/app.js?v=11"></script>
 </body>
 </html>

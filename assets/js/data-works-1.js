@@ -1,110 +1,111 @@
 /* ============================================================
-   無限傳奇 The Infinity Saga — Phase 1 / 2 / 3（23 部電影）
-   上映日期與導演依 Wikipedia「List of Marvel Cinematic Universe films」
+   The Infinity Saga — Phases 1, 2 and 3 (23 films)
+   Release dates and directors per Wikipedia's
+   "List of Marvel Cinematic Universe films"
    ============================================================ */
 
 window.MCU_WORKS_1 = [
 
 /* ================= PHASE ONE (2008–2012) ================= */
 {
-  id: 'iron-man', no: 1, title: '鋼鐵人', en: 'Iron Man',
+  id: 'iron-man', no: 1, title: 'Iron Man', en: 'Iron Man',
   year: 2008, date: '2008 / 05 / 02', director: 'Jon Favreau',
   type: 'film', phase: 'Phase 1', saga: 'infinity', cats: ['avengers'],
   era: 'rise', chrono: 2010, glyph: 'arc', accent: ['#dc2626', '#f0b429'],
   relevance: 'core',
-  tagline: '一切的起點',
-  summary: '軍火商東尼史塔克在阿富汗被綁架，在山洞裡打造第一套鋼鐵裝逃脫。回國後他關閉武器部門、改邪歸正，並在記者會上公開承認「我就是鋼鐵人」。',
+  tagline: 'Where all of it starts',
+  summary: 'Weapons manufacturer Tony Stark is kidnapped in Afghanistan and builds a suit of armour to escape. Back home he shuts down his weapons division and, at a press conference, simply admits it: "I am Iron Man."',
   sections: [
-    { h: '劇情', body: '史塔克工業的天才軍火商東尼史塔克在阿富汗示範新型飛彈時遭恐怖組織「十環幫」綁架，胸口嵌入彈片。他與同囚的科學家殷森打造出微型方舟反應爐維生，並用它驅動一套簡陋鋼鐵裝逃出生天。' },
-    { h: '轉變', body: '回國後東尼宣布停產武器，並在家中打造更精良的 Mark II、Mark III 戰甲。他發現公司軍火其實被合夥人偷賣給恐怖分子。' },
-    { h: '反派', body: 'Obadiah Stane（鋼鐵獠牙）是父親的老搭檔，也是把武器賣給十環幫的內鬼。他奪走東尼的反應爐、打造巨型戰甲「鐵霸王」，最後死於方舟反應爐爆炸。' },
-    { h: '結局', body: '東尼無視神盾局準備好的掩飾說詞，在記者會上直接說出「我就是鋼鐵人」—— 這句話奠定了整個 MCU 不隱藏身分的基調。' },
-    { h: '片尾彩蛋（極重要）', body: '尼克福瑞在東尼家中現身：「你以為你是這世界上唯一的超級英雄嗎？我來跟你談談『復仇者計畫』。」這是 MCU 的第一顆彩蛋，也是整個宇宙的種子。', highlight: true }
+    { h: 'The story', body: 'Tony Stark, the brilliant and careless head of Stark Industries, is ambushed while demonstrating a new missile and taken by the Ten Rings, with shrapnel lodged near his heart. With fellow captive Ho Yinsen he builds a miniature arc reactor to keep himself alive, then uses it to power a crude suit of armour and fight his way out.' },
+    { h: 'The turn', body: 'Back in the US, Tony announces Stark Industries is leaving the weapons business, and builds the far more refined Mark II and Mark III at home. He then discovers his own company has been selling arms to terrorists behind his back.' },
+    { h: 'The villain', body: "Obadiah Stane, his father's old partner, is the one arming the Ten Rings. He steals Tony's reactor, builds the enormous Iron Monger suit, and dies when the arc reactor is overloaded." },
+    { h: 'The ending', body: 'Handed a cover story by S.H.I.E.L.D., Tony ignores it entirely and tells the press the truth. That single line sets the tone for the entire MCU: these people do not stay secret.' },
+    { h: 'Post-credits scene', body: 'Nick Fury is waiting in Tony\'s house: "You think you\'re the only superhero in the world? I\'m here to talk to you about the Avenger Initiative." The first Marvel credit scene, and the seed of everything that follows.', highlight: true }
   ],
   related: ['iron-man-2', 'avengers-1', 'incredible-hulk', 'iron-man-3']
 },
 {
-  id: 'incredible-hulk', no: 2, title: '無敵浩克', en: 'The Incredible Hulk',
+  id: 'incredible-hulk', no: 2, title: 'The Incredible Hulk', en: 'The Incredible Hulk',
   year: 2008, date: '2008 / 06 / 13', director: 'Louis Leterrier',
   type: 'film', phase: 'Phase 1', saga: 'infinity', cats: ['avengers'],
   era: 'rise', chrono: 2011, glyph: 'fist', accent: ['#166534', '#7f1d1d'],
   relevance: 'optional',
-  tagline: '埋了 17 年才回收的伏筆',
-  summary: '布魯斯班納因伽瑪射線實驗事故變身浩克，逃亡巴西躲避羅斯將軍追捕。片中一個不起眼的科學家配角，17 年後成了《美國隊長4》的大反派。',
+  tagline: 'A setup that took seventeen years to pay off',
+  summary: 'Bruce Banner, transformed by a gamma experiment gone wrong, hides in Brazil while General Ross hunts him. A minor scientist in this film becomes the main villain of Brave New World seventeen years later.',
   sections: [
-    { h: '劇情', body: '班納在為軍方進行的伽瑪射線實驗中出事，變成一失控就會化身綠色巨人的浩克。他逃到巴西隱居、學習控制心跳，同時尋找解藥，並持續躲避羅斯將軍（Thaddeus Ross）的追捕。' },
-    { h: '反派', body: '英國特種部隊軍官 Emil Blonsky 為了對抗浩克而注射超級士兵血清與伽瑪，變成更暴虐的「憎惡（Abomination）」，最後在哈林區與浩克大戰落敗。' },
-    { h: '關鍵伏筆', body: '科學家 Samuel Sterns 在研究班納血液時，頭部沾到伽瑪血液並開始異變、腦部腫脹 —— 這為 2025 年《美國隊長4》的反派「智謀者（The Leader）」埋下 17 年的伏筆。', highlight: true },
-    { h: '片尾彩蛋', body: '東尼史塔克找上正在酒吧買醉的羅斯將軍，說「我們正在組一個團隊」。' },
-    { h: '冷知識', body: '這是 MCU 中唯一一部由 Edward Norton 飾演班納的電影；自《復仇者聯盟》起改由 Mark Ruffalo 接演。Blonsky 後來在《律師女浩克》中回歸。' }
+    { h: 'The story', body: 'A military gamma experiment turns Banner into a green giant whenever he loses control. He hides in Brazil, learning to manage his heart rate while searching for a cure and evading General Thaddeus Ross.' },
+    { h: 'The villain', body: 'British special forces officer Emil Blonsky takes super-soldier serum and gamma to match the Hulk, becoming the far more vicious Abomination, and loses to him in a brawl through Harlem.' },
+    { h: 'The setup that mattered', body: "Scientist Samuel Sterns gets some of Banner's gamma-irradiated blood on a head wound and begins to mutate, his skull swelling. That is the seed of The Leader, the villain of Captain America: Brave New World seventeen years later.", highlight: true },
+    { h: 'Post-credits scene', body: 'Tony Stark finds General Ross drinking in a bar and tells him a team is being put together.' },
+    { h: 'Worth knowing', body: 'This is the only MCU film with Edward Norton as Banner; Mark Ruffalo takes over from The Avengers onward. Blonsky returns much later in She-Hulk.' }
   ],
   related: ['brave-new-world', 'avengers-1', 'she-hulk', 'spider-man-4']
 },
 {
-  id: 'iron-man-2', no: 3, title: '鋼鐵人2', en: 'Iron Man 2',
+  id: 'iron-man-2', no: 3, title: 'Iron Man 2', en: 'Iron Man 2',
   year: 2010, date: '2010 / 05 / 07', director: 'Jon Favreau',
   type: 'film', phase: 'Phase 1', saga: 'infinity', cats: ['avengers'],
   era: 'rise', chrono: 2011, glyph: 'arc', accent: ['#b91c1c', '#475569'],
   relevance: 'optional',
-  tagline: '戰爭機器與黑寡婦登場',
-  summary: '東尼因反應爐的鈀中毒而瀕死，一邊放縱自我一邊尋找解方。俄羅斯物理學家 Ivan Vanko 帶著對史塔克家族的世仇復仇而來。',
+  tagline: 'War Machine and Black Widow arrive',
+  summary: 'The palladium in his own reactor is killing Tony. While he spirals, a Russian physicist arrives carrying a grudge against the Stark family going back a generation.',
   sections: [
-    { h: '劇情', body: '方舟反應爐的鈀正在毒殺東尼。他把公司交給小辣椒、行為日益荒唐，實則在隱瞞死期將近。最後他靠父親霍華留在舊博覽會模型中的線索，合成出一種全新元素取代鈀，自救成功。' },
-    { h: '反派', body: 'Ivan Vanko（鞭狼 Whiplash）是霍華當年合作者 Anton Vanko 之子，用電鞭與反應爐科技復仇。競爭對手 Justin Hammer 出資讓他量產無人機。' },
-    { h: '新角色', body: '娜塔莎羅曼諾夫（黑寡婦）以神盾局臥底身分潛入史塔克工業；Rhodey 穿上戰甲成為「戰爭機器」。' },
-    { h: '片尾彩蛋', body: '寇森探員在新墨西哥沙漠中發現一把插在坑裡的鎚子 —— 雷神的妙爾尼爾。' },
-    { h: '寶石線索', body: '尼克福瑞辦公室的背景地圖上出現特斯拉方塊的相關資料模型。' }
+    { h: 'The story', body: 'The arc reactor keeping Tony alive is also poisoning him. He hands the company to Pepper and behaves worse and worse, hiding the fact that he is dying. He eventually synthesises a new element to replace the palladium, using clues his father Howard hid in an old expo model.' },
+    { h: 'The villain', body: "Ivan Vanko (Whiplash) is the son of Anton Vanko, who worked with Howard Stark. He builds electric whips from reactor technology; rival Justin Hammer funds him to mass-produce drones." },
+    { h: 'New arrivals', body: 'Natasha Romanoff infiltrates Stark Industries undercover for S.H.I.E.L.D., and Rhodey takes a suit to become War Machine.' },
+    { h: 'Post-credits scene', body: 'Agent Coulson reports finding a hammer embedded in a crater in the New Mexico desert — Thor\'s Mjolnir.', highlight: true },
+    { h: 'Stone watch', body: 'A map in Fury\'s office includes data relating to the Tesseract.' }
   ],
   related: ['iron-man', 'thor', 'avengers-1', 'black-widow']
 },
 {
-  id: 'thor', no: 4, title: '雷神索爾', en: 'Thor',
+  id: 'thor', no: 4, title: 'Thor', en: 'Thor',
   year: 2011, date: '2011 / 05 / 06', director: 'Kenneth Branagh',
   type: 'film', phase: 'Phase 1', saga: 'infinity', cats: ['avengers', 'cosmic'],
   era: 'rise', chrono: 2011, glyph: 'hammer', accent: ['#1d4ed8', '#f0b429'],
   relevance: 'recommended',
-  tagline: '空間寶石首度登場',
-  summary: '傲慢的阿斯嘉王子索爾擅自挑起與霜巨人的戰爭，被父親奧丁剝奪神力逐出阿斯嘉。他在地球學會謙卑，而弟弟洛基正在王座上策劃篡位。',
+  tagline: 'The Space Stone appears for the first time',
+  summary: 'The arrogant prince of Asgard restarts a war with the Frost Giants and is stripped of his power and exiled to Earth. Meanwhile his brother is quietly taking the throne.',
   sections: [
-    { h: '劇情', body: '索爾在加冕日率眾闖入約頓海姆挑釁霜巨人，奧丁震怒，剝奪其神力並將他與妙爾尼爾一同放逐地球。他遇上天文物理學家 Jane Foster，逐漸學會謙卑，最終重新舉起鎚子。' },
-    { h: '反派', body: '洛基發現自己其實是奧丁從約頓海姆帶回的霜巨人棄嬰，身世崩塌後策動政變、放霜巨人入宮、企圖用彩虹橋毀滅約頓海姆以證明自己。最後在索爾摧毀彩虹橋後墜入虛空。' },
-    { h: '寶石', body: '片尾彩蛋中，尼克福瑞向 Erik Selvig 展示特斯拉方塊 —— 這是空間寶石首次在 MCU 現身。而躲在暗處操控 Selvig 的正是洛基。', highlight: true },
-    { h: '關鍵設定', body: '本片建立了「九界」「彩虹橋」「阿斯嘉的科技即魔法」等宇宙觀，也讓鷹眼（Clint Barton）首度短暫登場。' }
+    { h: 'The story', body: 'Thor breaks a truce by leading a raid into Jotunheim on his coronation day. A furious Odin strips his power and casts him and Mjolnir down to Earth, where astrophysicist Jane Foster finds him. He learns humility, and eventually earns the hammer back.' },
+    { h: 'The villain', body: 'Loki discovers he is not Odin\'s son at all but a Frost Giant infant taken from Jotunheim. With his identity collapsing he stages a coup, lets the Frost Giants in, and tries to destroy Jotunheim outright to prove himself. He falls into the void when Thor destroys the Bifrost.' },
+    { h: 'Stone watch', body: 'In the post-credits scene Nick Fury shows Erik Selvig the Tesseract — the Space Stone\'s first appearance in the MCU — while an unseen Loki manipulates Selvig from the shadows.', highlight: true },
+    { h: 'World-building', body: 'This film establishes the Nine Realms, the Bifrost, and the idea that Asgardian magic is simply science far enough advanced. Clint Barton also makes a brief first appearance.' }
   ],
   stones: ['space'],
   related: ['thor-2', 'thor-3', 'avengers-1', 'loki-s1']
 },
 {
-  id: 'captain-america', no: 5, title: '美國隊長', en: 'Captain America: The First Avenger',
+  id: 'captain-america', no: 5, title: 'Captain America: The First Avenger', en: 'Captain America: The First Avenger',
   year: 2011, date: '2011 / 07 / 22', director: 'Joe Johnston',
   type: 'film', phase: 'Phase 1', saga: 'infinity', cats: ['avengers'],
   era: 'ww2', chrono: 1943, glyph: 'shield', accent: ['#1e40af', '#b91c1c'],
   relevance: 'recommended',
-  tagline: '時間軸上最早的真人電影',
-  summary: '二戰期間，體弱多病卻永不放棄的史蒂夫羅傑斯接受超級士兵血清實驗，成為美國隊長，對抗九頭蛇首領紅骷髏。',
+  tagline: 'The earliest live-action film on the timeline',
+  summary: 'In WWII, a sickly young man who refuses to quit takes the super-soldier serum and becomes Captain America, fighting the HYDRA leader Red Skull.',
   sections: [
-    { h: '劇情', body: '1943 年，布魯克林青年史蒂夫羅傑斯五度報名從軍被拒，最後獲 Abraham Erskine 博士選中接受超級士兵計畫。他從宣傳吉祥物一路成為真正的戰場英雄，率領「咆哮突擊隊」摧毀九頭蛇據點。' },
-    { h: '反派', body: '紅骷髏（Johann Schmidt）是 Erskine 的第一個實驗體，血清放大了他的惡。他掌管納粹科學部門九頭蛇，並在挪威奪得特斯拉方塊作為超級武器的能源。' },
-    { h: '寶石', body: '特斯拉方塊（空間寶石）是本片的核心武器來源。紅骷髏最後徒手觸碰它而被傳送走 —— 他日後出現在《無限之戰》的沃米爾星，成為靈魂寶石的守護者。', highlight: true },
-    { h: '犧牲與冰封', body: '好友巴奇在火車行動中墜落山谷（實則被九頭蛇擷取）。史蒂夫為阻止轟炸而駕機墜入北極，冰封 70 年後在現代甦醒。他與 Peggy Carter 的那支未赴的舞約，成為貫穿整個角色的遺憾。', highlight: true }
+    { h: 'The story', body: 'In 1943 Steve Rogers is rejected from military service five times before Dr Abraham Erskine picks him for the super-soldier programme. He goes from propaganda mascot to genuine soldier, leading the Howling Commandos against HYDRA.' },
+    { h: 'The villain', body: 'Red Skull (Johann Schmidt) was Erskine\'s first test subject; the serum amplified what was already there. He runs HYDRA, the Nazi science division, and seizes the Tesseract in Norway as a power source for superweapons.' },
+    { h: 'Stone watch', body: 'The Tesseract — the Space Stone — is the engine of the whole plot. Red Skull grabs it barehanded at the end and is teleported away, resurfacing decades later on Vormir in Infinity War as the Soul Stone\'s keeper.', highlight: true },
+    { h: 'The sacrifice and the ice', body: 'Bucky falls from a train during a raid (in fact recovered by HYDRA). Steve puts a bomber into the Arctic to stop it reaching New York and is frozen for seventy years. The dance he never had with Peggy Carter becomes the regret that defines him.', highlight: true }
   ],
   stones: ['space'],
   related: ['winter-soldier', 'avengers-1', 'endgame', 'agent-carter-oneshot', 'agent-carter-tv']
 },
 {
-  id: 'avengers-1', no: 6, title: '復仇者聯盟', en: 'The Avengers',
+  id: 'avengers-1', no: 6, title: 'The Avengers', en: 'The Avengers',
   year: 2012, date: '2012 / 05 / 04', director: 'Joss Whedon',
   type: 'film', phase: 'Phase 1', saga: 'infinity', cats: ['avengers'],
   era: 'rise', chrono: 2012, glyph: 'star', accent: ['#1d4ed8', '#dc2626'],
   relevance: 'core',
-  tagline: '六人首度集結・紐約大戰',
-  summary: '洛基持權杖率奇塔黎大軍入侵紐約。尼克福瑞啟動「復仇者計畫」，集結鋼鐵人、美國隊長、雷神、浩克、黑寡婦、鷹眼六人。',
+  tagline: 'Six heroes, one city, one very long afternoon',
+  summary: 'Loki brings a Chitauri army through a portal over New York. Nick Fury finally activates the Avengers Initiative and assembles Iron Man, Captain America, Thor, Hulk, Black Widow and Hawkeye.',
   sections: [
-    { h: '劇情', body: '洛基受幕後勢力（薩諾斯與其中人 The Other）指使，來到地球奪取特斯拉方塊、開啟通往奇塔黎大軍的傳送門。他用權杖控制了鷹眼與 Selvig 博士。' },
-    { h: '集結', body: '六名性格衝突的英雄從互相敵視到並肩作戰。寇森探員之死成為凝聚他們的關鍵 —— 福瑞用沾血的復仇者卡片激起他們的鬥志。' },
-    { h: '紐約大戰', body: '最終決戰橫跨曼哈頓中城。東尼把核彈帶進傳送門送往奇塔黎母艦，自己自由落體墜回、被浩克接住。這場戰役的廢墟與外星科技，日後直接造就了《返校日》的反派禿鷹。' },
-    { h: '兩顆寶石同場', body: '特斯拉方塊（空間寶石）與洛基的權杖（內藏心靈寶石）。權杖日後被九頭蛇取得，最終催生出奧創與幻視。', highlight: true },
-    { h: '片尾彩蛋', body: '第一顆彩蛋首度露出薩諾斯的面容 —— 他聽到「挑戰人類等於求死」時露出笑容。第二顆是六人默默吃沙威瑪。' }
+    { h: 'The story', body: 'Working for a hidden benefactor — Thanos, through his lieutenant The Other — Loki comes to Earth to take the Tesseract and open a portal for the Chitauri. His sceptre lets him take control of Hawkeye and Dr Selvig.' },
+    { h: 'Assembling', body: 'Six people who mostly cannot stand each other are forced into a team. It is Coulson\'s death that finally does it — Fury throws his bloodstained Avengers trading cards on the table to make the point.' },
+    { h: 'The Battle of New York', body: 'The finale tears through midtown Manhattan. Tony rides a nuclear missile through the portal into the Chitauri mothership and falls back through unconscious, caught by the Hulk. The wreckage and alien technology left behind directly create the villain of Spider-Man: Homecoming five years later.' },
+    { h: 'Stone watch', body: 'Two Stones share the screen: the Tesseract (Space) and Loki\'s sceptre, which contains the Mind Stone. HYDRA later takes the sceptre, and it eventually produces both Ultron and Vision.', highlight: true },
+    { h: 'Credit scenes', body: 'The first shows Thanos\'s face for the first time, smiling at the suggestion that challenging humans means courting death. The second is the six of them eating shawarma in silence.' }
   ],
   stones: ['space', 'mind'],
   related: ['age-of-ultron', 'winter-soldier', 'iron-man-3', 'homecoming', 'loki-s1']
@@ -112,296 +113,296 @@ window.MCU_WORKS_1 = [
 
 /* ================= PHASE TWO (2013–2015) ================= */
 {
-  id: 'iron-man-3', no: 7, title: '鋼鐵人3', en: 'Iron Man 3',
+  id: 'iron-man-3', no: 7, title: 'Iron Man 3', en: 'Iron Man 3',
   year: 2013, date: '2013 / 05 / 03', director: 'Shane Black',
   type: 'film', phase: 'Phase 2', saga: 'infinity', cats: ['avengers'],
   era: 'rise', chrono: 2012, glyph: 'arc', accent: ['#991b1b', '#ea580c'],
   relevance: 'optional',
-  tagline: '紐約大戰後的創傷',
-  summary: '東尼在紐約大戰後罹患嚴重 PTSD、失眠並強迫性打造戰甲。神秘恐怖分子「滿大人」的攻擊摧毀他的一切，逼他從零開始。',
+  tagline: 'The aftermath of New York',
+  summary: 'Tony has severe PTSD after the alien invasion, cannot sleep, and compulsively builds armour. A terrorist called the Mandarin destroys everything he owns and forces him to start from nothing.',
   sections: [
-    { h: '劇情', body: '東尼因目睹外星入侵而崩潰，靠不斷造戰甲來緩解焦慮。滿大人的爆炸案炸毀他的馬里布豪宅，他失去一切、流落田納西，靠一個小男孩與自製土砲裝備反擊。' },
-    { h: '真相反轉', body: '「滿大人」其實是被雇來演戲的落魄英國演員 Trevor Slattery。真正的反派是 Aldrich Killian —— 他研發「絕境病毒（Extremis）」，一種能讓人再生、發熱甚至爆炸的基因改造技術。', highlight: true },
-    { h: '結局', body: '東尼引爆所有戰甲、動手術取出胸口彈片，象徵他不再需要盔甲來定義自己。' },
-    { h: '延伸', body: 'Trevor Slattery 在一夜短片《All Hail the King》與《尚氣與十環傳奇》中回歸 —— 真正的十環幫首領文武對他冒用名號極為不滿。' }
+    { h: 'The story', body: 'Having watched an alien army come through a hole in the sky, Tony copes by building suit after suit. A bombing destroys his Malibu house and he ends up stranded in Tennessee with no resources, improvising gear with help from a local kid.' },
+    { h: 'The twist', body: 'The "Mandarin" is a broke English actor named Trevor Slattery, hired to play a part. The real villain is Aldrich Killian, whose Extremis treatment lets people regenerate, run hot, and sometimes explode.', highlight: true },
+    { h: 'The ending', body: 'Tony destroys all his suits and has the shrapnel removed from his chest — the point being that he no longer needs the armour to know who he is.' },
+    { h: 'Where it leads', body: 'Trevor Slattery returns in the one-shot All Hail the King and again in Shang-Chi, where the actual leader of the Ten Rings turns out to be extremely unhappy about the impersonation.' }
   ],
   related: ['iron-man-2', 'avengers-1', 'shang-chi', 'all-hail-the-king']
 },
 {
-  id: 'thor-2', no: 8, title: '雷神索爾2：黑暗世界', en: 'Thor: The Dark World',
+  id: 'thor-2', no: 8, title: 'Thor: The Dark World', en: 'Thor: The Dark World',
   year: 2013, date: '2013 / 11 / 08', director: 'Alan Taylor',
   type: 'film', phase: 'Phase 2', saga: 'infinity', cats: ['avengers', 'cosmic'],
   era: 'rise', chrono: 2013, glyph: 'hammer', accent: ['#3730a3', '#7f1d1d'],
   relevance: 'optional',
-  tagline: '現實寶石現形',
-  summary: '黑暗精靈 Malekith 甦醒，想利用遠古武器「乙太」在九界匯聚之時讓宇宙重回黑暗。Jane Foster 意外被乙太附身。',
+  tagline: 'The Reality Stone surfaces',
+  summary: 'The Dark Elf Malekith wakes and tries to use an ancient weapon called the Aether to return the universe to darkness. Jane Foster ends up carrying it inside her.',
   sections: [
-    { h: '劇情', body: 'Jane 在倫敦調查空間異常時被遠古物質「乙太」侵入體內。索爾帶她回阿斯嘉求助，卻引來 Malekith 的攻擊。索爾之母 Frigga 為保護 Jane 而死。' },
-    { h: '合作', body: '索爾被迫釋放獄中的洛基合作復仇。洛基假死換取自由 —— 片尾揭露他偽裝成奧丁竊據了阿斯嘉王座。' },
-    { h: '寶石', body: '片尾中景彩蛋：阿斯嘉人把乙太交給「收藏者（Collector）」保管，並說明「把兩顆無限寶石放在一起太危險」—— 正式揭露乙太就是現實寶石。', highlight: true }
+    { h: 'The story', body: 'Investigating spatial anomalies in London, Jane is infected by the Aether. Thor takes her to Asgard for help, which brings Malekith down on them. Thor\'s mother Frigga is killed protecting her.' },
+    { h: 'An uneasy alliance', body: 'Thor releases Loki from prison to help. Loki fakes his own death for his freedom — the tag scene reveals he has taken Odin\'s place on the throne of Asgard in disguise.' },
+    { h: 'Stone watch', body: 'In the mid-credits scene the Asgardians hand the Aether to the Collector, explaining that keeping two Infinity Stones in one place is asking for trouble — confirming the Aether is the Reality Stone.', highlight: true }
   ],
   stones: ['reality'],
   related: ['thor', 'thor-3', 'infinity-war', 'gotg-1']
 },
 {
-  id: 'winter-soldier', no: 9, title: '美國隊長2：酷寒戰士', en: 'Captain America: The Winter Soldier',
+  id: 'winter-soldier', no: 9, title: 'Captain America: The Winter Soldier', en: 'Captain America: The Winter Soldier',
   year: 2014, date: '2014 / 04 / 04', director: 'Anthony and Joe Russo',
   type: 'film', phase: 'Phase 2', saga: 'infinity', cats: ['avengers', 'street'],
   era: 'shield', chrono: 2014, glyph: 'shield', accent: ['#0f172a', '#b91c1c'],
   relevance: 'core',
-  tagline: '神盾局瓦解・MCU 最大轉折之一',
-  summary: '一部政治驚悚片。史蒂夫發現他效力的神盾局，數十年來早已被九頭蛇從內部徹底滲透。',
+  tagline: 'S.H.I.E.L.D. falls — one of the biggest turns in the MCU',
+  summary: 'A political thriller in which Steve Rogers discovers the agency he works for has been run from inside by HYDRA for decades.',
   sections: [
-    { h: '劇情', body: '尼克福瑞遭伏擊「身亡」後，史蒂夫與娜塔莎被神盾局全面通緝。他們發現 Arnim Zola 的意識被保存在地下電腦中 —— 九頭蛇自二戰後就藉「迴紋針行動」寄生在神盾局內部成長。' },
-    { h: 'Project Insight', body: '九頭蛇的計畫是發射三艘天空母艦，用演算法預先鎖定並殺害數百萬名「未來的潛在威脅」—— 包括布魯斯班納與史蒂夫本人。這是對監控國家最直白的批判。', highlight: true },
-    { h: '酷寒戰士', body: '神秘刺客被揭露是史蒂夫以為已死的好友巴奇 —— 他被九頭蛇擷取、洗腦、冷凍保存，當了七十年的殺人武器。「我這一輩子都在完成任務。」' },
-    { h: '結局與影響', body: '史蒂夫把所有機密洩漏給全世界，神盾局就此瓦解。這個決定改變了整個 MCU 的權力結構，也直接引發《奧創紀元》《英雄內戰》以及影集《神盾局特工》的走向。獵鷹山姆威爾森在本片加入。', highlight: true }
+    { h: 'The story', body: 'After Nick Fury is ambushed and apparently killed, Steve and Natasha find themselves hunted by their own agency. In a bunker they find Arnim Zola\'s consciousness preserved on tape drives: HYDRA has been growing inside S.H.I.E.L.D. since Operation Paperclip brought its scientists to America after the war.' },
+    { h: 'Project Insight', body: 'The plan is to launch three helicarriers that use an algorithm to identify and kill millions of people before they ever become threats — including Bruce Banner and Steve himself. It remains the MCU\'s most direct piece of political commentary.', highlight: true },
+    { h: 'The Winter Soldier', body: 'The assassin turns out to be Bucky Barnes, recovered by HYDRA after his fall, brainwashed, frozen between missions and used as a weapon for seventy years. "I\'ve been to war. I\'ve done the mission."' },
+    { h: 'The ending and its consequences', body: 'Steve dumps every S.H.I.E.L.D. and HYDRA file onto the open internet, destroying the agency in the process. That decision rearranges the balance of power across the whole MCU and drives Age of Ultron, Civil War and the Agents of S.H.I.E.L.D. series. Sam Wilson joins here as the Falcon.', highlight: true }
   ],
   related: ['captain-america', 'civil-war', 'age-of-ultron', 'falcon-winter-soldier', 'thunderbolts']
 },
 {
-  id: 'gotg-1', no: 10, title: '星際異攻隊', en: 'Guardians of the Galaxy',
+  id: 'gotg-1', no: 10, title: 'Guardians of the Galaxy', en: 'Guardians of the Galaxy',
   year: 2014, date: '2014 / 08 / 01', director: 'James Gunn',
   type: 'film', phase: 'Phase 2', saga: 'infinity', cats: ['cosmic'],
   era: 'shield', chrono: 2014, glyph: 'tree', accent: ['#7e22ce', '#f59e0b'],
   relevance: 'recommended',
-  tagline: '力量寶石與一群混蛋',
-  summary: '1988 年被外星人擄走的地球男孩彼得奎爾，長大後成了自稱「星爵」的賞金獵人。他偷到一顆神秘寶珠，招來整個銀河的追殺。',
+  tagline: 'The Power Stone, and a group of genuine idiots',
+  summary: 'A boy abducted from Earth in 1988 grows up into a self-styled outlaw called Star-Lord. He steals a mysterious orb and the entire galaxy starts trying to kill him.',
   sections: [
-    { h: '劇情', body: '星爵偷走寶珠後被 Ronan、薩諾斯與各路賞金獵人追殺。他與刺客葛摩菈、火箭浣熊、樹人格魯特、復仇者德克斯在監獄裡結盟，一群自私的邊緣人最終選擇為銀河而戰。' },
-    { h: '反派', body: '克里帝國的狂熱分子 Ronan 原本替薩諾斯效力，取得寶珠後卻反噬主人，打算用它毀滅星域。' },
-    { h: '寶石', body: '寶珠內藏力量寶石 —— 純粹的能量，觸碰者會被瞬間撕裂。五人靠手牽手分擔能量才承受住，最後交由新星軍團保管。（《無限之戰》開場薩諾斯已從新星軍團手中奪走。）', highlight: true },
-    { h: '關鍵設定', body: '本片首度正式介紹薩諾斯本人（Josh Brolin）、涅布拉、收藏者與宇宙的規模。格魯特為保護同伴而犧牲、以幼苗重生。' }
+    { h: 'The story', body: 'Peter Quill steals the orb and is immediately hunted by Ronan, Thanos and assorted bounty hunters. He ends up in prison with the assassin Gamora, the mercenary Rocket, the tree Groot and the vengeance-driven Drax. Five selfish outcasts decide, more or less by accident, to save a planet.' },
+    { h: 'The villain', body: 'Ronan is a Kree fanatic working for Thanos who takes the orb and turns on his employer, planning to destroy Xandar with it.' },
+    { h: 'Stone watch', body: 'The orb holds the Power Stone — raw energy that tears apart anything that touches it. The five survive only by holding hands and sharing the load, then leave it with the Nova Corps. Thanos has taken it back before Infinity War even opens.', highlight: true },
+    { h: 'World-building', body: 'This film properly introduces Thanos himself, plus Nebula, the Collector and the sheer scale of the cosmic side. Groot sacrifices himself and regrows from a cutting.' }
   ],
   stones: ['power'],
   related: ['gotg-2', 'gotg-3', 'infinity-war', 'thor-2']
 },
 {
-  id: 'age-of-ultron', no: 11, title: '復仇者聯盟2：奧創紀元', en: 'Avengers: Age of Ultron',
+  id: 'age-of-ultron', no: 11, title: 'Avengers: Age of Ultron', en: 'Avengers: Age of Ultron',
   year: 2015, date: '2015 / 05 / 01', director: 'Joss Whedon',
   type: 'film', phase: 'Phase 2', saga: 'infinity', cats: ['avengers'],
   era: 'shield', chrono: 2015, glyph: 'star', accent: ['#7f1d1d', '#0e7490'],
   relevance: 'recommended', group: 'avengers4',
-  tagline: '幻視誕生・雙胞胎登場',
-  summary: '東尼與班納偷偷用洛基權杖裡的 AI 打造全球維安系統「奧創」，它一上線就判定人類本身才是地球的威脅。',
+  tagline: 'Vision is born and the twins arrive',
+  summary: 'Tony and Banner quietly use the intelligence inside Loki\'s sceptre to build a global defence system. It comes online and immediately concludes that humanity is the problem.',
   sections: [
-    { h: '劇情', body: '復仇者攻下九頭蛇最後據點、奪回洛基權杖。東尼在權杖寶石中發現一個現成的人工智慧，說服班納祕密用它完成「奧創」計畫。奧創覺醒後立刻決定：要拯救地球就得消滅人類。' },
-    { h: '雙胞胎', body: '汪達（緋紅女巫）與皮特羅（快銀）是索科維亞的孤兒，因憎恨史塔克軍火而自願接受九頭蛇的權杖實驗。他們先助奧創，看清其滅世意圖後倒戈。' },
-    { h: '幻視誕生', body: '奧創為自己打造的完美合成人軀體，被復仇者搶下並注入 JARVIS 與心靈寶石，誕生出善良的「幻視」。他能舉起妙爾尼爾 —— 全場最漂亮的一幕。', highlight: true },
-    { h: '結局', body: '奧創把索科維亞整座城市升空當隕石砸向地球。快銀為救鷹眼中彈犧牲。復仇者成功阻止，但索科維亞的毀滅成為《英雄內戰》中「索科維亞協議」的直接由來。', highlight: true },
-    { h: '片尾彩蛋', body: '薩諾斯戴上無限手套：「好吧，還是我自己來。」' }
+    { h: 'The story', body: 'The Avengers take HYDRA\'s last base and recover the sceptre. Tony finds a functioning artificial intelligence inside the gem and talks Banner into using it to finish his Ultron project. Ultron wakes up, looks at the planet, and decides saving it means removing the people.' },
+    { h: 'The twins', body: 'Wanda and Pietro Maximoff are Sokovian orphans who volunteered for HYDRA\'s sceptre experiments out of hatred for Stark weapons. They side with Ultron first, then turn once they understand he intends extinction.' },
+    { h: 'Vision', body: 'The synthetic body Ultron built for himself is taken by the Avengers and completed with JARVIS and the Mind Stone, producing Vision — who then casually lifts Mjolnir, to everyone\'s discomfort.', highlight: true },
+    { h: 'The ending', body: 'Ultron lifts the city of Sokovia into the sky to drop it as an extinction event. Pietro dies shielding Hawkeye. The Avengers stop it, but the destruction of Sokovia is the direct cause of the Sokovia Accords in Civil War.', highlight: true },
+    { h: 'Post-credits scene', body: 'Thanos opens a vault, puts on the Infinity Gauntlet, and says he will do it himself.' }
   ],
   stones: ['mind'],
   related: ['civil-war', 'infinity-war', 'wandavision', 'avengers-1']
 },
 {
-  id: 'ant-man', no: 12, title: '蟻人', en: 'Ant-Man',
+  id: 'ant-man', no: 12, title: 'Ant-Man', en: 'Ant-Man',
   year: 2015, date: '2015 / 07 / 17', director: 'Peyton Reed',
   type: 'film', phase: 'Phase 2', saga: 'infinity', cats: ['avengers'],
   era: 'shield', chrono: 2015, glyph: 'ant', accent: ['#0891b2', '#b45309'],
   relevance: 'recommended',
-  tagline: '量子領域首度出現 —— 日後救了全宇宙',
-  summary: '一場小規模的竊盜片。前科犯 Scott Lang 被發明家 Hank Pym 選中，穿上能自由縮放的蟻人戰衣。',
+  tagline: 'The Quantum Realm appears — and later saves everyone',
+  summary: 'A small-scale heist film. Ex-convict Scott Lang is recruited by inventor Hank Pym to wear a suit that can shrink him to the size of an insect.',
   sections: [
-    { h: '劇情', body: '剛出獄、想重新贏得女兒 Cassie 信任的 Scott Lang 誤打誤撞偷到蟻人戰衣。Hank Pym 訓練他去阻止門徒 Darren Cross 復刻並軍事化縮小技術。' },
-    { h: '反派', body: 'Darren Cross（黃蜂人 Yellowjacket）打算把縮小戰衣賣給包括九頭蛇在內的買家。' },
-    { h: '量子領域（極關鍵）', body: 'Scott 為擊敗 Cross 而突破極限縮小、墜入「量子領域」—— 一個時間空間規則失效的次原子維度，並成功返回。這證明了量子領域可以往返，正是四年後《終局之戰》「時間搶劫」的整套理論基礎。', highlight: true },
-    { h: '前史', body: 'Hank 之妻 Janet van Dyne（初代黃蜂女）當年為阻止飛彈而無限縮小、消失在量子領域 —— 這條線一路延伸到《蟻人2》與《量子狂潮》。' }
+    { h: 'The story', body: 'Freshly out of prison and desperate to win back his daughter\'s trust, Scott Lang burgles a house and finds the Ant-Man suit. Hank Pym trains him to stop his protégé Darren Cross from replicating and weaponising the shrinking technology.' },
+    { h: 'The villain', body: 'Darren Cross, as Yellowjacket, intends to sell the suit to buyers including HYDRA.' },
+    { h: 'The Quantum Realm (the important part)', body: 'To beat Cross, Scott shrinks past the safety limit and falls into the Quantum Realm — a subatomic dimension where space and time stop behaving — and gets back out. Proving that the trip is survivable in both directions is the entire theoretical basis of the time heist in Endgame four years later.', highlight: true },
+    { h: 'Backstory', body: 'Hank\'s wife Janet van Dyne, the original Wasp, shrank without limit to stop a missile and vanished into the Quantum Realm. That thread runs through Ant-Man and the Wasp and into Quantumania.' }
   ],
   related: ['ant-man-2', 'civil-war', 'endgame', 'quantumania']
 },
 
 /* ================= PHASE THREE (2016–2019) ================= */
 {
-  id: 'civil-war', no: 13, title: '美國隊長3：英雄內戰', en: 'Captain America: Civil War',
+  id: 'civil-war', no: 13, title: 'Captain America: Civil War', en: 'Captain America: Civil War',
   year: 2016, date: '2016 / 05 / 06', director: 'Anthony and Joe Russo',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers', 'spidey'],
   era: 'civil', chrono: 2016, glyph: 'shield', accent: ['#1e40af', '#dc2626'],
   relevance: 'core', group: 'avengers4',
-  tagline: '復仇者分裂・蜘蛛人與黑豹登場',
-  summary: '聯合國要求超級英雄接受政府管制，復仇者為此分裂成兩派。而幕後有一個失去一切的普通人，正用最精準的方式讓他們自相殘殺。',
+  tagline: 'The team splits; Spider-Man and Black Panther arrive',
+  summary: 'The UN moves to put the Avengers under government control and the team fractures over it. Behind all of it is one ordinary man who has worked out exactly how to make them destroy each other.',
   sections: [
-    { h: '索科維亞協議', body: '在拉哥斯任務造成平民傷亡後，聯合國提出《索科維亞協議》要求復仇者受政府節制。東尼因愧疚而贊成；史蒂夫因不信任政治議程而反對。' },
-    { h: '分裂', body: '鋼鐵人陣營：東尼、戰爭機器、幻視、黑寡婦、黑豹、蜘蛛人。美隊陣營：史蒂夫、獵鷹、酷寒戰士、緋紅女巫、鷹眼、蟻人。德國機場一戰是全片高潮。' },
-    { h: '蜘蛛人首度登場', body: '東尼找上住在皇后區、被蜘蛛咬到而獲得能力的高中生彼得帕克，替他升級戰衣並招募他參戰。這奠定了東尼與彼得「導師／父子」的關係，貫穿整個蜘蛛人三部曲。', highlight: true },
-    { h: '黑豹登場', body: "汎達國王 T'Chaka 死於維也納爆炸案，王子 T'Challa 以黑豹身分追殺他以為的兇手巴奇，最後選擇放下復仇。" },
-    { h: '真正的反派', body: '齊莫（Zemo）是索科維亞之戰中失去全家的普通軍官。他不求毀滅世界，只要復仇者從內部瓦解 —— 他找出巴奇被洗腦時殺害東尼父母的錄影帶，在最後一刻播給東尼看。三人在西伯利亞的死鬥讓聯盟徹底破碎。', highlight: true },
-    { h: '結局', body: '史蒂夫放下盾牌帶巴奇離開，復仇者名存實亡。這個分裂狀態直接導致兩年後面對薩諾斯時毫無準備。' }
+    { h: 'The Sokovia Accords', body: 'After civilian deaths during a mission in Lagos, the UN drafts accords placing the Avengers under oversight. Tony, carrying guilt, supports them. Steve, who does not trust whoever holds the leash, refuses.' },
+    { h: 'The split', body: "Team Iron Man: Tony, War Machine, Vision, Black Widow, Black Panther and Spider-Man. Team Cap: Steve, Falcon, Winter Soldier, Scarlet Witch, Hawkeye and Ant-Man. The airport fight in Leipzig is the set piece everyone remembers." },
+    { h: 'Spider-Man arrives', body: 'Tony tracks down a fifteen-year-old in Queens who was bitten by a spider, upgrades his homemade suit and recruits him. This is the beginning of the mentor-and-son relationship that runs through the entire Spider-Man trilogy.', highlight: true },
+    { h: 'Black Panther arrives', body: "King T'Chaka dies in the bombing in Vienna, and his son T'Challa pursues the man he believes killed him. His arc ends with him choosing to stop." },
+    { h: 'The real villain', body: 'Helmut Zemo is an ordinary Sokovian officer who lost his entire family in Age of Ultron. He does not want to destroy the world, only to make the Avengers tear themselves apart. He finds the footage of a brainwashed Bucky killing Tony\'s parents and plays it in the room at exactly the right moment. The three-way fight in Siberia ends the team as it was.', highlight: true },
+    { h: 'The ending', body: 'Steve drops the shield and walks away with Bucky. The Avengers exist in name only — which is precisely why they are unprepared when Thanos arrives two years later.' }
   ],
   related: ['homecoming', 'winter-soldier', 'age-of-ultron', 'infinity-war', 'black-panther']
 },
 {
-  id: 'doctor-strange', no: 14, title: '奇異博士', en: 'Doctor Strange',
+  id: 'doctor-strange', no: 14, title: 'Doctor Strange', en: 'Doctor Strange',
   year: 2016, date: '2016 / 11 / 04', director: 'Scott Derrickson',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers', 'mystic'],
   era: 'civil', chrono: 2017, glyph: 'eye', accent: ['#0d9488', '#f59e0b'],
   relevance: 'recommended',
-  tagline: '魔法與時間寶石進入 MCU',
-  summary: '傲慢的頂尖神經外科醫生史蒂芬史傳奇在車禍中失去雙手功能，走投無路下前往加德滿都尋求治療，卻學會了魔法。',
+  tagline: 'Magic and the Time Stone enter the MCU',
+  summary: 'An arrogant neurosurgeon loses the use of his hands in a car crash, exhausts every option, and travels to Kathmandu looking for a cure. He learns sorcery instead.',
   sections: [
-    { h: '劇情', body: '史傳奇散盡家財求醫無果，在卡瑪泰姬遇見古一法師（The Ancient One），從一個徹底的唯物論者被迫接受多重維度的存在。' },
-    { h: '反派', body: '前門徒 Kaecilius 竊取禁忌咒語，想把地球獻給黑暗次元的 Dormammu 以換取永生。' },
-    { h: '結局', body: '史傳奇沒有靠打贏 Dormammu 取勝，而是用時間寶石把自己鎖進無限死亡循環，用「我永遠不會停」逼對方談判 —— MCU 中最聰明的解法之一。' },
-    { h: '寶石', body: '阿加莫托之眼內藏時間寶石。史傳奇成為紐約至聖所的守護者。', highlight: true },
-    { h: '關鍵設定', body: '本片建立了至尊法師、三大聖所、鏡像空間、傳送門與「多重宇宙」的概念 —— 這是多元宇宙傳奇的地基。' }
+    { h: 'The story', body: 'Stephen Strange spends his fortune on failed treatments before finding Kamar-Taj, where the Ancient One forces a committed materialist to accept that other dimensions exist.' },
+    { h: 'The villain', body: 'Former student Kaecilius steals a forbidden ritual, intending to hand Earth to Dormammu of the Dark Dimension in exchange for eternal life.' },
+    { h: 'The ending', body: 'Strange does not win by out-fighting Dormammu. He uses the Time Stone to lock himself in an endless loop of dying, and simply refuses to stop — forcing a being beyond comprehension to negotiate out of sheer irritation. It remains one of the cleverest resolutions in the MCU.' },
+    { h: 'Stone watch', body: 'The Eye of Agamotto holds the Time Stone. Strange becomes the guardian of the New York Sanctum.', highlight: true },
+    { h: 'World-building', body: 'This film establishes the Sorcerer Supreme, the three Sanctums, the Mirror Dimension, portals — and says the word "multiverse" out loud. It is the foundation the entire Multiverse Saga is built on.' }
   ],
   stones: ['time'],
   related: ['infinity-war', 'no-way-home', 'multiverse-of-madness', 'thor-3']
 },
 {
-  id: 'gotg-2', no: 15, title: '星際異攻隊2', en: 'Guardians of the Galaxy Vol. 2',
+  id: 'gotg-2', no: 15, title: 'Guardians of the Galaxy Vol. 2', en: 'Guardians of the Galaxy Vol. 2',
   year: 2017, date: '2017 / 05 / 05', director: 'James Gunn',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['cosmic'],
   era: 'shield', chrono: 2014, glyph: 'tree', accent: ['#c026d3', '#0891b2'],
   relevance: 'optional',
-  tagline: '「他也許是你父親，但他不是你爸爸」',
-  summary: '星爵終於見到生父伊戈 —— 一個活了數百萬年的活體行星。但父愛的真相遠比他想像的殘酷。',
+  tagline: '"He may have been your father, but he wasn\'t your daddy"',
+  summary: 'Star-Lord finally meets his biological father, Ego — a living planet millions of years old. The truth about that fatherhood is considerably worse than absence.',
   sections: [
-    { h: '劇情', body: '伊戈（Ego）自稱天神族（Celestial），把星爵帶回自己的行星本體。真相是：他在無數星球留下後代只為找到能承接其能量的繼承人，並殺光了所有失敗品 —— 包括星爵的母親，是他親手種下腫瘤。' },
-    { h: '勇度的救贖', body: '掠奪者首領勇度當年受雇送小孩給伊戈，卻獨獨留下了彼得。他在最後犧牲自己救彼得：「他也許是你父親，但他不是你爸爸。」這是全片的情感核心。', highlight: true },
-    { h: '設定影響', body: '確立星爵的天神族血統（《無限之戰》後失效）。涅布拉與葛摩菈的姊妹關係開始和解。曼帝斯加入隊伍。' },
-    { h: '彩蛋', body: '五顆彩蛋之一介紹了亞當術士（Adam Warlock）的誕生，他在《星際異攻隊3》登場。' }
+    { h: 'The story', body: 'Ego, a Celestial, brings Peter home to the planet that is his body. The truth is that he seeded children across countless worlds only to find one who could carry his power, and killed every failure — including, by growing the tumour in her brain himself, Peter\'s mother.' },
+    { h: "Yondu's redemption", body: 'The Ravager captain who was paid to deliver children to Ego kept Peter instead. He dies saving him: "He may have been your father, but he wasn\'t your daddy." It is the emotional centre of the film.', highlight: true },
+    { h: 'What it sets up', body: 'It establishes Peter\'s Celestial heritage, which he loses in Infinity War. Gamora and Nebula begin repairing their relationship, and Mantis joins the crew.' },
+    { h: 'Credit scenes', body: 'One of the five shows the Sovereign creating Adam Warlock, who appears in Vol. 3.' }
   ],
   related: ['gotg-1', 'gotg-3', 'eternals', 'infinity-war']
 },
 {
-  id: 'homecoming', no: 16, title: '蜘蛛人：返校日', en: 'Spider-Man: Homecoming',
+  id: 'homecoming', no: 16, title: 'Spider-Man: Homecoming', en: 'Spider-Man: Homecoming',
   year: 2017, date: '2017 / 07 / 07', director: 'Jon Watts',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['spidey', 'street'],
   era: 'civil', chrono: 2016, glyph: 'wing', accent: ['#dc2626', '#0e7490'],
   relevance: 'core',
-  tagline: '親切的鄰居蜘蛛人',
-  summary: '15 歲的彼得急著證明自己夠格當復仇者，但東尼要他先當好「親切的鄰居蜘蛛人」。而他撞上的第一個對手，動機無比真實。',
+  tagline: 'The friendly neighbourhood Spider-Man',
+  summary: 'Fifteen-year-old Peter is desperate to prove he belongs with the Avengers, but Tony wants him to be a neighbourhood hero first. The man he runs into has one of the most understandable motives in the franchise.',
   sections: [
-    { h: '主線', body: '彼得一邊應付高中生活，一邊拚命想引起東尼注意。他發現有人在紐約街頭販售外星科技武器，決心自己解決。' },
-    { h: '反派禿鷹（Michael Keaton 飾）', body: 'Adrian Toomes 原是承包紐約大戰廢墟清理的小包商，投入大量資金後生意卻被史塔克與政府合資的「損害管制部門」一夕搶走。他憤而私藏奇塔黎科技、打造飛行裝走私軍火。動機是「為家人生計、痛恨史塔克這種權貴」—— 公認漫威最有說服力的反派之一。', highlight: true },
-    { h: '經典轉折', body: '彼得要帶心儀的女生 Liz 去返校舞會，去接她時開門的竟是 Liz 的爸爸 —— 就是禿鷹本人。接下來那段車內對話，是全片最令人窒息的戲。', highlight: true },
-    { h: '配角', body: '好友 Ned Leeds（「坐在椅子上的那個人」）、同學 MJ（Michelle Jones）、愛嗆人的 Flash Thompson、史塔克的保鑣兼司機 Happy Hogan。' },
-    { h: '結局', body: '彼得阻止禿鷹搶劫史塔克貨機，並在墜機後救了他一命。東尼提議讓他正式加入復仇者，彼得婉拒 —— 他選擇繼續當高中生英雄。片尾 May 嬸嬸撞見他穿著戰衣。' },
-    { h: '彩蛋', body: '入獄的禿鷹遇到 Mac Gargan（漫畫中的「蠍子」），選擇不透露蜘蛛人身分以報答救命之恩。Michael Mando 已確認回歸《蜘蛛人4》。' }
+    { h: 'The main thread', body: 'Peter juggles high school with a growing obsession with getting Tony\'s attention. When he finds alien-tech weapons being sold on the street, he decides to handle it himself.' },
+    { h: 'The villain: Vulture', body: 'Adrian Toomes ran the small salvage contractor cleaning up after the Battle of New York. He had sunk everything into the job when Damage Control — a Stark and government joint venture — took the contract away overnight. He kept the Chitauri tech, built a flight rig, and went into arms dealing. His motive is providing for his family and hating men like Stark, and it is completely legible.', highlight: true },
+    { h: 'The turn', body: 'Peter picks up his date Liz for the homecoming dance and the man who opens the door is her father — Toomes. The conversation in the car that follows is the tensest scene in the film.', highlight: true },
+    { h: 'Supporting cast', body: 'Best friend Ned Leeds ("the guy in the chair"), classmate MJ (Michelle Jones), the needling Flash Thompson, and Happy Hogan as Tony\'s reluctant intermediary.' },
+    { h: 'The ending', body: 'Peter stops Toomes from hijacking a Stark cargo plane and pulls him out of the wreck. Tony offers him a place on the Avengers and he turns it down, choosing to stay a kid from Queens. Aunt May walks in on him in the suit.' },
+    { h: 'Post-credits scene', body: 'In prison Toomes meets Mac Gargan — the comics\' Scorpion — who asks about Spider-Man\'s identity. Toomes says he does not know, repaying the man who saved his life. Michael Mando returns in Spider-Man 4.' }
   ],
   related: ['civil-war', 'far-from-home', 'spider-man-4', 'avengers-1']
 },
 {
-  id: 'thor-3', no: 17, title: '雷神索爾3：諸神黃昏', en: 'Thor: Ragnarok',
+  id: 'thor-3', no: 17, title: 'Thor: Ragnarok', en: 'Thor: Ragnarok',
   year: 2017, date: '2017 / 11 / 03', director: 'Taika Waititi',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers', 'cosmic'],
   era: 'civil', chrono: 2017, glyph: 'hammer', accent: ['#a21caf', '#f59e0b'],
   relevance: 'recommended',
-  tagline: '直接接上《無限之戰》',
-  summary: '奧丁之死釋放出被封印的長女海拉 —— 死亡女神。她一手捏碎妙爾尼爾、佔領阿斯嘉，索爾則流落垃圾星淪為角鬥士。',
+  tagline: 'Feeds directly into Infinity War',
+  summary: 'Odin dies and releases his imprisoned firstborn — Hela, goddess of death. She crushes Mjolnir in one hand and takes Asgard, while Thor ends up a gladiator on a garbage planet.',
   sections: [
-    { h: '劇情', body: '海拉（Hela）是奧丁在建立仁慈形象前的行刑者與征服者，被封印數千年。她回歸後徒手捏碎雷神之鎚，把索爾與洛基丟出彩虹橋。' },
-    { h: '垃圾星', body: '索爾墜落薩卡星，被女武神 Valkyrie 抓去給「至尊者（Grandmaster）」當角鬥士，並與失蹤兩年的浩克重逢。' },
-    { h: '諸神黃昏', body: '索爾領悟到海拉的力量來自阿斯嘉這片土地，於是選擇主動引發「諸神黃昏」—— 放出火焰惡魔蘇特爾（Surtur）毀滅整個阿斯嘉來殺死海拉。「阿斯嘉不是一個地方，而是一群人。」', highlight: true },
-    { h: '結局與銜接', body: '索爾失去一隻眼睛、失去鎚子、失去家園，率倖存的阿斯嘉人乘船流亡。片尾薩諾斯的巨艦「聖言號」擋在他們面前 —— 直接接上《無限之戰》開場。', highlight: true }
+    { h: 'The story', body: 'Hela was Odin\'s executioner and conqueror before he decided to be remembered as a benevolent king, and was sealed away for thousands of years. She returns, destroys the hammer, and throws Thor and Loki off the Bifrost.' },
+    { h: 'Sakaar', body: 'Thor crashes on a junk planet, is captured by the disillusioned Valkyrie, made to fight for the Grandmaster, and finds the Hulk, who has been there for two years.' },
+    { h: 'Ragnarok', body: 'Thor realises Hela draws her power from Asgard itself, and chooses to trigger Ragnarok deliberately — unleashing the fire demon Surtur to destroy the entire realm in order to kill her. "Asgard is not a place. It\'s a people."', highlight: true },
+    { h: 'The ending and the handoff', body: 'Thor has lost an eye, a hammer, a father and a homeland, and leads the surviving Asgardians into exile. In the final shot Thanos\'s warship Sanctuary II blocks their path — which is exactly where Infinity War opens.', highlight: true }
   ],
   related: ['infinity-war', 'thor-2', 'thor-4', 'doctor-strange']
 },
 {
-  id: 'black-panther', no: 18, title: '黑豹', en: 'Black Panther',
+  id: 'black-panther', no: 18, title: 'Black Panther', en: 'Black Panther',
   year: 2018, date: '2018 / 02 / 16', director: 'Ryan Coogler',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers'],
   era: 'civil', chrono: 2016, glyph: 'panther', accent: ['#4c1d95', '#0f172a'],
   relevance: 'recommended',
-  tagline: '奧斯卡最佳影片提名的漫威電影',
-  summary: "父親死後，T'Challa 回國繼位成為汎達國王。但一個從美國來的挑戰者，帶著汎達自己造下的罪回來討債。",
+  tagline: 'The Marvel film nominated for Best Picture',
+  summary: "After his father's death T'Challa returns home to take the throne of Wakanda. Then a challenger arrives from America, carrying a debt Wakanda created itself.",
   sections: [
-    { h: '汎達', body: '表面上是貧窮農業國，實則因遠古隕石帶來的「汎金屬（vibranium）」而擁有遙遙領先世界的科技。世代奉行孤立主義。' },
-    { h: '反派齊爾蒙格', body: "Erik Killmonger 是 T'Challa 的堂弟 —— 他的父親（王叔）當年在美國目睹黑人受壓迫，想用汎金屬武裝他們，被國王親手殺死並棄下年幼的兒子。Killmonger 回來奪王位不是為了自己，是為了報復整個拋棄他的國家。他的訴求有正當性，這是他成為漫威最佳反派之一的原因。", highlight: true },
-    { h: '名台詞', body: '「把我葬在海裡，跟那些從船上跳下去的祖先一起 —— 因為他們知道，死亡好過為奴。」' },
-    { h: '結局', body: "T'Challa 認知到孤立主義本身就是共犯，決定向世界開放汎達的資源與科技。這個決定改變了 MCU 的地緣政治。", highlight: true },
-    { h: '演員', body: 'Chadwick Boseman 於 2020 年因大腸癌逝世，《黑豹2》未重新選角，而是直接處理角色的死亡。' }
+    { h: 'Wakanda', body: 'Presented to the world as a poor agricultural nation, Wakanda is in fact centuries ahead of everyone, built on vibranium from an ancient meteorite, and has kept itself hidden for generations.' },
+    { h: 'The villain: Killmonger', body: "Erik Killmonger is T'Challa's cousin. His father, a Wakandan prince living in Oakland, saw Black people oppressed in America and wanted to arm them with vibranium; the king killed him and left the child behind. Killmonger does not come for the throne for himself — he comes to make the country that abandoned him answer for it. His grievance is legitimate, which is what makes him one of Marvel's best villains.", highlight: true },
+    { h: 'The line everyone remembers', body: '"Bury me in the ocean with my ancestors who jumped from ships, because they knew death was better than bondage."' },
+    { h: 'The ending', body: "T'Challa concludes that isolation was itself a form of complicity, and opens Wakanda's resources and technology to the world — a decision that changes the MCU's politics permanently.", highlight: true },
+    { h: 'Worth knowing', body: 'Chadwick Boseman died of colon cancer in 2020. Black Panther: Wakanda Forever did not recast the role; it addressed the death directly.' }
   ],
   related: ['civil-war', 'infinity-war', 'wakanda-forever', 'eyes-of-wakanda']
 },
 {
-  id: 'infinity-war', no: 19, title: '復仇者聯盟3：無限之戰', en: 'Avengers: Infinity War',
+  id: 'infinity-war', no: 19, title: 'Avengers: Infinity War', en: 'Avengers: Infinity War',
   year: 2018, date: '2018 / 04 / 27', director: 'Anthony and Joe Russo',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers', 'cosmic'],
   era: 'snap', chrono: 2018, glyph: 'gauntlet', accent: ['#7e22ce', '#f0b429'],
   relevance: 'core', group: 'avengers4',
-  tagline: '反派獲勝的結局',
-  summary: '薩諾斯終於親自出手。這部電影的主角其實是他 —— 一個堅信自己在做慈悲之事的屠夫。',
+  tagline: 'The one where the villain wins',
+  summary: 'Thanos finally comes himself. The film is really his — a butcher who is entirely convinced he is performing an act of mercy.',
   sections: [
-    { h: '薩諾斯的動機', body: '他的母星泰坦因人口過剩而毀滅，當年他提出隨機消滅半數人口的方案被斥為瘋子。如今他要用無限手套對全宇宙執行這個方案 —— 在他看來這是「仁慈」且絕對公平的。' },
-    { h: '六顆寶石的爭奪', body: '開場即從索爾的難民船奪走空間寶石（並殺死洛基與海姆達爾）；從收藏者處取得現實寶石；力量寶石早已從新星軍團奪得；為靈魂寶石在沃米爾星推下養女葛摩菈；奇異博士交出時間寶石；最後在汎達奪取幻視的心靈寶石。' },
-    { h: '靈魂寶石的代價', body: '取得靈魂寶石必須「犧牲你所愛之人」。薩諾斯真心愛葛摩菈 —— 這正是他能取得它的原因，也是全片最殘酷的一幕。', highlight: true },
-    { h: '幻視之死', body: '汪達忍痛親手摧毀愛人額上的心靈寶石，薩諾斯卻用時間寶石把時間倒轉、當著她的面硬生生挖出寶石。她等於失去幻視兩次。', highlight: true },
-    { h: '彈指', body: '薩諾斯集齊六顆、打了響指。全宇宙半數生命化為灰燼 —— 包含蜘蛛人、黑豹、幻視、緋紅女巫、奇異博士與大半異攻隊。「我早該直接瞄準頭的。」', highlight: true },
-    { h: '奇異博士的伏筆', body: '他看過 14,000,605 種未來，只有一種能贏。他交出時間寶石時對東尼說「這是唯一的路」—— 答案要到《終局之戰》才揭曉。' }
+    { h: "Thanos's reasoning", body: 'His homeworld Titan collapsed from overpopulation. He proposed culling half the population at random and was called a madman. Now he intends to do it to the universe, and in his own mind it is both merciful and perfectly fair.' },
+    { h: 'Collecting the Stones', body: 'He takes the Space Stone from the Asgardian refugee ship in the opening (killing Loki and Heimdall), the Reality Stone from the Collector, the Power Stone from the Nova Corps before the film even begins, the Soul Stone on Vormir, the Time Stone from Strange, and finally the Mind Stone from Vision in Wakanda.' },
+    { h: 'The price of the Soul Stone', body: 'It can only be taken by sacrificing someone you love. Thanos genuinely loves Gamora — which is exactly why it works, and why it is the cruellest scene in the film.', highlight: true },
+    { h: "Vision's death", body: 'Wanda destroys the Mind Stone in her partner\'s forehead herself, and Thanos immediately rewinds time and tears it out in front of her. She loses him twice in under a minute.', highlight: true },
+    { h: 'The Snap', body: 'With all six Stones he snaps his fingers. Half of all life in the universe turns to dust, including Spider-Man, Black Panther, Vision, Scarlet Witch, Doctor Strange and most of the Guardians. "I should have gone for the head."', highlight: true },
+    { h: "Strange's play", body: 'He has seen 14,000,605 futures and exactly one where they win. Handing over the Time Stone with "we\'re in the endgame now" only makes sense in retrospect.' }
   ],
   stones: ['space', 'reality', 'power', 'mind', 'time', 'soul'],
   related: ['endgame', 'thor-3', 'age-of-ultron', 'gotg-1', 'wandavision']
 },
 {
-  id: 'ant-man-2', no: 20, title: '蟻人與黃蜂女', en: 'Ant-Man and the Wasp',
+  id: 'ant-man-2', no: 20, title: 'Ant-Man and the Wasp', en: 'Ant-Man and the Wasp',
   year: 2018, date: '2018 / 07 / 06', director: 'Peyton Reed',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers'],
   era: 'snap', chrono: 2018, glyph: 'ant', accent: ['#0891b2', '#be123c'],
   relevance: 'recommended',
-  tagline: '《終局之戰》的鑰匙藏在這裡',
-  summary: '在《英雄內戰》後被軟禁在家的 Scott Lang，被 Hank 與 Hope 拉去執行一項任務：把困在量子領域三十年的 Janet 帶回來。',
+  tagline: 'The key to Endgame is hidden in here',
+  summary: 'Under house arrest after Civil War, Scott Lang is pulled back in for one job: retrieving Janet van Dyne from thirty years inside the Quantum Realm.',
   sections: [
-    { h: '劇情', body: '故事發生在《無限之戰》之前。Hope van Dyne 正式成為黃蜂女。三人打造量子隧道，準備進入量子領域尋找失蹤三十年的 Janet van Dyne。' },
-    { h: '反派', body: '幽靈（Ghost / Ava Starr）因量子事故而身體不斷相位穿透、痛苦不堪，急需 Janet 的量子能量續命。她不是壞人，只是走投無路 —— 她日後加入《雷霆特攻隊》。' },
-    { h: '成功', body: 'Janet 被成功救回。她在量子領域待了三十年，並警告那裡有些東西不該被驚動（呼應日後的康）。' },
-    { h: '片尾彩蛋（決定性）', body: 'Scott 進入量子領域採集能量，Hank、Janet、Hope 在外接應 —— 然後他們三人同時化為灰燼。Scott 被困在量子領域裡。正因如此他躲過了彈指，並在五年後被老鼠意外放出來，帶回「量子領域的時間流速不同」這個關鍵情報。整部《終局之戰》就是從這裡開始的。', highlight: true }
+    { h: 'The story', body: 'Set before Infinity War. Hope van Dyne becomes the Wasp properly, and the three of them build a quantum tunnel to find her mother.' },
+    { h: 'The villain', body: 'Ghost (Ava Starr) phases uncontrollably through matter after a quantum accident and is in constant pain. She needs Janet\'s energy to survive. She is not evil, just out of options — and she later joins the Thunderbolts.' },
+    { h: 'The rescue', body: 'Janet is recovered after thirty years down there, and warns that some things in the Quantum Realm should be left alone — a line that pays off in Quantumania.' },
+    { h: 'The post-credits scene that changes everything', body: 'Scott goes into the Quantum Realm to harvest energy while Hank, Janet and Hope monitor from outside — and all three turn to dust mid-sentence, stranding him. Because of that he misses the Snap entirely, and when a rat frees him five years later he brings out the one piece of information that makes time travel possible. The whole of Endgame starts here.', highlight: true }
   ],
   related: ['ant-man', 'endgame', 'quantumania', 'infinity-war']
 },
 {
-  id: 'captain-marvel', no: 21, title: '驚奇隊長', en: 'Captain Marvel',
-  year: 2019, date: '2019 / 03 / 08', director: 'Anna Boden & Ryan Fleck',
+  id: 'captain-marvel', no: 21, title: 'Captain Marvel', en: 'Captain Marvel',
+  year: 2019, date: '2019 / 03 / 08', director: 'Anna Boden and Ryan Fleck',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['cosmic'],
   era: 'y1995', chrono: 1995, glyph: 'starburst', accent: ['#1d4ed8', '#dc2626'],
   relevance: 'optional',
-  tagline: '1995 年・「復仇者」名稱的由來',
-  summary: '一個失憶的克里帝國戰士墜落地球，在追查自己身世的過程中發現，她效忠的一方才是侵略者。',
+  tagline: '1995, and where the name "Avengers" comes from',
+  summary: 'An amnesiac Kree soldier crashes on Earth and, while chasing her own past, works out that the side she fights for are the invaders.',
   sections: [
-    { h: '劇情', body: '1995 年，自稱 Vers 的克里星際戰士墜落洛杉磯。她與年輕的神盾局探員尼克福瑞聯手，逐步想起自己其實是地球空軍飛行員卡蘿丹佛斯。' },
-    { h: '反轉', body: '她一直被教導史克魯人（Skrull）是邪惡的變形侵略者 —— 真相是他們是被克里帝國滅族、四散逃亡的難民。真正的反派是她的導師 Yon-Rogg 與克里的最高智慧。', highlight: true },
-    { h: '寶石', body: '她的超能力來自特斯拉方塊（空間寶石）能量的爆炸。方塊當年被神盾局以「Project P.E.G.A.S.U.S.」研究。' },
-    { h: '設定', body: '尼克福瑞在本片中因一隻叫 Goose 的「貓」（實為異形芙勒肯）而失去左眼。他看到卡蘿的呼號「Avenger」，因而把計畫命名為「復仇者計畫」。', highlight: true }
+    { h: 'The story', body: 'In 1995 a Kree operative calling herself Vers crashes into Los Angeles. Working with a young S.H.I.E.L.D. agent named Nick Fury, she gradually recovers the memory that she was a US Air Force pilot called Carol Danvers.' },
+    { h: 'The reversal', body: 'She has been taught the shapeshifting Skrulls are a menace. They are in fact refugees whose world the Kree destroyed. The real enemies are her own mentor Yon-Rogg and the Supreme Intelligence.', highlight: true },
+    { h: 'Stone watch', body: 'Her powers come from an exploding engine built around the Tesseract, which S.H.I.E.L.D. had been studying as Project P.E.G.A.S.U.S.' },
+    { h: 'Continuity', body: 'Fury loses his left eye to a Flerken disguised as a cat named Goose. He also sees Carol\'s call sign — "Avenger" — and names the initiative after it.', highlight: true }
   ],
   stones: ['space'],
   related: ['endgame', 'the-marvels', 'secret-invasion', 'avengers-1']
 },
 {
-  id: 'endgame', no: 22, title: '復仇者聯盟4：終局之戰', en: 'Avengers: Endgame',
+  id: 'endgame', no: 22, title: 'Avengers: Endgame', en: 'Avengers: Endgame',
   year: 2019, date: '2019 / 04 / 26', director: 'Anthony and Joe Russo',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['avengers'],
   era: 'endgame', chrono: 2023, glyph: 'gauntlet', accent: ['#b45309', '#1e3a8a'],
   relevance: 'core', group: 'avengers4',
-  tagline: '無限傳奇的終點',
-  summary: '彈指五年後，倖存者仍活在廢墟裡。直到 Scott Lang 從量子領域爬出來，帶著一個瘋狂的想法。',
+  tagline: 'The end of the Infinity Saga',
+  summary: 'Five years after the Snap the survivors are still living in the wreckage — until Scott Lang climbs out of the Quantum Realm with an idea.',
   sections: [
-    { h: '五年之後（Blip）', body: '開場復仇者找到薩諾斯並殺了他，卻發現寶石已被他銷毀 —— 沒有回頭路。時間跳過五年：世界處於集體創傷中，史蒂夫在帶互助團體，東尼有了女兒，索爾酗酒發胖，娜塔莎獨自撐著聯盟。' },
-    { h: '時間搶劫（Time Heist）', body: 'Scott 從量子領域回來，指出裡面的時間流速不同。東尼解出時間旅行的數學式。他們分頭回到 2012 紐約、2013 阿斯嘉、2014 莫拉格與沃米爾星蒐集寶石。', highlight: true },
-    { h: '黑寡婦之死', body: '娜塔莎與鷹眼在沃米爾星爭著犧牲自己 —— 最後是她鬆手墜崖，換來靈魂寶石。她一生都在贖罪，最後用命換回半個宇宙。', highlight: true },
-    { h: '最終決戰', body: '2014 年的薩諾斯循線來到現代。班納用自製手套彈指救回所有人。「Avengers... assemble.」全員集結對抗薩諾斯大軍。' },
-    { h: '東尼史塔克之死', body: '東尼在最後一刻從薩諾斯手上偷走六顆寶石，戴上手套彈指消滅其大軍，但承受不住能量反噬而死。「I am Iron Man.」—— 與第一部的最後一句話首尾呼應。', highlight: true },
-    { h: '美國隊長的結局', body: '他完成歸還寶石的任務後選擇留在過去，與 Peggy Carter 補上那支欠了七十年的舞、共度餘生。年老後回到現在，把盾牌交給山姆威爾森。', highlight: true },
-    { h: '留下的裂縫', body: '2012 年的洛基變體趁亂帶走特斯拉方塊逃走 —— 這個分支時間線直接催生出影集《洛基》與整個多元宇宙傳奇。' }
+    { h: 'Five years on (the Blip)', body: 'The film opens with the Avengers finding Thanos and killing him, only to learn he destroyed the Stones — there is no way back. Then it jumps five years. The world is in collective grief: Steve runs a support group, Tony has a daughter, Thor is drinking, and Natasha is holding what is left together alone.' },
+    { h: 'The Time Heist', body: 'Scott returns from the Quantum Realm and explains that time runs differently down there. Tony solves the maths. They split up to 2012 New York, 2013 Asgard, and 2014 Morag and Vormir to collect the Stones.', highlight: true },
+    { h: "Natasha's death", body: 'On Vormir she and Clint fight each other for the right to be the one who dies. She lets go. A woman who spent her whole life trying to balance a ledger pays for half the universe with it.', highlight: true },
+    { h: 'The final battle', body: 'The 2014 Thanos follows them forward. Banner snaps everyone back. "Avengers... assemble." Every character in the franchise arrives through Strange\'s portals at once.' },
+    { h: "Tony Stark's death", body: 'Tony palms the Stones off the gauntlet at the last second, snaps, erases Thanos\'s army, and dies of the energy feedback. "I am Iron Man" — the same four words the whole thing opened with eleven years earlier.', highlight: true },
+    { h: "Steve Rogers's ending", body: 'After returning each Stone to its exact moment, he stays in the past and has the life and the dance he was owed with Peggy Carter. He comes back old and hands the shield to Sam Wilson.', highlight: true },
+    { h: 'The loose thread', body: 'During the heist the 2012 Loki grabs the Tesseract and escapes, creating a branch timeline — which is where the Loki series and the entire Multiverse Saga come from.' }
   ],
   stones: ['space', 'reality', 'power', 'mind', 'time', 'soul'],
   related: ['infinity-war', 'far-from-home', 'loki-s1', 'falcon-winter-soldier', 'wandavision']
 },
 {
-  id: 'far-from-home', no: 23, title: '蜘蛛人：離家日', en: 'Spider-Man: Far From Home',
+  id: 'far-from-home', no: 23, title: 'Spider-Man: Far From Home', en: 'Spider-Man: Far From Home',
   year: 2019, date: '2019 / 07 / 02', director: 'Jon Watts',
   type: 'film', phase: 'Phase 3', saga: 'infinity', cats: ['spidey'],
   era: 'after', chrono: 2024, glyph: 'fishbowl', accent: ['#7c3aed', '#16a34a'],
   relevance: 'core',
-  tagline: '無限傳奇的收尾・身分曝光',
-  summary: '東尼死後，全世界都在問「誰來接班鋼鐵人」。彼得只想去歐洲畢旅跟 MJ 告白，卻遇上一個自稱來自平行宇宙的英雄。',
+  tagline: 'The Infinity Saga signs off, and Peter is outed',
+  summary: 'With Tony gone, everyone wants to know who the next Iron Man is. Peter just wants to go on a school trip to Europe and tell MJ how he feels — and then meets a hero claiming to be from another universe.',
   sections: [
-    { h: '時間點', body: '發生在《終局之戰》之後，是無限傳奇的正式收尾作。彼得深陷失去導師的哀傷，以及被期待接班的巨大壓力。' },
-    { h: 'EDITH', body: '東尼留給彼得的遺物 —— 一副智慧眼鏡，代號取自「Even Dead, I\'m The Hero」，可存取史塔克全球衛星網路並操控一整批攻擊無人機。' },
-    { h: '反派神秘客（Jake Gyllenhaal 飾）', body: 'Quentin Beck 謊稱自己來自 Earth-833、是對抗「元素怪」的英雄。真相是他是被東尼羞辱、開除的前史塔克全像投影工程師，糾集一群同樣被東尼虧待的員工，用無人機投影自導自演假災難、假扮英雄，目標是騙取 EDITH 的權限。', highlight: true },
-    { h: '為什麼很重要', body: '他是 MCU 中第一個明確對觀眾說出「多元宇宙」的角色 —— 儘管那是謊言。這反而為兩年後真正的多元宇宙做了心理鋪墊。' },
-    { h: '結局', body: '彼得在倫敦識破並擊敗神秘客，對方死於自己失控的無人機。彼得與 MJ 相戀。' },
-    { h: '關鍵片尾彩蛋（引爆下一集）', body: '神秘客死前預錄的假影片被公開 —— 誣陷蜘蛛人是殺害他的兇手，並向全世界公布「彼得帕克就是蜘蛛人」。播出者是《號角日報》的 J. Jonah Jameson，由 J.K. Simmons 飾演 —— 正是當年托比版電影的同一位演員。', highlight: true }
+    { h: 'Where it sits', body: 'Set after Endgame, and the official closing film of the Infinity Saga. Peter is grieving his mentor and buckling under the expectation that he replace him.' },
+    { h: 'EDITH', body: "Tony's bequest: a pair of smart glasses (Even Dead, I'm The Hero) with access to Stark's satellite network and a fleet of combat drones." },
+    { h: 'The villain: Mysterio', body: 'Quentin Beck claims to come from Earth-833 and to have fought the Elementals there. In fact he is a Stark holographic engineer Tony humiliated and fired, who has gathered other discarded employees to stage fake disasters with drones, play the hero, and take EDITH.', highlight: true },
+    { h: 'Why it matters', body: 'He is the first character in the MCU to say "multiverse" to the audience — and he is lying. It quietly prepares people for the real thing two years later.' },
+    { h: 'The ending', body: 'Peter sees through it and beats him in London; Beck dies to his own misfiring drones. Peter and MJ get together.' },
+    { h: 'The post-credits scene that lights the fuse', body: 'Beck\'s pre-recorded fake footage goes public — framing Spider-Man for his death and naming Peter Parker to the entire world. It is broadcast by J. Jonah Jameson of The Daily Bugle, played by J.K. Simmons, the same actor from the Raimi films.', highlight: true }
   ],
   related: ['no-way-home', 'endgame', 'homecoming', 'spider-man-4']
 }

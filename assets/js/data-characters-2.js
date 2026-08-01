@@ -1,41 +1,41 @@
 /* ============================================================
-   角色資料（第二批）— 擴充至完整 MCU
+   Characters (part 2) — the rest of the MCU roster
    ============================================================ */
 
 window.MCU_CHARACTERS_2 = [
 
-/* ================= 蟻人一家 ================= */
+/* ================= THE ANT-MAN FAMILY ================= */
 {
-  id: 'scott-lang', name: 'Scott Lang / 蟻人', en: 'Scott Lang / Ant-Man',
+  id: 'scott-lang', name: 'Scott Lang / Ant-Man', en: 'Scott Lang / Ant-Man',
   actor: 'Paul Rudd', group: 'avengers', role: 'hero',
   glyph: 'ant', accent: ['#0891b2', '#b45309'],
-  tagline: '救了全宇宙的前科犯。',
-  bio: '因揭發公司弊案而入獄的電機工程師，出獄後穿上蟻人戰衣。他不是最強的復仇者，但《終局之戰》能成立完全靠他。',
+  tagline: 'The ex-convict who saves the universe.',
+  bio: 'An electrical engineer jailed for whistleblowing who ends up wearing the Ant-Man suit. He is not the strongest Avenger, but Endgame does not happen without him.',
   facts: [
-    '他在《蟻人與黃蜂女》片尾被困在量子領域，因此躲過了彈指。',
-    '五年後一隻老鼠意外按到開關把他放出來 —— 他帶回「量子領域時間流速不同」這個情報，整個時間搶劫計畫由此展開。'
+    'The Ant-Man and the Wasp tag scene strands him in the Quantum Realm, so he misses the Snap entirely.',
+    'Five years later a rat frees him by accident, and he brings out the one fact that makes time travel possible.'
   ],
   arc: [
-    { entry: 'ant-man', text: '出獄後為贏回女兒的信任而誤入歧途，被 Hank Pym 選中成為蟻人。他突破極限縮小進入量子領域並成功返回 —— 證明了那裡可以往返。', highlight: true },
-    { entry: 'civil-war', text: '被獵鷹找來加入美隊陣營，在機場一戰中首度變成巨人。' },
-    { entry: 'ant-man-2', text: '因違反協議被軟禁在家。片尾進入量子領域採集能量時，外面三人同時化為灰燼，他被困在裡面。', highlight: true },
-    { entry: 'endgame', text: '五年後被意外放出，帶回時間旅行的關鍵情報，並參與最終決戰。', highlight: true },
-    { entry: 'quantumania', text: '全家被吸入量子領域，與征服者康正面對決。' },
-    { entry: 'doomsday', text: '已確認集結。' }
+    { entry: 'ant-man', text: 'Recruited by Hank Pym, he shrinks past the limit into the Quantum Realm and gets back — proving the trip is survivable.', highlight: true },
+    { entry: 'civil-war', text: 'Brought in by Falcon for the airport fight, where he becomes a giant for the first time.' },
+    { entry: 'ant-man-2', text: 'Under house arrest, then stranded in the Quantum Realm when the other three turn to dust.', highlight: true },
+    { entry: 'endgame', text: 'Released five years later, and hands the Avengers the theory that wins.', highlight: true },
+    { entry: 'quantumania', text: 'The whole family is pulled back into the Quantum Realm to face Kang.' },
+    { entry: 'doomsday', text: 'Confirmed to return.' }
   ],
   appears: ['ant-man', 'civil-war', 'ant-man-2', 'endgame', 'quantumania', 'doomsday']
 },
 {
-  id: 'hope', name: 'Hope van Dyne / 黃蜂女', en: 'Hope van Dyne / Wasp',
+  id: 'hope', name: 'Hope van Dyne / Wasp', en: 'Hope van Dyne / Wasp',
   actor: 'Evangeline Lilly', group: 'avengers', role: 'hero',
   glyph: 'ant', accent: ['#f0b429', '#111827'],
-  tagline: '本來就比 Scott 更適合穿那套戰衣。',
-  bio: 'Hank Pym 與 Janet van Dyne 的女兒。第一集全程訓練 Scott，第二集終於拿到自己的戰衣。',
+  tagline: 'Always the better candidate for the suit.',
+  bio: "Hank Pym and Janet van Dyne's daughter. She trains Scott through the first film and finally gets her own suit in the second.",
   arc: [
-    { entry: 'ant-man', text: '負責訓練 Scott，並對父親不讓她親自上陣極為不滿。片尾她終於看到母親的黃蜂女戰衣。' },
-    { entry: 'ant-man-2', text: '正式成為黃蜂女，與 Scott 並肩作戰尋找母親。片尾化為灰燼。' },
-    { entry: 'endgame', text: '被復活，參與最終決戰。' },
-    { entry: 'quantumania', text: '在量子領域對抗康。' }
+    { entry: 'ant-man', text: 'Trains Scott while making clear she should be the one wearing it.' },
+    { entry: 'ant-man-2', text: 'Becomes the Wasp and searches for her mother. Turns to dust in the tag scene.' },
+    { entry: 'endgame', text: 'Restored, and fights in the final battle.' },
+    { entry: 'quantumania', text: 'Faces Kang in the Quantum Realm.' }
   ],
   appears: ['ant-man', 'ant-man-2', 'endgame', 'quantumania']
 },
@@ -43,12 +43,12 @@ window.MCU_CHARACTERS_2 = [
   id: 'hank-pym', name: 'Hank Pym', en: 'Hank Pym',
   actor: 'Michael Douglas', group: 'avengers', role: 'ally',
   glyph: 'ant', accent: ['#475569', '#0891b2'],
-  tagline: '初代蟻人、皮姆粒子的發明者。',
-  bio: '冷戰時期的神盾局特工與科學家，發明了能改變物體大小的「皮姆粒子」。因妻子在任務中消失而封存技術數十年。',
+  tagline: 'The original Ant-Man and inventor of the Pym Particle.',
+  bio: 'A Cold War S.H.I.E.L.D. scientist who invented the particles that change an object\'s size, and locked the technology away for decades after losing his wife.',
   arc: [
-    { entry: 'ant-man', text: '選中 Scott 接班，阻止門徒 Darren Cross 復刻並軍事化縮小技術。' },
-    { entry: 'ant-man-2', text: '打造量子隧道尋找失蹤三十年的妻子 Janet。片尾化為灰燼。' },
-    { entry: 'quantumania', text: '在量子領域重逢自己畢生研究的世界。' }
+    { entry: 'ant-man', text: 'Picks Scott as a successor to stop his protégé weaponising the technology.' },
+    { entry: 'ant-man-2', text: 'Builds a quantum tunnel to find Janet after thirty years. Turns to dust in the tag scene.' },
+    { entry: 'quantumania', text: 'Finally sees the realm he spent his life theorising about.' }
   ],
   appears: ['ant-man', 'ant-man-2', 'endgame', 'quantumania']
 },
@@ -56,13 +56,13 @@ window.MCU_CHARACTERS_2 = [
   id: 'janet', name: 'Janet van Dyne', en: 'Janet van Dyne',
   actor: 'Michelle Pfeiffer', group: 'avengers', role: 'ally',
   glyph: 'ant', accent: ['#be123c', '#4c1d95'],
-  tagline: '在量子領域活了三十年的初代黃蜂女。',
-  bio: '初代黃蜂女。1987 年為阻止洲際飛彈而無限縮小、墜入量子領域，被困三十年。',
-  facts: ['她在量子領域見過康，並且知道他有多危險 —— 這是她一直不願提起的祕密。'],
+  tagline: 'Thirty years in the Quantum Realm.',
+  bio: 'The original Wasp, who shrank without limit in 1987 to stop a missile and was lost in the Quantum Realm for three decades.',
+  facts: ['She met Kang down there, knows exactly how dangerous he is, and spent years refusing to talk about it.'],
   arc: [
-    { entry: 'ant-man', text: '（回憶）為阻止飛彈而無限縮小，消失在量子領域。' },
-    { entry: 'ant-man-2', text: '被 Scott 與家人成功救回。她警告量子領域有些東西不該被驚動。' },
-    { entry: 'quantumania', text: '她隱瞞的祕密揭曉：她在量子領域曾與被放逐的康合作，也親眼見識他的殘暴。' }
+    { entry: 'ant-man', text: 'In flashback: she goes subatomic to stop a missile and disappears.' },
+    { entry: 'ant-man-2', text: 'Recovered at last, and warns that some things in the Quantum Realm should be left alone.' },
+    { entry: 'quantumania', text: 'Her secret comes out — she worked with the exiled Kang down there and saw what he is.' }
   ],
   appears: ['ant-man-2', 'quantumania']
 },
@@ -70,43 +70,43 @@ window.MCU_CHARACTERS_2 = [
   id: 'cassie', name: 'Cassie Lang', en: 'Cassie Lang',
   actor: 'Kathryn Newton', group: 'newgen', role: 'hero',
   glyph: 'ant', accent: ['#0891b2', '#be123c'],
-  tagline: 'Scott 的女兒，新一代的縮小英雄。',
-  bio: 'Scott Lang 的女兒。在父親消失的五年間長大，成為關心社會議題的行動派，並自行研究出量子訊號技術。',
+  tagline: "Scott's daughter, and the next size-changer.",
+  bio: "Scott Lang's daughter, who grew up during the five years he was gone and became an activist and engineer in her own right.",
   arc: [
-    { entry: 'ant-man', text: '年幼登場，是 Scott 想重新做人的唯一理由。' },
-    { entry: 'quantumania', text: '她打造的量子訊號器把全家吸進量子領域。她獲得自己的戰衣。' },
-    { entry: 'doomsday', text: '已確認集結。' }
+    { entry: 'ant-man', text: 'Introduced as a child — the reason Scott wants to go straight.' },
+    { entry: 'quantumania', text: 'Her quantum signalling device pulls the family in, and she gets a suit of her own.' },
+    { entry: 'doomsday', text: 'Confirmed to return.' }
   ],
   appears: ['ant-man', 'quantumania', 'doomsday']
 },
 
-/* ================= 魔法與神秘 ================= */
+/* ================= MAGIC AND THE MYSTIC ================= */
 {
   id: 'wong', name: 'Wong', en: 'Wong',
   actor: 'Benedict Wong', group: 'avengers', role: 'ally',
   glyph: 'eye', accent: ['#b45309', '#0d9488'],
-  tagline: '現任至尊法師 —— 而且他真的很忙。',
-  bio: '卡瑪泰姬的圖書館管理員，在史傳奇因彈指消失的五年間接任至尊法師。是 MCU 中出場作品最多的「配角」之一。',
+  tagline: 'The current Sorcerer Supreme, and a very busy man.',
+  bio: 'Librarian of Kamar-Taj, who became Sorcerer Supreme while Strange was dusted for five years. One of the most-travelled supporting characters in the MCU.',
   arc: [
-    { entry: 'doctor-strange', text: '掌管卡瑪泰姬的藏書，與史傳奇亦師亦友。' },
-    { entry: 'infinity-war', text: '守衛紐約至聖所。' },
-    { entry: 'endgame', text: '率法師團從各地開啟傳送門，帶來最終決戰的援軍。' },
-    { entry: 'shang-chi', text: '透過傳送門與尚氣一行接觸，調查十環的來歷。' },
-    { entry: 'no-way-home', text: '警告史傳奇不要施那道咒語，然後明智地先行離開。' },
-    { entry: 'she-hulk', text: '在法庭上作證，並把 Blonsky 從農場帶走。' },
-    { entry: 'multiverse-of-madness', text: '協助對抗被腐化的緋紅女巫。' }
+    { entry: 'doctor-strange', text: 'Keeper of the library, and eventually a friend rather than a minder.' },
+    { entry: 'infinity-war', text: 'Defends the New York Sanctum.' },
+    { entry: 'endgame', text: 'Brings the sorcerers and the portals that turn the final battle.' },
+    { entry: 'shang-chi', text: 'Investigates the origin of the Ten Rings.' },
+    { entry: 'no-way-home', text: 'Warns Strange not to cast the spell, then sensibly leaves.' },
+    { entry: 'she-hulk', text: 'Testifies in court and quietly removes Blonsky from his retreat.' },
+    { entry: 'multiverse-of-madness', text: 'Fights alongside Strange against a corrupted Wanda.' }
   ],
   appears: ['doctor-strange', 'infinity-war', 'endgame', 'shang-chi', 'no-way-home', 'multiverse-of-madness', 'she-hulk']
 },
 {
-  id: 'ancient-one', name: '古一法師', en: 'The Ancient One',
+  id: 'ancient-one', name: 'The Ancient One', en: 'The Ancient One',
   actor: 'Tilda Swinton', group: 'avengers', role: 'ally',
   glyph: 'eye', accent: ['#f0b429', '#0d9488'],
-  tagline: '教會史傳奇的人 —— 也自己犯了同樣的錯。',
-  bio: '在史傳奇之前的至尊法師，活了數百年。她一邊禁止門徒使用黑暗次元的力量，一邊私下用它延長自己的生命。',
+  tagline: 'Teaches Strange — and breaks her own rules.',
+  bio: 'The Sorcerer Supreme before Strange, centuries old, who forbade drawing on the Dark Dimension while quietly using it to extend her own life.',
   arc: [
-    { entry: 'doctor-strange', text: '收史傳奇為徒。臨終前承認自己也偷用了黑暗次元的力量：「我們都是為了更大的善而破戒。」' },
-    { entry: 'endgame', text: '2012 年的她把時間寶石交給班納，並解釋移除寶石會產生分支時間線 —— 這是整個時間搶劫規則的來源。', highlight: true }
+    { entry: 'doctor-strange', text: 'Takes Strange as a student and admits, dying, that she broke the same rule: "We never lose our demons. We only learn to live above them."' },
+    { entry: 'endgame', text: 'Her 2012 self hands Banner the Time Stone and explains that removing a Stone creates a branch — which is the rule the whole Time Heist runs on.', highlight: true }
   ],
   appears: ['doctor-strange', 'endgame']
 },
@@ -114,11 +114,11 @@ window.MCU_CHARACTERS_2 = [
   id: 'agatha-char', name: 'Agatha Harkness', en: 'Agatha Harkness',
   actor: 'Kathryn Hahn', group: 'newgen', role: 'villain',
   glyph: 'hex', accent: ['#7e22ce', '#166534'],
-  tagline: '「Agatha all along.」',
-  bio: '活了數百年的女巫，靠吸取其他女巫的力量維生。她潛伏在 Westview 想奪取汪達的混沌魔法。',
+  tagline: '"Agatha all along."',
+  bio: 'A witch several centuries old who survives by draining other witches, and who hid among the residents of Westview to get at Wanda\'s chaos magic.',
   arc: [
-    { entry: 'wandavision', text: '偽裝成鄰居 Agnes 潛伏在小鎮裡，最後揭露自己才是幕後推手，並說出汪達是「緋紅女巫」的真相。被汪達封印記憶。', highlight: true },
-    { entry: 'agatha', text: '三年後恢復自我，組女巫團走上「女巫之路」奪回力量。' }
+    { entry: 'wandavision', text: 'Poses as neighbour Agnes, reveals herself as the one pulling threads, and names Wanda as the Scarlet Witch. Wanda seals her mind.', highlight: true },
+    { entry: 'agatha', text: 'Three years on she comes back to herself and walks the Witches\' Road to reclaim her power.' }
   ],
   appears: ['wandavision', 'agatha']
 },
@@ -126,59 +126,59 @@ window.MCU_CHARACTERS_2 = [
   id: 'billy', name: 'Billy Maximoff / Wiccan', en: 'Billy Maximoff / Wiccan',
   actor: 'Joe Locke', group: 'newgen', role: 'hero',
   glyph: 'hex', accent: ['#be123c', '#0891b2'],
-  tagline: '汪達用魔法創造的兒子 —— 他真的存在。',
-  bio: '汪達在 Westview 幻境中創造的雙胞胎之一。幻境消散後，他的靈魂附到另一個瀕死男孩身上，成為魔法師 Wiccan。',
+  tagline: "Wanda's conjured son — who turns out to be real.",
+  bio: 'One of the twins Wanda created inside the Westview illusion. When it collapsed his soul found another dying boy, and he grew up as the sorcerer Wiccan.',
   arc: [
-    { entry: 'wandavision', text: '與雙胞胎兄弟 Tommy 一同被汪達的魔法創造出來，在幻境消散時與母親道別。' },
-    { entry: 'multiverse-of-madness', text: '（另一宇宙的版本）汪達為了與他和 Tommy 團聚而發動整場災難。' },
-    { entry: 'agatha', text: '身分揭曉 —— 他就是那個被封印名字的少年。他真實存在於 MCU，正在尋找自己的雙胞胎 Tommy。', highlight: true }
+    { entry: 'wandavision', text: 'Created by Wanda\'s magic alongside his twin Tommy, and says goodbye to her as the illusion falls.' },
+    { entry: 'multiverse-of-madness', text: 'The version of him in another universe is what Wanda tears the multiverse apart to reach.' },
+    { entry: 'agatha', text: 'Revealed as the boy with the sealed name — he genuinely exists in the MCU, and is now looking for Tommy.', highlight: true }
   ],
   appears: ['wandavision', 'agatha']
 },
 {
-  id: 'moon-knight-char', name: 'Marc Spector / 月光騎士', en: 'Marc Spector / Moon Knight',
+  id: 'moon-knight-char', name: 'Marc Spector / Moon Knight', en: 'Marc Spector / Moon Knight',
   actor: 'Oscar Isaac', group: 'newgen', role: 'antihero',
   glyph: 'eye', accent: ['#e5e7eb', '#1e293b'],
-  tagline: '一個身體，三個人格，一位月神。',
-  bio: '瀕死時與埃及月神 Khonshu 立約的傭兵，成為其人間化身。他患有解離性身分障礙，與溫吞的 Steven Grant 及第三人格 Jake Lockley 共用身體。',
+  tagline: 'One body, three identities, one moon god.',
+  bio: 'A mercenary who made a pact with the Egyptian god Khonshu while dying and became his avatar. He has dissociative identity disorder, sharing his body with Steven Grant and Jake Lockley.',
   arc: [
-    { entry: 'moon-knight', text: '在對抗 Ammit 信徒 Arthur Harrow 的過程中，逐步面對自己的童年創傷與人格分裂的成因。' }
+    { entry: 'moon-knight', text: 'Fighting the Ammit cult forces him to face his childhood and the origin of his condition.' }
   ],
   appears: ['moon-knight']
 },
 
-/* ================= 捍衛者聯盟・街頭層級 ================= */
+/* ================= STREET LEVEL ================= */
 {
-  id: 'daredevil-char', name: 'Matt Murdock / 夜魔俠', en: 'Matt Murdock / Daredevil',
+  id: 'daredevil-char', name: 'Matt Murdock / Daredevil', en: 'Matt Murdock / Daredevil',
   actor: 'Charlie Cox', group: 'street', role: 'hero',
   glyph: 'skull', accent: ['#7f1d1d', '#111827'], pin: true,
-  tagline: '「無所畏懼的人」—— 白天律師，晚上義警。',
-  bio: '幼時因化學藥劑失明，其餘感官因此極度敏銳。白天是律師 Matt Murdock，晚上是廚房地獄的蒙面義警。虔誠的天主教徒，這讓他的暴力永遠伴隨罪惡感。',
+  tagline: 'The Man Without Fear — lawyer by day, vigilante by night.',
+  bio: 'Blinded by a chemical spill as a boy, with every other sense heightened past human limits. A devout Catholic, which means his violence always comes with guilt attached.',
   facts: [
-    'Netflix 版《夜魔俠》(2015–2018) 已被 Disney+ 納入官方 MCU 時間軸。',
-    '他堅持絕不殺人 —— 這與制裁者形成整個街頭層級最重要的對立。'
+    "Netflix's Daredevil (2015–2018) is now on the official MCU timeline.",
+    'He will not kill — the line that puts him permanently at odds with the Punisher.'
   ],
   arc: [
-    { entry: 'daredevil-netflix', text: '三季故事：對抗 Wilson Fisk、手合會，並在第三季走過信仰崩潰與重建。' },
-    { entry: 'defenders', text: '與潔西卡瓊斯、盧克凱奇、鐵拳俠聯手對抗手合會。' },
-    { entry: 'no-way-home', text: '以彼得的律師身分短暫登場，接住飛進來的磚頭：「我是一個非常好的律師。」', highlight: true },
-    { entry: 'she-hulk', text: '穿著黃紅戰衣登場，與 Jennifer 合作（並過了一夜）。' },
-    { entry: 'echo', text: '在紐約與 Maya 有短暫交會。' },
-    { entry: 'daredevil-born-again', text: '掛起戰衣專心當律師，卻遇上選上紐約市長的 Wilson Fisk。兩人在法庭與市政廳裡的角力比拳頭更緊繃。', highlight: true }
+    { entry: 'daredevil-netflix', text: 'Three seasons against Wilson Fisk and the Hand, ending with his faith broken and rebuilt.' },
+    { entry: 'defenders', text: 'Teams with Jessica Jones, Luke Cage and Iron Fist against the Hand.' },
+    { entry: 'no-way-home', text: 'Appears briefly as Peter\'s lawyer, catching a thrown brick: "I\'m a really good lawyer."', highlight: true },
+    { entry: 'she-hulk', text: 'Turns up in the yellow-and-red suit and leaves the next morning.' },
+    { entry: 'echo', text: 'Crosses paths with Maya in New York.' },
+    { entry: 'daredevil-born-again', text: 'Hangs up the suit for the law, and finds Fisk running for mayor. Their manoeuvring is tenser than any fight.', highlight: true }
   ],
   appears: ['daredevil-netflix', 'defenders', 'no-way-home', 'she-hulk', 'echo', 'daredevil-born-again', 'dd-born-again-s2']
 },
 {
-  id: 'kingpin', name: 'Wilson Fisk / 金霸王', en: 'Wilson Fisk / Kingpin',
+  id: 'kingpin', name: 'Wilson Fisk / Kingpin', en: 'Wilson Fisk / Kingpin',
   actor: "Vincent D'Onofrio", group: 'street', role: 'villain',
   glyph: 'tombstone', accent: ['#e5e7eb', '#111827'], pin: true,
-  tagline: '漫威影視史上最好的反派之一。',
-  bio: '控制紐約地下世界的犯罪之王。一個同時極度暴力又極度脆弱的人 —— 他真心相信自己是在拯救這座城市。',
+  tagline: 'One of the best villains Marvel has put on screen.',
+  bio: 'The crime lord of New York — enormously violent and painfully fragile at once, and entirely convinced he is saving the city.',
   arc: [
-    { entry: 'daredevil-netflix', text: '主要反派。從幕後金主一路成為公開的犯罪之王，與 Matt Murdock 的對決貫穿三季。' },
-    { entry: 'hawkeye', text: '以 Maya Lopez 養父的身分現身，是整部影集的幕後主使。', highlight: true },
-    { entry: 'echo', text: '與養女 Maya 的關係正面攤牌。' },
-    { entry: 'daredevil-born-again', text: '洗白從政，當選紐約市長 —— 用合法的權力做他一直在做的事。', highlight: true }
+    { entry: 'daredevil-netflix', text: 'The main antagonist, moving from silent financier to open crime lord across three seasons.' },
+    { entry: 'hawkeye', text: "Revealed as Maya Lopez's adoptive father and the power behind the series.", highlight: true },
+    { entry: 'echo', text: 'His relationship with Maya comes to a head.' },
+    { entry: 'daredevil-born-again', text: 'Launders himself into politics and is elected mayor — doing what he always did, with the law behind him.', highlight: true }
   ],
   appears: ['daredevil-netflix', 'hawkeye', 'echo', 'daredevil-born-again', 'dd-born-again-s2']
 },
@@ -186,11 +186,11 @@ window.MCU_CHARACTERS_2 = [
   id: 'jessica-char', name: 'Jessica Jones', en: 'Jessica Jones',
   actor: 'Krysten Ritter', group: 'street', role: 'antihero',
   glyph: 'widow', accent: ['#4c1d95', '#111827'],
-  tagline: '一個靠酒精撐著的超能力倖存者。',
-  bio: '擁有超人力量的私家偵探。曾被反派 Kilgrave 用精神控制長期奴役，故事主軸是創傷後的復原而非打擊犯罪。',
+  tagline: 'A survivor holding herself together with whisky.',
+  bio: 'A private investigator with superhuman strength who was held and abused under the mind control of a man called Kilgrave. Her story is about recovery, not crime-fighting.',
   arc: [
-    { entry: 'jessica-jones', text: '面對重新出現的 Kilgrave，一部關於創傷、同意權與加害者心態的心理驚悚劇。' },
-    { entry: 'defenders', text: '被捲入手合會的陰謀，與其他三人聯手。' }
+    { entry: 'jessica-jones', text: 'Kilgrave resurfaces, and the season becomes a study of trauma, consent and the psychology of an abuser.' },
+    { entry: 'defenders', text: 'Dragged into the Hand conspiracy with the other three.' }
   ],
   appears: ['jessica-jones', 'defenders']
 },
@@ -198,23 +198,23 @@ window.MCU_CHARACTERS_2 = [
   id: 'luke-cage-char', name: 'Luke Cage', en: 'Luke Cage',
   actor: 'Mike Colter', group: 'street', role: 'hero',
   glyph: 'fist', accent: ['#a16207', '#111827'],
-  tagline: '哈林區的防彈英雄。',
-  bio: '被冤獄的男人，在監獄實驗中獲得刀槍不入的皮膚與超人力量。他不想當英雄，但哈林區需要一個。',
+  tagline: 'The bulletproof man of Harlem.',
+  bio: 'Wrongly imprisoned and given unbreakable skin by a prison experiment. He does not want to be a hero; Harlem needs one anyway.',
   arc: [
-    { entry: 'luke-cage', text: '對抗夜總會老闆 Cottonmouth 與議員 Mariah Dillard，成為哈林區的守護者。' },
-    { entry: 'defenders', text: '與其他三人聯手對抗手合會。' }
+    { entry: 'luke-cage', text: 'Takes on Cottonmouth and Mariah Dillard and becomes the neighbourhood\'s protector.' },
+    { entry: 'defenders', text: 'Joins the other three against the Hand.' }
   ],
   appears: ['luke-cage', 'defenders']
 },
 {
-  id: 'iron-fist-char', name: 'Danny Rand / 鐵拳俠', en: 'Danny Rand / Iron Fist',
+  id: 'iron-fist-char', name: 'Danny Rand / Iron Fist', en: 'Danny Rand / Iron Fist',
   actor: 'Finn Jones', group: 'street', role: 'hero',
   glyph: 'fist', accent: ['#166534', '#f0b429'],
-  tagline: '崑崙的守護者。',
-  bio: '空難後被帶到異界城市崑崙修習武術的富家子，獲得將氣凝聚於拳頭的能力。',
+  tagline: "The Immortal Iron Fist of K'un-Lun.",
+  bio: "A billionaire's son raised in a mystical city after a plane crash, able to focus his chi into his fist.",
   arc: [
-    { entry: 'iron-fist', text: '回紐約奪回家族企業並對抗手合會。' },
-    { entry: 'defenders', text: '手合會的目標正是他 —— 他是打開地底大門的鑰匙。' }
+    { entry: 'iron-fist', text: 'Returns to New York to reclaim his company and fight the Hand.' },
+    { entry: 'defenders', text: 'He is what the Hand actually wants — the key to the door beneath the city.' }
   ],
   appears: ['iron-fist', 'defenders']
 },
@@ -222,10 +222,10 @@ window.MCU_CHARACTERS_2 = [
   id: 'kate-bishop', name: 'Kate Bishop', en: 'Kate Bishop',
   actor: 'Hailee Steinfeld', group: 'newgen', role: 'hero',
   glyph: 'arrow', accent: ['#7c3aed', '#b45309'],
-  tagline: '「全世界最厲害的神射手」—— 她自己說的。',
-  bio: '22 歲的富家女，從小因目睹紐約大戰中鷹眼的表現而立志成為神射手。新一代的鷹眼。',
+  tagline: '"The world\'s greatest archer" — her words.',
+  bio: 'A wealthy 22-year-old who watched Hawkeye fight during the Battle of New York as a child and has been training ever since.',
   arc: [
-    { entry: 'hawkeye', text: '穿上「浪人」戰衣引來追殺，硬是把克林特拖進自己的麻煩裡，最後成為他認可的搭檔。' }
+    { entry: 'hawkeye', text: 'Puts on the Ronin suit, drags Clint into her mess, and earns his respect as a partner.' }
   ],
   appears: ['hawkeye']
 },
@@ -233,106 +233,105 @@ window.MCU_CHARACTERS_2 = [
   id: 'echo-char', name: 'Maya Lopez / Echo', en: 'Maya Lopez / Echo',
   actor: 'Alaqua Cox', group: 'newgen', role: 'antihero',
   glyph: 'arrow', accent: ['#b91c1c', '#78350f'],
-  tagline: 'MCU 第一位失聰的原住民主角。',
-  bio: '失聰的 Choctaw 族女性，能完美複製任何人的動作。由金霸王養大，並被利用來對付敵人。',
+  tagline: "The MCU's first deaf Indigenous lead.",
+  bio: 'A deaf Choctaw woman who can perfectly replicate any movement she sees, raised and used by Kingpin.',
   arc: [
-    { entry: 'hawkeye', text: '追殺穿著浪人戰衣的人 —— 因為浪人殺了她父親。真相是金霸王一直在騙她。' },
-    { entry: 'echo', text: '回到奧克拉荷馬的故鄉，連結上祖先的力量，正面對決養父金霸王。' }
+    { entry: 'hawkeye', text: 'Hunts the man in the Ronin suit for killing her father, not knowing Kingpin has been lying to her.' },
+    { entry: 'echo', text: 'Returns to Oklahoma, connects to her ancestors\' power, and confronts her adoptive father.' }
   ],
   appears: ['hawkeye', 'echo']
 },
 {
-  id: 'she-hulk-char', name: 'Jennifer Walters / 女浩克', en: 'Jennifer Walters / She-Hulk',
+  id: 'she-hulk-char', name: 'Jennifer Walters / She-Hulk', en: 'Jennifer Walters / She-Hulk',
   actor: 'Tatiana Maslany', group: 'newgen', role: 'hero',
   glyph: 'fist', accent: ['#15803d', '#7c3aed'],
-  tagline: '會直接對著鏡頭跟你說話的律師。',
-  bio: '布魯斯班納的表妹，因車禍中沾到他的血液而獲得浩克能力 —— 而且她能完全保持理智。',
+  tagline: 'A lawyer who talks directly to you.',
+  bio: "Bruce Banner's cousin, given Hulk powers by his blood in a car accident — and able to keep her mind entirely.",
   arc: [
-    { entry: 'she-hulk', text: '接下「超人類法律部門」，一邊當女浩克一邊處理超人類官司。最後一集她直接闖進漫威工作室與 AI 編劇爭論結局。', highlight: true }
+    { entry: 'she-hulk', text: 'Runs the superhuman law division, and in the finale walks out of the streaming menu to argue with the studio about her own ending.', highlight: true }
   ],
   appears: ['she-hulk']
 },
 
-/* ================= 十環與宇宙 ================= */
+/* ================= TEN RINGS AND COSMIC ================= */
 {
-  id: 'shang-chi-char', name: '尚氣', en: 'Shang-Chi',
+  id: 'shang-chi-char', name: 'Shang-Chi', en: 'Shang-Chi',
   actor: 'Simu Liu', group: 'avengers', role: 'hero',
   glyph: 'rings', accent: ['#b45309', '#065f46'],
-  tagline: '從小被訓練成刺客的兒子。',
-  bio: '十環幫首領文武之子，從小被訓練成刺客。母親死後他逃到舊金山當泊車小弟，直到父親找上門。',
+  tagline: 'A son raised to be an assassin.',
+  bio: "Xu Wenwu's son, trained from childhood as a killer. After his mother's death he fled to San Francisco and parked cars until his father came for him.",
   arc: [
-    { entry: 'shang-chi', text: '回頭面對父親，繼承十環，並在大羅之戰中阻止「居食者」吞噬世界。' },
-    { entry: 'doomsday', text: '已確認集結。' }
+    { entry: 'shang-chi', text: 'Confronts his father, inherits the ten rings, and stops the Dweller-in-Darkness at Ta Lo.' },
+    { entry: 'doomsday', text: 'Confirmed to return.' }
   ],
   appears: ['shang-chi', 'doomsday']
 },
 {
-  id: 'wenwu', name: '文武', en: 'Xu Wenwu',
-  actor: 'Tony Leung（梁朝偉）', group: 'bigbad', role: 'villain',
+  id: 'wenwu', name: 'Xu Wenwu', en: 'Xu Wenwu',
+  actor: 'Tony Leung', group: 'bigbad', role: 'villain',
   glyph: 'rings', accent: ['#7f1d1d', '#b45309'],
-  tagline: '活了千年的父親。',
-  bio: '十環的持有者，靠神環的力量活了千年並建立十環幫。妻子死後他被悲痛與幻聽扭曲，深信她仍被囚禁在大羅。',
+  tagline: 'A father who has lived a thousand years.',
+  bio: 'The bearer of the ten rings, kept alive for a millennium by them, and warped by grief into believing his dead wife is imprisoned in Ta Lo.',
   arc: [
-    { entry: 'shang-chi', text: '為了「救回」亡妻而率軍攻打大羅，實則被邪靈「居食者」利用。最後將十環傳給兒子後身亡。', highlight: true },
-    { entry: 'iron-man', text: '（背景）綁架東尼史塔克的正是十環幫的一個分支。' }
+    { entry: 'shang-chi', text: 'Leads an army against Ta Lo to "rescue" his wife, manipulated by the Dweller-in-Darkness, and dies passing the rings to his son.', highlight: true }
   ],
   appears: ['shang-chi']
 },
 {
-  id: 'nebula', name: '涅布拉', en: 'Nebula',
+  id: 'nebula', name: 'Nebula', en: 'Nebula',
   actor: 'Karen Gillan', group: 'cosmic', role: 'hero',
   glyph: 'starburst', accent: ['#0891b2', '#4c1d95'],
-  tagline: '薩諾斯每次都拿她的身體零件當懲罰。',
-  bio: '薩諾斯的養女、葛摩菈的妹妹。每次輸給姊姊，薩諾斯就替換掉她身上的一個部位換成機械。',
+  tagline: 'Rebuilt piece by piece as punishment.',
+  bio: "Thanos's adopted daughter and Gamora's sister. Every time she lost to Gamora, Thanos replaced another part of her with machinery.",
   arc: [
-    { entry: 'gotg-1', text: '替 Ronan 效力，與葛摩菈為敵。' },
-    { entry: 'gotg-2', text: '與葛摩菈的關係開始和解 —— 她說出真相：「我只想要一個姊姊。」', highlight: true },
-    { entry: 'infinity-war', text: '被薩諾斯拆解拷問，逼出靈魂寶石的線索。' },
-    { entry: 'endgame', text: '關鍵角色。她的記憶被 2014 年的自己讀取，讓薩諾斯得知未來 —— 她也親手殺了過去的自己。', highlight: true },
-    { entry: 'gotg-3', text: '成為隊伍中最可靠的人，最後留下建設知者。' }
+    { entry: 'gotg-1', text: 'Serves Ronan, and fights her sister.' },
+    { entry: 'gotg-2', text: 'Tells Gamora the truth: "I just wanted a sister."', highlight: true },
+    { entry: 'infinity-war', text: 'Taken apart and interrogated, which gives Thanos the Soul Stone.' },
+    { entry: 'endgame', text: 'Central to the plot: her memories are read by her 2014 self, tipping Thanos off — and she ends up killing her own past self.', highlight: true },
+    { entry: 'gotg-3', text: 'The most dependable member of the team, staying behind to build Knowhere.' }
   ],
   appears: ['gotg-1', 'gotg-2', 'infinity-war', 'endgame', 'gotg-3']
 },
 {
-  id: 'mantis', name: '曼帝斯', en: 'Mantis',
+  id: 'mantis', name: 'Mantis', en: 'Mantis',
   actor: 'Pom Klementieff', group: 'cosmic', role: 'hero',
   glyph: 'starburst', accent: ['#166534', '#be123c'],
-  tagline: '星爵同父異母的妹妹。',
-  bio: '擁有觸碰即可讀取與操控情緒能力的共感者，原本被伊戈用來安撫他入睡。',
+  tagline: "Star-Lord's half-sister.",
+  bio: 'An empath who can read and alter emotions by touch, originally kept by Ego to help him sleep.',
   arc: [
-    { entry: 'gotg-2', text: '加入異攻隊。她用能力讓伊戈入睡，是取勝的關鍵。' },
-    { entry: 'infinity-war', text: '在泰坦星用共感能力壓制薩諾斯 —— 差一點就成功。' },
-    { entry: 'gotg-holiday', text: '揭露自己是伊戈的女兒，也就是星爵的妹妹。', highlight: true },
-    { entry: 'gotg-3', text: '最後選擇離開隊伍，去尋找自己想要的人生。' }
+    { entry: 'gotg-2', text: 'Joins the team, and putting Ego to sleep is what makes the win possible.' },
+    { entry: 'infinity-war', text: 'Holds Thanos under on Titan — it very nearly works.' },
+    { entry: 'gotg-holiday', text: 'Reveals she is Ego\'s daughter, and therefore Peter\'s sister.', highlight: true },
+    { entry: 'gotg-3', text: 'Leaves the team to go and find out what she actually wants.' }
   ],
   appears: ['gotg-2', 'infinity-war', 'endgame', 'gotg-holiday', 'gotg-3']
 },
 {
-  id: 'namor', name: '納摩', en: 'Namor',
+  id: 'namor', name: 'Namor', en: 'Namor',
   actor: 'Tenoch Huerta Mejía', group: 'bigbad', role: 'antihero',
   glyph: 'celestial', accent: ['#0e7490', '#166534'],
-  tagline: '水下王國 Talokan 的統治者。',
-  bio: '祖先為逃離西班牙殖民者而飲下汎金屬藥草潛入海底。他活了數百年，記得殖民帶來的一切。',
+  tagline: 'Ruler of Talokan.',
+  bio: 'Centuries old, ruling an undersea kingdom founded by people who fled Spanish colonisers. He remembers exactly what colonisation cost.',
   arc: [
-    { entry: 'wakanda-forever', text: '為了在列強掠奪汎金屬前先發制人而攻擊汎達。他不是為征服，是為保護自己的族人。', highlight: true },
-    { entry: 'doomsday', text: '已確認集結。' }
+    { entry: 'wakanda-forever', text: 'Strikes at Wakanda pre-emptively rather than wait for the surface powers to come for his vibranium. He is protecting his people, not conquering.', highlight: true },
+    { entry: 'doomsday', text: 'Confirmed to return.' }
   ],
   appears: ['wakanda-forever', 'doomsday']
 },
 
-/* ================= 復仇者周邊 ================= */
+/* ================= AVENGERS SUPPORTING CAST ================= */
 {
-  id: 'rhodey', name: 'Rhodey / 戰爭機器', en: 'James Rhodes / War Machine',
+  id: 'rhodey', name: 'James Rhodes / War Machine', en: 'James Rhodes / War Machine',
   actor: 'Don Cheadle', group: 'avengers', role: 'hero',
   glyph: 'arc', accent: ['#475569', '#b91c1c'],
-  tagline: '東尼唯一真正的老朋友。',
-  bio: '空軍上校，東尼史塔克的摯友。穿上軍用版鋼鐵裝成為戰爭機器。',
+  tagline: "Tony's only real old friend.",
+  bio: 'An Air Force colonel and Tony Stark\'s closest friend, who takes a militarised suit and becomes War Machine.',
   arc: [
-    { entry: 'iron-man-2', text: '穿上 Mark II 戰甲成為戰爭機器。' },
-    { entry: 'civil-war', text: '站在東尼一方。在機場一戰中被幻視誤擊墜落，導致下半身癱瘓。', highlight: true },
-    { entry: 'infinity-war', text: '靠外骨骼重新行走，在汎達參戰。' },
-    { entry: 'endgame', text: '參與時間搶劫與最終決戰，並在東尼的葬禮上送別。' },
-    { entry: 'secret-invasion', text: '被史克魯人取代並潛伏了一段時間。' }
+    { entry: 'iron-man-2', text: 'Takes the Mark II and becomes War Machine.' },
+    { entry: 'civil-war', text: 'Sides with Tony, and is accidentally shot down by Vision — leaving him paralysed from the waist down.', highlight: true },
+    { entry: 'infinity-war', text: 'Walking again with an exoskeleton, he fights in Wakanda.' },
+    { entry: 'endgame', text: 'Joins the Time Heist and the final battle, and stands at Tony\'s funeral.' },
+    { entry: 'secret-invasion', text: 'Revealed to have been replaced by a Skrull for some time.' }
   ],
   appears: ['iron-man-2', 'iron-man-3', 'civil-war', 'infinity-war', 'endgame', 'secret-invasion']
 },
@@ -340,12 +339,12 @@ window.MCU_CHARACTERS_2 = [
   id: 'pepper', name: 'Pepper Potts', en: 'Pepper Potts',
   actor: 'Gwyneth Paltrow', group: 'avengers', role: 'ally',
   glyph: 'heart', accent: ['#be123c', '#f0b429'],
-  tagline: '東尼的另一半，也是史塔克工業的執行長。',
-  bio: '從東尼的助理一路成為史塔克工業執行長與他的妻子。《終局之戰》中穿上「Rescue」戰甲參戰。',
+  tagline: "Tony's partner, and CEO of Stark Industries.",
+  bio: 'From personal assistant to chief executive to Tony\'s wife. In Endgame she puts on the Rescue armour and fights.',
   arc: [
-    { entry: 'iron-man', text: '東尼的助理，協助他換下胸口的反應爐。' },
-    { entry: 'iron-man-3', text: '被注射絕境病毒，最後親手擊敗 Killian。' },
-    { entry: 'endgame', text: '與東尼育有女兒 Morgan。穿上 Rescue 戰甲參與最終決戰，並在他死前對他說「你可以休息了」。', highlight: true }
+    { entry: 'iron-man', text: 'His assistant, and the person who changes the reactor in his chest.' },
+    { entry: 'iron-man-3', text: 'Injected with Extremis, and the one who finally kills Killian.' },
+    { entry: 'endgame', text: 'She and Tony have a daughter, Morgan. She suits up for the final battle and tells him, at the end, that he can rest.', highlight: true }
   ],
   appears: ['iron-man', 'iron-man-2', 'iron-man-3', 'civil-war', 'infinity-war', 'endgame']
 },
@@ -353,25 +352,25 @@ window.MCU_CHARACTERS_2 = [
   id: 'jane-foster', name: 'Jane Foster', en: 'Jane Foster',
   actor: 'Natalie Portman', group: 'avengers', role: 'ally',
   glyph: 'hammer', accent: ['#db2777', '#1d4ed8'],
-  tagline: '天文物理學家，後來的女雷神。',
-  bio: '索爾在地球遇到的天文物理學家。多年後她因末期癌症被重鑄的妙爾尼爾選中，成為女雷神。',
+  tagline: 'An astrophysicist who becomes the Mighty Thor.',
+  bio: 'The scientist Thor meets on Earth. Years later, dying of cancer, she is chosen by a reforged Mjolnir.',
   arc: [
-    { entry: 'thor', text: '在新墨西哥發現墜落的索爾，兩人相戀。' },
-    { entry: 'thor-2', text: '被現實寶石「乙太」侵入體內。' },
-    { entry: 'thor-4', text: '罹患末期癌症，被妙爾尼爾選中成為女雷神。每次變身都在加速病情。她仍選擇最後一次舉起鎚子，在索爾懷中離世。', highlight: true }
+    { entry: 'thor', text: 'Finds Thor in the New Mexico desert.' },
+    { entry: 'thor-2', text: 'The Aether infects her, making her the target of the Dark Elves.' },
+    { entry: 'thor-4', text: 'Terminally ill, she is chosen by Mjolnir. Every transformation accelerates the cancer; she lifts it one last time anyway and dies in his arms.', highlight: true }
   ],
   appears: ['thor', 'thor-2', 'thor-4']
 },
 {
-  id: 'valkyrie', name: '女武神', en: 'Valkyrie',
+  id: 'valkyrie', name: 'Valkyrie', en: 'Valkyrie',
   actor: 'Tessa Thompson', group: 'avengers', role: 'hero',
   glyph: 'hammer', accent: ['#1d4ed8', '#b45309'],
-  tagline: '新阿斯嘉的國王。',
-  bio: '阿斯嘉女武神軍團的最後倖存者。同袍全數死於海拉之手後，她逃到薩卡星酗酒度日。',
+  tagline: 'King of New Asgard.',
+  bio: 'The last of the Valkyrior, whose entire order was destroyed by Hela. She drank her way through the centuries on Sakaar until Thor arrived.',
   arc: [
-    { entry: 'thor-3', text: '在薩卡星把索爾賣給至尊者，最後選擇回頭面對海拉。' },
-    { entry: 'endgame', text: '率阿斯嘉人參與最終決戰。索爾離開時把新阿斯嘉交給她。', highlight: true },
-    { entry: 'thor-4', text: '以新阿斯嘉國王的身分治理國家並參戰。' }
+    { entry: 'thor-3', text: 'Sells Thor to the Grandmaster, then turns around and goes back to face Hela.' },
+    { entry: 'endgame', text: 'Leads the Asgardians into the final battle. Thor leaves New Asgard to her.', highlight: true },
+    { entry: 'thor-4', text: 'Rules New Asgard and fights Gorr.' }
   ],
   appears: ['thor-3', 'endgame', 'thor-4']
 },
@@ -379,50 +378,50 @@ window.MCU_CHARACTERS_2 = [
   id: 'isaiah', name: 'Isaiah Bradley', en: 'Isaiah Bradley',
   actor: 'Carl Lumbly', group: 'avengers', role: 'ally',
   glyph: 'shield', accent: ['#111827', '#b91c1c'],
-  tagline: '被歷史抹除的黑人美國隊長。',
-  bio: '韓戰時期被注射超級士兵血清的黑人軍人。政府事後把他關押三十年做實驗，並從所有紀錄中抹除他的存在。',
-  facts: ['他的存在是《獵鷹與酷寒戰士》最沉重的部分 —— 山姆接下盾牌前必須面對這段歷史。'],
+  tagline: 'The Black Captain America erased from the record.',
+  bio: 'A Korean War soldier given the super-soldier serum, then imprisoned and experimented on for thirty years and removed from every official history.',
+  facts: ['He is the heaviest thing in The Falcon and the Winter Soldier — Sam cannot take the shield without answering for him.'],
   arc: [
-    { entry: 'falcon-winter-soldier', text: '山姆與巴奇找到他，得知政府對他做過的事。他起初拒絕山姆：「他們絕不會讓一個黑人當美國隊長。」最後山姆讓他的名字進了史密森尼博物館。', highlight: true },
-    { entry: 'brave-new-world', text: '被陷害為刺殺總統的兇手並遭逮捕，是山姆調查的起點。' }
+    { entry: 'falcon-winter-soldier', text: 'Tells Sam what was done to him and refuses the shield outright: they will never let a Black man be Captain America. Sam eventually has him recognised in the Smithsonian.', highlight: true },
+    { entry: 'brave-new-world', text: 'Framed for an assassination attempt and arrested, which starts Sam\'s investigation.' }
   ],
   appears: ['falcon-winter-soldier', 'brave-new-world']
 },
 {
-  id: 'mobius', name: 'Mobius', en: 'Mobius M. Mobius',
+  id: 'mobius', name: 'Mobius M. Mobius', en: 'Mobius M. Mobius',
   actor: 'Owen Wilson', group: 'newgen', role: 'ally',
   glyph: 'tva', accent: ['#b45309', '#166534'],
-  tagline: 'TVA 探員，洛基唯一的朋友。',
-  bio: '時間變異管理局的資深探員，招募洛基協助追捕變體。他也是被抹除記憶的變體之一。',
+  tagline: "A TVA analyst, and Loki's only friend.",
+  bio: 'The agent who recruits Loki, and himself a variant with his memory wiped like everyone else at the TVA.',
   arc: [
-    { entry: 'loki-s1', text: '招募洛基，並逐漸從「相信 TVA」走到懷疑一切。' },
-    { entry: 'loki-s2', text: '陪洛基走到最後。當洛基選擇獨自撐起多元宇宙時，他是唯一明白那個代價的人。', highlight: true }
+    { entry: 'loki-s1', text: 'Recruits Loki, and moves from believing in the TVA to doubting all of it.' },
+    { entry: 'loki-s2', text: 'Stays with him to the end, and is the only person who understands what Loki gives up.', highlight: true }
   ],
   appears: ['loki-s1', 'loki-s2']
 },
 {
-  id: 'alexei', name: '紅衛兵 Alexei', en: 'Alexei Shostakov / Red Guardian',
+  id: 'alexei', name: 'Alexei Shostakov / Red Guardian', en: 'Alexei Shostakov / Red Guardian',
   actor: 'David Harbour', group: 'newgen', role: 'antihero',
   glyph: 'shield', accent: ['#b91c1c', '#166534'],
-  tagline: '蘇聯版的美國隊長 —— 而且他非常想跟隊長打一場。',
-  bio: '蘇聯的超級士兵，曾在假家庭任務中扮演娜塔莎與葉蓮娜的「父親」。虛榮、話多，但那份父愛是真的。',
+  tagline: "The Soviet Captain America, who badly wants a rematch.",
+  bio: 'A Soviet super-soldier who played father to Natasha and Yelena during an undercover posting. Vain and impossible, but the affection was real.',
   arc: [
-    { entry: 'black-widow', text: '被兩個「女兒」從監獄救出，一路吹噓當年勇。最後真心說出他對她們的愧疚。' },
-    { entry: 'thunderbolts', text: '加入瓦倫提娜召集的隊伍，是團隊中的情緒潤滑劑。' },
-    { entry: 'doomsday', text: '已確認集結。' }
+    { entry: 'black-widow', text: 'Broken out of prison by his two "daughters", boasting the whole way, until he admits what he owes them.' },
+    { entry: 'thunderbolts', text: 'The comic relief and emotional glue of the team.' },
+    { entry: 'doomsday', text: 'Confirmed to return.' }
   ],
   appears: ['black-widow', 'thunderbolts', 'doomsday']
 },
 {
-  id: 'ghost', name: '幽靈 Ava Starr', en: 'Ghost / Ava Starr',
+  id: 'ghost', name: 'Ava Starr / Ghost', en: 'Ghost / Ava Starr',
   actor: 'Hannah John-Kamen', group: 'newgen', role: 'antihero',
   glyph: 'question', accent: ['#0891b2', '#e5e7eb'],
-  tagline: '身體不斷相位穿透的痛苦。',
-  bio: '幼時因量子實驗事故而身體不斷在相位間穿透、持續劇痛。她不是壞人，只是走投無路。',
+  tagline: 'In constant pain from phasing.',
+  bio: 'A quantum accident in childhood left her body phasing uncontrollably through matter, in permanent agony. Not evil — out of options.',
   arc: [
-    { entry: 'ant-man-2', text: '為了活下去而追奪 Janet 的量子能量，最後被治療、與眾人和解。' },
-    { entry: 'thunderbolts', text: '加入反英雄隊伍，成為新復仇者的一員。' },
-    { entry: 'doomsday', text: '已確認集結。' }
+    { entry: 'ant-man-2', text: 'Chases Janet\'s quantum energy to stay alive, and is treated rather than killed.' },
+    { entry: 'thunderbolts', text: 'Joins the antihero team and becomes a New Avenger.' },
+    { entry: 'doomsday', text: 'Confirmed to return.' }
   ],
   appears: ['ant-man-2', 'thunderbolts', 'doomsday']
 },
@@ -430,73 +429,88 @@ window.MCU_CHARACTERS_2 = [
   id: 'howard-stark', name: 'Howard Stark', en: 'Howard Stark',
   actor: 'John Slattery / Dominic Cooper', group: 'avengers', role: 'ally',
   glyph: 'arc', accent: ['#b45309', '#1e40af'],
-  tagline: '東尼的父親、神盾局共同創辦人。',
-  bio: '天才發明家與軍火商，參與超級士兵計畫、打造美國隊長的盾牌，並與 Peggy Carter 共同創立神盾局。',
+  tagline: "Tony's father and a founder of S.H.I.E.L.D.",
+  bio: 'An inventor and industrialist who worked on the super-soldier programme, built the shield, and co-founded S.H.I.E.L.D. with Peggy Carter.',
   arc: [
-    { entry: 'captain-america', text: '協助超級士兵計畫，打造隊長的汎金屬盾牌。' },
-    { entry: 'agent-carter-oneshot', text: '來電任命 Peggy 共同主持新成立的神盾局。' },
-    { entry: 'iron-man-2', text: '（遺留影片）他把新元素的線索藏在博覽會模型裡留給東尼。' },
-    { entry: 'civil-war', text: '真相揭露：1991 年他與妻子被洗腦的巴奇殺害，這成為復仇者分裂的導火線。', highlight: true },
-    { entry: 'endgame', text: '東尼在 1970 年與年輕的父親有一次遲來的和解對話。', highlight: true }
+    { entry: 'captain-america', text: 'Works on the serum project and builds the vibranium shield.' },
+    { entry: 'agent-carter-oneshot', text: 'Calls to tell Peggy they are founding S.H.I.E.L.D. together.' },
+    { entry: 'iron-man-2', text: 'In an old recording, he leaves Tony the clue to a new element.' },
+    { entry: 'civil-war', text: 'The reveal that he and his wife were murdered in 1991 by a brainwashed Bucky is what ends the Avengers.', highlight: true },
+    { entry: 'endgame', text: 'Tony meets his father in 1970 and gets the conversation he never had.', highlight: true }
   ],
   appears: ['captain-america', 'iron-man-2', 'agent-carter-oneshot', 'civil-war', 'endgame', 'agent-carter-tv']
 },
-
-/* ================= 更多反派 ================= */
 {
-  id: 'killmonger', name: '齊爾蒙格', en: "Erik Killmonger",
+  id: 'coulson', name: 'Phil Coulson', en: 'Phil Coulson',
+  actor: 'Clark Gregg', group: 'avengers', role: 'ally',
+  glyph: 'badge', accent: ['#0f172a', '#b91c1c'],
+  tagline: 'The man who held the early team together.',
+  bio: 'The S.H.I.E.L.D. agent who links the early films, and whose death is what finally makes the Avengers work as a team.',
+  arc: [
+    { entry: 'iron-man', text: 'First appearance, as S.H.I.E.L.D.\'s contact with Tony.' },
+    { entry: 'thors-hammer', text: 'Disarms two robbers at a petrol station without breaking stride.' },
+    { entry: 'the-consultant', text: 'Plans, with Sitwell, to send Tony to sabotage the Abomination negotiation.' },
+    { entry: 'avengers-1', text: 'Killed by Loki. Fury uses his bloodstained trading cards to force the team together.', highlight: true },
+    { entry: 'agents-of-shield', text: 'Secretly revived to run a small team handling strange cases (canon status unclear).' }
+  ],
+  appears: ['iron-man', 'iron-man-2', 'thor', 'avengers-1', 'the-consultant', 'thors-hammer', 'agents-of-shield']
+},
+
+/* ================= MORE VILLAINS ================= */
+{
+  id: 'killmonger', name: 'Erik Killmonger', en: 'Erik Killmonger',
   actor: 'Michael B. Jordan', group: 'bigbad', role: 'villain',
   glyph: 'panther', accent: ['#7f1d1d', '#4c1d95'],
-  tagline: '漫威最有正當性的反派之一。',
-  bio: "T'Challa 的堂弟。父親被國王親手殺死後，年幼的他被遺棄在美國。他回來奪王位不是為了自己，而是為了報復整個拋棄他的國家。",
-  facts: ['「把我葬在海裡，跟那些從船上跳下去的祖先一起 —— 因為他們知道，死亡好過為奴。」'],
+  tagline: 'One of the most justified villains Marvel has written.',
+  bio: "T'Challa's cousin, abandoned in Oakland as a child after the king killed his father. He does not want the throne for himself — he wants the country that left him to answer for it.",
+  facts: ['"Bury me in the ocean with my ancestors who jumped from ships, because they knew death was better than bondage."'],
   arc: [
-    { entry: 'black-panther', text: "挑戰並打敗 T'Challa 奪得王位，計畫用汎金屬武裝全世界受壓迫的黑人。他的訴求有正當性，這正是他成為漫威最佳反派之一的原因。", highlight: true }
+    { entry: 'black-panther', text: "Beats T'Challa for the throne and moves to arm oppressed people worldwide with vibranium. The legitimacy of his grievance is what makes him work.", highlight: true }
   ],
   appears: ['black-panther']
 },
 {
-  id: 'hela', name: '海拉', en: 'Hela',
+  id: 'hela', name: 'Hela', en: 'Hela',
   actor: 'Cate Blanchett', group: 'bigbad', role: 'villain',
   glyph: 'hammer', accent: ['#166534', '#111827'],
-  tagline: '奧丁被抹去的長女。',
-  bio: '死亡女神，奧丁在建立仁慈形象前的行刑者與征服者。她被封印數千年，奧丁一死便回歸。',
+  tagline: "Odin's erased firstborn.",
+  bio: "The goddess of death, and Odin's executioner during the conquests he later wrote out of Asgard's history. Sealed away for millennia.",
   arc: [
-    { entry: 'thor-3', text: '徒手捏碎妙爾尼爾、佔領阿斯嘉、屠殺女武神軍團。最後被索爾放出的蘇特爾連同整個阿斯嘉一同毀滅。', highlight: true }
+    { entry: 'thor-3', text: 'Crushes Mjolnir barehanded, takes Asgard and destroys the Valkyrior — and is killed only by Thor destroying the realm itself.', highlight: true }
   ],
   appears: ['thor-3']
 },
 {
-  id: 'gorr', name: '屠神者格爾', en: 'Gorr the God Butcher',
+  id: 'gorr', name: 'Gorr the God Butcher', en: 'Gorr the God Butcher',
   actor: 'Christian Bale', group: 'bigbad', role: 'villain',
   glyph: 'skull', accent: ['#111827', '#e5e7eb'],
-  tagline: '他的憤怒完全合理。',
-  bio: '女兒在信仰中餓死後，他向神求助卻只換來嘲笑。奪得「弒神劍」後立誓屠盡所有神明。',
+  tagline: 'His anger is entirely justified.',
+  bio: 'His daughter starved while he prayed, and the god he prayed to laughed. With the Necrosword he swore to kill every god there is.',
   arc: [
-    { entry: 'thor-4', text: '橫掃各界屠殺神明。最後他選擇用永恆之力復活女兒而非復仇，索爾承諾撫養她。', highlight: true }
+    { entry: 'thor-4', text: 'Cuts through the pantheons. Given a final wish, he resurrects his daughter instead of taking revenge, and Thor raises her.', highlight: true }
   ],
   appears: ['thor-4']
 },
 {
-  id: 'ronan', name: '羅南', en: 'Ronan the Accuser',
+  id: 'ronan', name: 'Ronan the Accuser', en: 'Ronan the Accuser',
   actor: 'Lee Pace', group: 'bigbad', role: 'villain',
   glyph: 'starburst', accent: ['#4c1d95', '#111827'],
-  tagline: '克里帝國的狂熱分子。',
-  bio: '克里的復仇者，原替薩諾斯效力尋找寶珠，取得力量寶石後卻反噬主人。',
+  tagline: 'A Kree fanatic.',
+  bio: 'A Kree Accuser working for Thanos to find the orb, who takes the Power Stone and immediately turns on his employer.',
   arc: [
-    { entry: 'gotg-1', text: '奪得力量寶石後打算毀滅 Xandar，最後被異攻隊五人合力承受寶石能量擊敗。' },
-    { entry: 'captain-marvel', text: '（1995 年）以克里指揮官身分登場。' }
+    { entry: 'gotg-1', text: 'Plans to destroy Xandar with the Power Stone, and is beaten when five people share the load of holding it.' },
+    { entry: 'captain-marvel', text: 'Appears in 1995 as a Kree commander.' }
   ],
   appears: ['gotg-1', 'captain-marvel']
 },
 {
-  id: 'ego', name: '伊戈', en: 'Ego the Living Planet',
+  id: 'ego', name: 'Ego', en: 'Ego the Living Planet',
   actor: 'Kurt Russell', group: 'bigbad', role: 'villain',
   glyph: 'celestial', accent: ['#c026d3', '#0891b2'],
-  tagline: '「他也許是你父親，但他不是你爸爸。」',
-  bio: '活了數百萬年的天神族，本體是一整顆行星。他在無數星球留下後代，只為找到能承接其能量的繼承人。',
+  tagline: '"He may have been your father, but he wasn\'t your daddy."',
+  bio: 'A Celestial millions of years old whose body is an entire planet, who seeded children across the galaxy looking for one who could carry his power.',
   arc: [
-    { entry: 'gotg-2', text: '把星爵帶回本體。真相是他殺光了所有不合格的後代，也親手在星爵母親腦中種下腫瘤。最後被異攻隊摧毀核心。', highlight: true }
+    { entry: 'gotg-2', text: "Brings Peter home, then reveals he killed every failed child and grew the tumour in Peter's mother himself. The Guardians destroy his core.", highlight: true }
   ],
   appears: ['gotg-2']
 },
@@ -504,21 +518,21 @@ window.MCU_CHARACTERS_2 = [
   id: 'dormammu', name: 'Dormammu', en: 'Dormammu',
   actor: '—', group: 'bigbad', role: 'villain',
   glyph: 'portal', accent: ['#7e22ce', '#be123c'],
-  tagline: '「Dormammu, I\'ve come to bargain.」',
-  bio: '黑暗次元的統治者，一個吞噬整個宇宙的存在。',
+  tagline: '"Dormammu, I\'ve come to bargain."',
+  bio: 'The ruler of the Dark Dimension, a being that consumes entire universes.',
   arc: [
-    { entry: 'doctor-strange', text: '史傳奇用時間寶石把自己鎖進無限死亡循環，用「我永遠不會停」逼他談判撤退 —— MCU 最聰明的解法之一。', highlight: true }
+    { entry: 'doctor-strange', text: 'Strange traps himself in an endless death loop and simply refuses to stop, forcing a cosmic entity to negotiate out of irritation.', highlight: true }
   ],
   appears: ['doctor-strange']
 },
 {
-  id: 'high-evolutionary', name: '至高進化', en: 'The High Evolutionary',
+  id: 'high-evolutionary', name: 'The High Evolutionary', en: 'The High Evolutionary',
   actor: 'Chukwudi Iwuji', group: 'bigbad', role: 'villain',
   glyph: 'skull', accent: ['#b45309', '#0d9488'],
-  tagline: '把「創造」當成虐待的科學家。',
-  bio: '執著於創造「完美物種」的科學家。把動物改造成有智慧的生物，一旦不合期待就整批銷毀。',
+  tagline: 'Treats creation as licence to torture.',
+  bio: 'A scientist obsessed with engineering a perfect species, who uplifts animals into intelligence and destroys entire batches that disappoint him.',
   arc: [
-    { entry: 'gotg-3', text: '火箭浣熊的創造者，也是他一生的夢魘。他無法接受火箭比自己更聰明。', highlight: true }
+    { entry: 'gotg-3', text: "Rocket's creator and lifelong nightmare — and unable to accept that his creation is cleverer than he is.", highlight: true }
   ],
   appears: ['gotg-3']
 },
@@ -526,21 +540,21 @@ window.MCU_CHARACTERS_2 = [
   id: 'cassandra-nova', name: 'Cassandra Nova', en: 'Cassandra Nova',
   actor: 'Emma Corrin', group: 'bigbad', role: 'villain',
   glyph: 'claw', accent: ['#e5e7eb', '#4c1d95'],
-  tagline: 'Charles Xavier 的雙胞胎妹妹。',
-  bio: '擁有強大心靈能力的變種人，統治著 TVA 用來丟棄時間線的「虛空」。',
+  tagline: "Charles Xavier's twin sister.",
+  bio: 'An immensely powerful telepathic mutant who rules the Void, where the TVA dumps the timelines it prunes.',
   arc: [
-    { entry: 'deadpool-wolverine', text: '打算用「時間撕裂器」毀滅整個多元宇宙，被死侍與金鋼狼聯手阻止。' }
+    { entry: 'deadpool-wolverine', text: 'Attempts to destroy the multiverse with a Time Ripper and is stopped by Deadpool and Wolverine.' }
   ],
   appears: ['deadpool-wolverine']
 },
 {
-  id: 'galactus', name: '吞星', en: 'Galactus',
+  id: 'galactus', name: 'Galactus', en: 'Galactus',
   actor: 'Ralph Ineson', group: 'bigbad', role: 'villain',
   glyph: 'celestial', accent: ['#4c1d95', '#a16207'],
-  tagline: '以吞噬行星維生的宇宙級存在。',
-  bio: '一個超越善惡的宇宙級力量，需要吞噬行星維生。他派出「先驅使者」為他尋找目標。',
+  tagline: 'Consumes planets to survive.',
+  bio: 'A cosmic force beyond good and evil that must devour worlds to live, sending heralds ahead to find them.',
   arc: [
-    { entry: 'fantastic-four', text: '驚奇 4 超人在 Earth-828 面對的威脅，與銀色衝浪手一同登場。', highlight: true }
+    { entry: 'fantastic-four', text: 'The threat the Fantastic Four face on Earth-828, arriving with the Silver Surfer.', highlight: true }
   ],
   appears: ['fantastic-four']
 },
@@ -548,43 +562,26 @@ window.MCU_CHARACTERS_2 = [
   id: 'trevor', name: 'Trevor Slattery', en: 'Trevor Slattery',
   actor: 'Ben Kingsley', group: 'newgen', role: 'ally',
   glyph: 'question', accent: ['#b45309', '#7c3aed'],
-  tagline: 'MCU 最持久的一個笑話。',
-  bio: '落魄的英國舞台劇演員，被雇來扮演恐怖分子「滿大人」—— 結果冒用了一個真實存在千年的組織的名號。',
+  tagline: 'The longest-running joke in the MCU.',
+  bio: 'A washed-up English stage actor hired to play a terrorist called the Mandarin, who unwittingly impersonated the leader of a real thousand-year-old organisation.',
   arc: [
-    { entry: 'iron-man-3', text: '被揭露「滿大人」其實是他演的，真反派另有其人。' },
-    { entry: 'all-hail-the-king', text: '在獄中接受訪問，才發現訪問者是真正的十環幫派來的 —— 因為「真正的滿大人」要見他。', highlight: true },
-    { entry: 'shang-chi', text: '被文武囚禁多年，成為尚氣一行意外的助力。' },
-    { entry: 'wonder-man', text: '確認回歸。' }
+    { entry: 'iron-man-3', text: 'Revealed as an actor playing the Mandarin, with the real villain elsewhere.' },
+    { entry: 'all-hail-the-king', text: 'Gives a prison interview and discovers his interviewer works for the actual Ten Rings, whose leader would like a word.', highlight: true },
+    { entry: 'shang-chi', text: 'Held prisoner by Wenwu for years, and becomes an unlikely help to Shang-Chi.' },
+    { entry: 'wonder-man', text: 'Confirmed to return.' }
   ],
   appears: ['iron-man-3', 'all-hail-the-king', 'shang-chi', 'wonder-man']
 },
-{
-  id: 'coulson', name: 'Phil Coulson', en: 'Phil Coulson',
-  actor: 'Clark Gregg', group: 'avengers', role: 'ally',
-  glyph: 'badge', accent: ['#0f172a', '#b91c1c'],
-  tagline: '把復仇者黏在一起的那個人。',
-  bio: '神盾局探員，早期串起所有英雄的聯絡人。他的死是復仇者第一次真正團結的原因。',
-  arc: [
-    { entry: 'iron-man', text: '首度登場，代表神盾局接觸東尼。' },
-    { entry: 'thors-hammer', text: '在加油站順手制伏兩名搶匪 —— 確立他不只是文書探員。' },
-    { entry: 'the-consultant', text: '與 Sitwell 設計讓東尼去破壞憎惡加入復仇者的談判。' },
-    { entry: 'avengers-1', text: '被洛基刺殺。福瑞用他沾血的復仇者卡片激起六人的鬥志。', highlight: true },
-    { entry: 'agents-of-shield', text: '被祕密復活，率領小隊處理超自然事件（正史地位模糊）。' }
-  ],
-  appears: ['iron-man', 'iron-man-2', 'thor', 'avengers-1', 'the-consultant', 'thors-hammer', 'agents-of-shield']
-}
 
-,
-
-/* ================= 永恆族與驚奇 4 超人 ================= */
+/* ================= ETERNALS AND FANTASTIC FOUR ================= */
 {
   id: 'sersi', name: 'Sersi', en: 'Sersi',
   actor: 'Gemma Chan', group: 'cosmic', role: 'hero',
   glyph: 'celestial', accent: ['#0d9488', '#be123c'],
-  tagline: '選擇人類而背叛創造者的永恆族。',
-  bio: '能改變物質結構的永恆族，在地球生活七千年。她比其他同伴都更愛人類，這讓她成為反抗天神的關鍵。',
+  tagline: 'The Eternal who chooses humanity over her maker.',
+  bio: 'An Eternal able to transmute matter, who has lived among people for seven thousand years and loves them more than her own kind does.',
   arc: [
-    { entry: 'eternals', text: '得知永恆族的真正任務是讓人類滅絕以孕育新天神後，她帶頭反抗，並用「統合心智」的力量把提亞穆特石化。', highlight: true }
+    { entry: 'eternals', text: 'On learning their real assignment was to let humanity die so a Celestial could be born, she leads the revolt and petrifies Tiamut.', highlight: true }
   ],
   appears: ['eternals']
 },
@@ -592,21 +589,21 @@ window.MCU_CHARACTERS_2 = [
   id: 'ikaris', name: 'Ikaris', en: 'Ikaris',
   actor: 'Richard Madden', group: 'cosmic', role: 'villain',
   glyph: 'celestial', accent: ['#a16207', '#1e40af'],
-  tagline: '最強的永恆族 —— 也是背叛者。',
-  bio: '擁有飛行與眼部光束的永恆族。他早就知道真相，並選擇忠於天神 Arishem 而非人類。',
+  tagline: 'The strongest Eternal — and the traitor.',
+  bio: 'An Eternal who can fly and project beams from his eyes. He knew the truth all along and sided with Arishem over humanity.',
   arc: [
-    { entry: 'eternals', text: '為完成天神的任務而與同伴反目、殺死領袖 Ajak。任務失敗後，他選擇飛入太陽自盡。', highlight: true }
+    { entry: 'eternals', text: 'Turns on the others and kills their leader Ajak to complete the Celestial\'s plan. When it fails, he flies into the sun.', highlight: true }
   ],
   appears: ['eternals']
 },
 {
-  id: 'silver-surfer', name: '銀色衝浪手', en: 'Silver Surfer / Shalla-Bal',
+  id: 'silver-surfer', name: 'Silver Surfer / Shalla-Bal', en: 'Silver Surfer / Shalla-Bal',
   actor: 'Julia Garner', group: 'cosmic', role: 'antihero',
   glyph: 'starburst', accent: ['#e5e7eb', '#4c1d95'],
-  tagline: '吞星的先驅使者。',
-  bio: '為了拯救自己的母星而與吞星立約，成為替他尋找下一顆行星的先驅使者。',
+  tagline: "Galactus's herald.",
+  bio: 'She made a bargain with Galactus to save her own world, and now finds him the next one.',
   arc: [
-    { entry: 'fantastic-four', text: '作為吞星的使者來到 Earth-828，與驚奇 4 超人正面交鋒。' }
+    { entry: 'fantastic-four', text: 'Arrives on Earth-828 as the herald, and comes into direct conflict with the four.' }
   ],
   appears: ['fantastic-four']
 },
@@ -614,17 +611,17 @@ window.MCU_CHARACTERS_2 = [
   id: 'franklin', name: 'Franklin Richards', en: 'Franklin Richards',
   actor: '—', group: 'newgen', role: 'ally',
   glyph: 'four', accent: ['#1d4ed8', '#f0b429'],
-  tagline: '末日博士現身時，站在他身邊的那個孩子。',
-  bio: 'Reed Richards 與 Sue Storm 的兒子。在漫畫中他是宇宙中最強大的變種人之一。',
+  tagline: 'The child standing beside Doom.',
+  bio: "Reed Richards and Sue Storm's son. In the comics he is among the most powerful mutants ever written.",
   arc: [
-    { entry: 'fantastic-four', text: '中段彩蛋：時間快轉四年後，一名手持末日博士銀色面具的神秘披風人物出現在他身邊 —— 直接鋪陳《末日之戰》。', highlight: true }
+    { entry: 'fantastic-four', text: 'In the mid-credits scene, four years on, a cloaked figure holding a silver Doom mask appears at his side — the setup for Doomsday.', highlight: true }
   ],
   appears: ['fantastic-four']
 }
 
 ];
 
-/* ---------- 合併角色 ---------- */
+/* ---------- Merge the roster ---------- */
 window.MCU_CHARACTERS = [].concat(
   window.MCU_CHARACTERS || [],
   window.MCU_CHARACTERS_2 || []

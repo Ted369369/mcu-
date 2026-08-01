@@ -1,300 +1,300 @@
 /* ============================================================
-   周邊與相關宇宙
-   ・Marvel One-Shots 一夜短片
-   ・捍衛者聯盟 Defenders Saga（已納入 Disney+ 官方 MCU 時間軸）
-   ・Marvel Television 舊作（正史地位模糊）
-   ・Sony 舊蜘蛛人電影（《無家日》引用的其他宇宙）
+   Peripheral works and adjacent universes
+   · Marvel One-Shots
+   · The Defenders Saga (now on the official Disney+ timeline)
+   · Marvel Television's older shows (ambiguous canon)
+   · Sony's Spider-Man films (the universes No Way Home draws on)
    ============================================================ */
 
 window.MCU_WORKS_3 = [
 
 /* ================= Marvel One-Shots ================= */
 {
-  id: 'the-consultant', no: 100, title: '顧問', en: 'The Consultant',
-  year: 2011, date: '2011', episodes: '短片 4 分鐘',
+  id: 'the-consultant', no: 100, title: 'The Consultant', en: 'The Consultant',
+  year: 2011, date: '2011', episodes: 'Short, 4 min',
   type: 'oneshot', phase: 'One-Shot', saga: 'oneshot', cats: ['avengers'],
   era: 'rise', chrono: 2011, glyph: 'badge', accent: ['#0f172a', '#0e7490'],
   relevance: 'optional',
-  tagline: '解釋為什麼憎惡沒加入復仇者',
-  summary: '寇森與 Sitwell 兩位神盾局探員在餐廳裡討論如何阻止世界安全理事會把憎惡編入復仇者。',
+  tagline: 'Why Abomination never joined the Avengers',
+  summary: 'Two S.H.I.E.L.D. agents sit in a diner working out how to stop the World Security Council putting Abomination on the team.',
   sections: [
-    { h: '劇情', body: '安理會要求釋放 Emil Blonsky（憎惡）加入復仇者計畫。兩人不敢直接違抗，於是派出「全世界最讓人受不了的人」東尼史塔克去跟羅斯將軍談判 —— 保證談判必然破裂。' },
-    { h: '意義', body: '這解釋了《無敵浩克》片尾東尼找上羅斯的那場戲，其實是神盾局的計謀。' }
+    { h: 'The story', body: 'The Council wants Emil Blonsky released and added to the Avengers Initiative. Neither agent can refuse outright, so they send "the most annoying man alive" — Tony Stark — to negotiate with General Ross, guaranteeing the talks collapse.' },
+    { h: 'Why it matters', body: 'It reframes the post-credits scene of The Incredible Hulk: Tony showing up to irritate Ross was a deliberate S.H.I.E.L.D. tactic.' }
   ],
   related: ['incredible-hulk', 'avengers-1']
 },
 {
-  id: 'thors-hammer', no: 101, title: '在雷神之鎚路上發生的趣事', en: "A Funny Thing Happened on the Way to Thor's Hammer",
-  year: 2011, date: '2011', episodes: '短片 4 分鐘',
+  id: 'thors-hammer', no: 101, title: "A Funny Thing Happened on the Way to Thor's Hammer", en: "A Funny Thing Happened on the Way to Thor's Hammer",
+  year: 2011, date: '2011', episodes: 'Short, 4 min',
   type: 'oneshot', phase: 'One-Shot', saga: 'oneshot', cats: ['avengers'],
   era: 'rise', chrono: 2011, glyph: 'hammer', accent: ['#1d4ed8', '#475569'],
   relevance: 'optional',
-  tagline: '寇森的個人秀',
-  summary: '寇森在前往新墨西哥的路上停靠加油站，順手制伏了兩名持槍搶匪。',
+  tagline: 'Four minutes of Coulson',
+  summary: 'Coulson stops at a petrol station on his way to New Mexico and calmly disarms two armed robbers.',
   sections: [
-    { h: '劇情', body: '兩名搶匪打劫便利商店，寇森氣定神閒地用最少的動作解決他們，然後繼續上路 —— 前往雷神之鎚墜落的坑洞。' },
-    { h: '意義', body: '純粹為了確立「寇森不只是個文書探員」的角色魅力。' }
+    { h: 'The story', body: 'Two men hold up a convenience store. Coulson deals with both of them with the minimum possible effort and gets back on the road — heading for the crater where Mjolnir landed.' },
+    { h: 'Why it exists', body: 'Purely to establish that Coulson is not just a man with a clipboard.' }
   ],
   related: ['thor', 'avengers-1']
 },
 {
-  id: 'item-47', no: 102, title: '47 號物品', en: 'Item 47',
-  year: 2012, date: '2012', episodes: '短片 12 分鐘',
+  id: 'item-47', no: 102, title: 'Item 47', en: 'Item 47',
+  year: 2012, date: '2012', episodes: 'Short, 12 min',
   type: 'oneshot', phase: 'One-Shot', saga: 'oneshot', cats: ['avengers'],
   era: 'rise', chrono: 2012, glyph: 'bolt', accent: ['#166534', '#b45309'],
   relevance: 'optional',
-  tagline: '紐約大戰之後的小人物',
-  summary: '一對失業情侶撿到紐約大戰後遺留的奇塔黎槍械，開始搶銀行。',
+  tagline: 'Ordinary people after the Battle of New York',
+  summary: 'An unemployed couple find a Chitauri weapon in the rubble and start robbing banks with it.',
   sections: [
-    { h: '劇情', body: 'Bennie 與 Claire 用外星槍搶了三家銀行。神盾局派 Sitwell 追捕，最後決定不殺他們，反而招募兩人來逆向工程奇塔黎科技。' },
-    { h: '意義', body: '第一次呈現「紐約大戰的外星武器流入民間」這個主題 —— 這正是五年後《返校日》反派禿鷹整條故事線的源頭。', highlight: true }
+    { h: 'The story', body: 'Bennie and Claire hit three banks with the alien gun. S.H.I.E.L.D. sends Sitwell after them, and instead of killing them he recruits both to reverse-engineer Chitauri technology.' },
+    { h: 'Why it matters', body: 'The first time the MCU deals with alien weapons from the Battle of New York leaking into civilian hands — which is the entire origin of the Vulture five years later.', highlight: true }
   ],
   related: ['avengers-1', 'homecoming']
 },
 {
-  id: 'agent-carter-oneshot', no: 103, title: '卡特探員', en: 'Agent Carter',
-  year: 2013, date: '2013', episodes: '短片 15 分鐘',
+  id: 'agent-carter-oneshot', no: 103, title: 'Agent Carter', en: 'Agent Carter (One-Shot)',
+  year: 2013, date: '2013', episodes: 'Short, 15 min',
   type: 'oneshot', phase: 'One-Shot', saga: 'oneshot', cats: ['avengers'],
   era: 'cold', chrono: 1946, glyph: 'badge', accent: ['#b91c1c', '#1e40af'],
   relevance: 'optional',
-  tagline: '神盾局的誕生',
-  summary: '二戰結束一年後，Peggy Carter 在戰略科學軍團被同事當成打雜的。她決定自己出勤。',
+  tagline: 'The founding of S.H.I.E.L.D.',
+  summary: 'A year after the war, Peggy Carter is being treated as an office assistant at the SSR. She goes out on the job herself.',
   sections: [
-    { h: '劇情', body: 'Peggy 獨自完成一項本該由四人執行的任務，取回神秘的「零物質」。上司震怒，卻接到霍華史塔克的來電 —— 她被任命與霍華共同主持新成立的「神盾局」。', highlight: true },
-    { h: '延伸', body: '這部短片直接催生了 ABC 影集《卡特探員》兩季。' }
+    { h: 'The story', body: 'Peggy single-handedly completes an operation her superiors had assigned to a four-man team, recovering the mysterious Zodiac. Her furious boss is interrupted by a call from Howard Stark: she is to co-found a new agency called S.H.I.E.L.D.', highlight: true },
+    { h: 'Where it leads', body: 'This short directly led to the two-season Agent Carter series on ABC.' }
   ],
   related: ['captain-america', 'agent-carter-tv', 'winter-soldier']
 },
 {
-  id: 'all-hail-the-king', no: 104, title: '吾王萬歲', en: 'All Hail the King',
-  year: 2014, date: '2014', episodes: '短片 14 分鐘',
+  id: 'all-hail-the-king', no: 104, title: 'All Hail the King', en: 'All Hail the King',
+  year: 2014, date: '2014', episodes: 'Short, 14 min',
   type: 'oneshot', phase: 'One-Shot', saga: 'oneshot', cats: ['avengers'],
   era: 'rise', chrono: 2013, glyph: 'rings', accent: ['#b45309', '#111827'],
   relevance: 'optional',
-  tagline: '修正《鋼鐵人3》的滿大人爭議',
-  summary: '獄中的演員 Trevor Slattery 接受紀錄片訪問，卻發現訪問者是真正十環幫派來的人。',
+  tagline: 'Cleaning up the Iron Man 3 controversy',
+  summary: 'Trevor Slattery gives a prison documentary interview and discovers his interviewer works for the real Ten Rings.',
   sections: [
-    { h: '劇情', body: 'Trevor 在監獄裡因扮演過「滿大人」而成為名人。一名紀錄片導演接近他，最後亮出身分 —— 他是真正的十環幫成員，因為 Trevor 冒用了他們領袖的名號，「真正的滿大人」要見他。' },
-    { h: '意義', body: '這是漫威對《鋼鐵人3》反派反轉爭議的官方回應，並埋下十環幫真實存在的伏筆 —— 七年後在《尚氣與十環傳奇》完整兌現。', highlight: true }
+    { h: 'The story', body: 'Trevor is a celebrity inside prison for having played the Mandarin. A documentary maker gets close to him, then reveals himself: he belongs to the actual Ten Rings, and their real leader would like a word about the impersonation.' },
+    { h: 'Why it matters', body: "Marvel's formal answer to the backlash over the Iron Man 3 twist, planting the idea that the Ten Rings are real — paid off seven years later in Shang-Chi.", highlight: true }
   ],
   related: ['iron-man-3', 'shang-chi', 'wonder-man']
 },
 
-/* ================= Defenders Saga（Netflix，已納入官方時間軸）================= */
+/* ================= The Defenders Saga (Netflix, now canon) ================= */
 {
-  id: 'daredevil-netflix', no: 110, title: '夜魔俠（Netflix）', en: 'Daredevil',
-  year: 2015, date: '2015–2018', episodes: '3 季 39 集',
+  id: 'daredevil-netflix', no: 110, title: 'Daredevil (Netflix)', en: 'Daredevil',
+  year: 2015, date: '2015–2018', episodes: '3 seasons, 39 episodes',
   type: 'series', phase: 'Defenders Saga', saga: 'defenders', cats: ['series', 'street'],
   era: 'shield', chrono: 2015, glyph: 'skull', accent: ['#7f1d1d', '#111827'],
   relevance: 'recommended',
-  tagline: '街頭層級的最高標準',
-  summary: '白天是律師 Matt Murdock，晚上是廚房地獄的義警。全盲，但其餘感官極度敏銳。',
+  tagline: 'The high-water mark for street-level Marvel',
+  summary: 'Blind lawyer Matt Murdock by day, masked vigilante of Hell\'s Kitchen by night, with every other sense heightened past human limits.',
   sections: [
-    { h: '劇情', body: '幼時因化學藥劑失明的 Matt Murdock，以律師與蒙面義警雙重身分對抗控制紐約地下世界的 Wilson Fisk。第三季改編自漫畫名作《Born Again》。' },
-    { h: '金霸王', body: 'Vincent D\'Onofrio 飾演的 Wilson Fisk 被公認是漫威影視史上最好的反派之一 —— 一個同時極度暴力又極度脆弱的人。' },
-    { h: '正史地位', body: 'Disney+ 已把整個「捍衛者聯盟（Defenders Saga）」正式納入官方 MCU 時間軸。Charlie Cox 與 D\'Onofrio 已在《無家日》《鷹眼》《律師女浩克》《回聲》回歸，並主演《夜魔俠：重生》。', highlight: true },
-    { h: '提醒', body: '本劇為 TV-MA 級，暴力程度遠高於 MCU 電影。' }
+    { h: 'The story', body: 'Blinded as a child by a chemical spill, Matt Murdock fights Wilson Fisk\'s control of the New York underworld as both a lawyer and a vigilante. The third season adapts the celebrated Born Again comic arc.' },
+    { h: 'Kingpin', body: "Vincent D'Onofrio's Wilson Fisk is widely considered one of the best villains Marvel has put on screen — a man who is simultaneously enormously violent and painfully fragile." },
+    { h: 'Canon status', body: 'Disney+ has now placed the entire Defenders Saga on the official MCU timeline. Charlie Cox and D\'Onofrio have both returned in No Way Home, Hawkeye, She-Hulk, Echo and Daredevil: Born Again.', highlight: true },
+    { h: 'A warning', body: 'Rated TV-MA, and considerably more violent than any MCU film.' }
   ],
   related: ['daredevil-born-again', 'no-way-home', 'echo', 'defenders', 'punisher-netflix']
 },
 {
-  id: 'jessica-jones', no: 111, title: '潔西卡瓊斯', en: 'Jessica Jones',
-  year: 2015, date: '2015–2019', episodes: '3 季 39 集',
+  id: 'jessica-jones', no: 111, title: 'Jessica Jones', en: 'Jessica Jones',
+  year: 2015, date: '2015–2019', episodes: '3 seasons, 39 episodes',
   type: 'series', phase: 'Defenders Saga', saga: 'defenders', cats: ['series', 'street'],
   era: 'shield', chrono: 2015, glyph: 'widow', accent: ['#4c1d95', '#111827'],
   relevance: 'optional',
-  tagline: 'MCU 最黑暗的一部作品',
-  summary: '擁有超人力量的私家偵探，一邊酗酒一邊處理 PTSD —— 因為那個能用聲音控制任何人的男人回來了。',
+  tagline: 'The darkest thing in the MCU',
+  summary: 'A private investigator with super strength drinks her way through her PTSD — because the man who could control anyone with his voice has come back.',
   sections: [
-    { h: '劇情', body: 'Jessica Jones 曾被反派 Kilgrave 用精神控制能力長期奴役與性侵。第一季是一部關於創傷、同意權與加害者心態的心理驚悚劇。' },
-    { h: '評價', body: 'David Tennant 飾演的 Kilgrave 被視為漫威最令人不安的反派。本劇對 PTSD 與倖存者處境的描寫獲得高度評價。' },
-    { h: '提醒', body: 'TV-MA 級，主題極為沉重。與主線關聯低。' }
+    { h: 'The story', body: 'Jessica Jones was held and repeatedly assaulted under the mind control of a man called Kilgrave. The first season is a psychological thriller about trauma, consent and the psychology of an abuser.' },
+    { h: 'Reception', body: "David Tennant's Kilgrave is regarded as Marvel's most genuinely disturbing villain, and the show's treatment of survivorship drew very strong reviews." },
+    { h: 'A warning', body: 'TV-MA, with extremely heavy subject matter. Low connection to the main thread.' }
   ],
   related: ['defenders', 'daredevil-netflix']
 },
 {
-  id: 'luke-cage', no: 112, title: '盧克凱奇', en: 'Luke Cage',
-  year: 2016, date: '2016–2018', episodes: '2 季 26 集',
+  id: 'luke-cage', no: 112, title: 'Luke Cage', en: 'Luke Cage',
+  year: 2016, date: '2016–2018', episodes: '2 seasons, 26 episodes',
   type: 'series', phase: 'Defenders Saga', saga: 'defenders', cats: ['series', 'street'],
   era: 'civil', chrono: 2016, glyph: 'fist', accent: ['#a16207', '#111827'],
   relevance: 'optional',
-  tagline: '哈林區的防彈英雄',
-  summary: '刀槍不入、力大無窮的 Luke Cage 在哈林區開始不情願地當起英雄。',
+  tagline: 'The bulletproof man of Harlem',
+  summary: 'Unbreakable skin, enormous strength, and a very reluctant hero in Harlem.',
   sections: [
-    { h: '劇情', body: '被冤獄的 Luke Cage 在監獄實驗中獲得刀槍不入的皮膚與超人力量。他回到哈林區，對抗夜總會老闆 Cottonmouth 與議員 Mariah Dillard。' },
-    { h: '特色', body: '大量融入嘻哈與黑人音樂文化，每集標題取自 Gang Starr 的歌名。' }
+    { h: 'The story', body: 'Wrongly imprisoned, Luke Cage gains unbreakable skin and great strength in a prison experiment. He returns to Harlem and takes on club owner Cottonmouth and councilwoman Mariah Dillard.' },
+    { h: 'What sets it apart', body: 'Deeply rooted in hip-hop and Black American music; every episode in the first season is named after a Gang Starr track.' }
   ],
   related: ['defenders', 'jessica-jones', 'iron-fist']
 },
 {
-  id: 'iron-fist', no: 113, title: '鐵拳俠', en: 'Iron Fist',
-  year: 2017, date: '2017–2018', episodes: '2 季 23 集',
+  id: 'iron-fist', no: 113, title: 'Iron Fist', en: 'Iron Fist',
+  year: 2017, date: '2017–2018', episodes: '2 seasons, 23 episodes',
   type: 'series', phase: 'Defenders Saga', saga: 'defenders', cats: ['series', 'street', 'mystic'],
   era: 'civil', chrono: 2016, glyph: 'fist', accent: ['#166534', '#f0b429'],
   relevance: 'skippable',
-  tagline: '系列中評價最低的一部',
-  summary: '失蹤十五年的富家子 Danny Rand 回到紐約，宣稱自己是崑崙的守護者「鐵拳」。',
+  tagline: 'The weakest of the Netflix run',
+  summary: 'Danny Rand, missing for fifteen years, returns to New York claiming to be the Immortal Iron Fist of K\'un-Lun.',
   sections: [
-    { h: '劇情', body: 'Danny Rand 在空難後被帶到異界城市崑崙修習武術，獲得將氣凝聚於拳頭的能力。他回紐約奪回家族企業並對抗「手合會（The Hand）」。' },
-    { h: '評價', body: '本劇是 Defenders Saga 中評價最低的一部，武打設計與選角均受到批評。' },
-    { h: '定位', body: '可跳過，除非想看完整的《捍衛者聯盟》前置。' }
+    { h: 'The story', body: 'Presumed dead in a plane crash, Danny Rand was raised in the mystical city of K\'un-Lun and can focus his chi into his fist. He returns to reclaim his family company and fight the Hand.' },
+    { h: 'Reception', body: 'The weakest-reviewed entry in the Defenders Saga, criticised for its fight choreography and casting.' },
+    { h: 'Where it sits', body: 'Skippable unless you want the complete run-up to The Defenders.' }
   ],
   related: ['defenders', 'luke-cage', 'shang-chi']
 },
 {
-  id: 'defenders', no: 114, title: '捍衛者聯盟', en: 'The Defenders',
-  year: 2017, date: '2017', episodes: '迷你影集 8 集',
+  id: 'defenders', no: 114, title: 'The Defenders', en: 'The Defenders',
+  year: 2017, date: '2017', episodes: 'Miniseries, 8 episodes',
   type: 'series', phase: 'Defenders Saga', saga: 'defenders', cats: ['series', 'street'],
   era: 'civil', chrono: 2016, glyph: 'star', accent: ['#166534', '#7c2d12'],
   relevance: 'optional',
-  tagline: '街頭版的復仇者集結',
-  summary: '夜魔俠、潔西卡瓊斯、盧克凱奇與鐵拳俠四人被迫聯手對抗「手合會」。',
+  tagline: 'The street-level Avengers',
+  summary: 'Daredevil, Jessica Jones, Luke Cage and Iron Fist are forced to work together against the Hand.',
   sections: [
-    { h: '劇情', body: '四位互不對盤的街頭英雄因手合會挖掘紐約地底的計畫而集結。八集迷你影集，是整個 Netflix 系列的交會點。' },
-    { h: '正史地位', body: '與其他 Defenders Saga 作品一同被納入 Disney+ 官方 MCU 時間軸。' }
+    { h: 'The story', body: 'Four vigilantes who do not get along are pulled together by the Hand\'s excavation beneath New York. Eight episodes, and the crossover point of the whole Netflix run.' },
+    { h: 'Canon status', body: 'On the official Disney+ MCU timeline along with the rest of the Defenders Saga.' }
   ],
   related: ['daredevil-netflix', 'jessica-jones', 'luke-cage', 'iron-fist']
 },
 {
-  id: 'punisher-netflix', no: 115, title: '制裁者（Netflix）', en: 'The Punisher',
-  year: 2017, date: '2017–2019', episodes: '2 季 26 集',
+  id: 'punisher-netflix', no: 115, title: 'The Punisher (Netflix)', en: 'The Punisher',
+  year: 2017, date: '2017–2019', episodes: '2 seasons, 26 episodes',
   type: 'series', phase: 'Defenders Saga', saga: 'defenders', cats: ['series', 'street'],
   era: 'civil', chrono: 2016, glyph: 'skull', accent: ['#111827', '#e5e7eb'],
   relevance: 'recommended',
-  tagline: '《蜘蛛人4》制裁者的來歷',
-  summary: '海軍陸戰隊退役狙擊手 Frank Castle 在妻兒被殺後，成為以極端暴力執行私刑的制裁者。',
+  tagline: "Where Spider-Man 4's Punisher comes from",
+  summary: 'Retired Marine sniper Frank Castle, after the murder of his wife and children, becomes a one-man execution squad.',
   sections: [
-    { h: '劇情', body: 'Frank Castle 首度登場於《夜魔俠》第二季，隨後獲得個人影集。故事處理他的軍中創傷、家庭之死，以及一樁牽連中情局的陰謀。' },
-    { h: '演員', body: 'Jon Bernthal 飾演的制裁者被公認是這個角色最好的影視版本。他在《夜魔俠：重生》回歸，並在 2026 年的特別節目《制裁者：最後一殺》主演。', highlight: true },
-    { h: '為什麼跟蜘蛛人4有關', body: '同一位演員、同一個角色，《蜘蛛人4》是他首度登上大銀幕。預告中他開廂型車撞彼得，並對他說「你正在失控（losing it）」。他與彼得「絕不殺人」的原則完全相反 —— 這條對立線是新片的看點之一。', highlight: true },
-    { h: '提醒', body: 'TV-MA 級，暴力程度極高。' }
+    { h: 'The story', body: 'Frank Castle first appears in season two of Daredevil, then gets his own series dealing with his combat trauma, the loss of his family, and a conspiracy reaching into the CIA.' },
+    { h: 'The actor', body: 'Jon Bernthal is broadly regarded as the definitive screen Punisher. He returned in Daredevil: Born Again and headlined the 2026 special The Punisher: One Last Kill.', highlight: true },
+    { h: 'The Spider-Man 4 connection', body: 'Same actor, same character. Spider-Man 4 is his first big-screen appearance. In the trailer he rams Peter with a van and tells him he is "losing it". His methods are the exact opposite of Peter\'s no-killing rule, and that clash is one of the film\'s main draws.', highlight: true },
+    { h: 'A warning', body: 'TV-MA, and extremely violent.' }
   ],
   related: ['spider-man-4', 'daredevil-netflix', 'punisher-special', 'daredevil-born-again']
 },
 
-/* ================= Marvel Television 舊作（正史地位模糊）================= */
+/* ================= Marvel Television (ambiguous canon) ================= */
 {
-  id: 'agents-of-shield', no: 120, title: '神盾局特工', en: 'Agents of S.H.I.E.L.D.',
-  year: 2013, date: '2013–2020', episodes: '7 季 136 集',
+  id: 'agents-of-shield', no: 120, title: 'Agents of S.H.I.E.L.D.', en: 'Agents of S.H.I.E.L.D.',
+  year: 2013, date: '2013–2020', episodes: '7 seasons, 136 episodes',
   type: 'series', phase: 'Marvel TV', saga: 'marveltv', cats: ['series'],
   era: 'shield', chrono: 2013, glyph: 'badge', accent: ['#0f172a', '#b91c1c'],
   relevance: 'optional',
-  tagline: '寇森復活・與電影同步連動的實驗',
-  summary: 'ABC 影集。在《復仇者聯盟》中「陣亡」的寇森探員被祕密復活，率領一支小隊處理超自然事件。',
+  tagline: 'Coulson lives, and TV syncs with film',
+  summary: 'An ABC series in which the agent killed in The Avengers is secretly revived to lead a small team handling strange cases.',
   sections: [
-    { h: '劇情', body: '橫跨七季，題材從特工劇一路演變到異人族、太空歌劇與時間旅行。' },
-    { h: '與電影的連動', body: '第一季中段與《酷寒戰士》同步 —— 九頭蛇滲透的真相揭露後，影集裡整個組織在一集之內崩解。這是影視連動最成功的一次示範。', highlight: true },
-    { h: '正史地位', body: '播出時被視為正史，但 Marvel Television 於 2019 年併入 Marvel Studios 後，其正史地位變得模糊。目前尚未被納入 Disney+ 官方 MCU 時間軸。', unconfirmed: true }
+    { h: 'The story', body: 'Across seven seasons it moves from spy procedural into Inhumans, space opera and time travel.' },
+    { h: 'The crossover that worked', body: 'Mid-way through season one it synchronised with The Winter Soldier — the moment HYDRA was exposed, the entire organisation collapsed inside a single episode of the show. It remains the best example of film and television actually moving together.', highlight: true },
+    { h: 'Canon status', body: 'Treated as canon when it aired, but after Marvel Television was folded into Marvel Studios in 2019 its standing became unclear. It has not been added to the official Disney+ MCU timeline.', unconfirmed: true }
   ],
   related: ['winter-soldier', 'avengers-1', 'agent-carter-tv']
 },
 {
-  id: 'agent-carter-tv', no: 121, title: '卡特探員（影集）', en: 'Agent Carter',
-  year: 2015, date: '2015–2016', episodes: '2 季 18 集',
+  id: 'agent-carter-tv', no: 121, title: 'Agent Carter (series)', en: 'Agent Carter',
+  year: 2015, date: '2015–2016', episodes: '2 seasons, 18 episodes',
   type: 'series', phase: 'Marvel TV', saga: 'marveltv', cats: ['series'],
   era: 'cold', chrono: 1946, glyph: 'badge', accent: ['#b91c1c', '#1e40af'],
   relevance: 'optional',
-  tagline: '1940 年代的 Peggy Carter',
-  summary: 'ABC 影集。二戰後的 Peggy 在戰略科學軍團被當成祕書，暗中替霍華史塔克洗清叛國嫌疑。',
+  tagline: 'Peggy Carter in the 1940s',
+  summary: 'An ABC series in which the post-war SSR treats Peggy as a secretary while she quietly works to clear Howard Stark of treason.',
   sections: [
-    { h: '劇情', body: '1946 年的紐約與 1947 年的洛杉磯。Peggy 與霍華的管家 Jarvis 搭檔（他正是 AI「JARVIS」名字的由來）辦案，同時面對戰後職場的性別歧視。' },
-    { h: '正史地位', body: '與《神盾局特工》相同，正史地位模糊，尚未納入官方時間軸。', unconfirmed: true }
+    { h: 'The story', body: 'Set in 1946 New York and 1947 Los Angeles. Peggy works cases with Howard\'s butler Edwin Jarvis — the man the AI JARVIS is named after — while navigating the sexism of the post-war workplace.' },
+    { h: 'Canon status', body: 'As with Agents of S.H.I.E.L.D., its standing is unclear and it is not on the official timeline.', unconfirmed: true }
   ],
   related: ['agent-carter-oneshot', 'captain-america', 'agents-of-shield']
 },
 {
-  id: 'other-marvel-tv', no: 122, title: '其他 Marvel TV 作品', en: 'Inhumans / Runaways / Cloak & Dagger / Helstrom',
-  year: 2017, date: '2017–2020', episodes: '多部',
+  id: 'other-marvel-tv', no: 122, title: 'Other Marvel TV series', en: 'Inhumans / Runaways / Cloak & Dagger / Helstrom',
+  year: 2017, date: '2017–2020', episodes: 'Several series',
   type: 'series', phase: 'Marvel TV', saga: 'marveltv', cats: ['series'],
   era: 'civil', chrono: 2017, glyph: 'skip', accent: ['#475569', '#1e293b'],
   relevance: 'skippable',
-  tagline: '正史地位模糊，可直接跳過',
-  summary: '《異人族》(ABC, 2017)、《叛逃者》(Hulu, 2017–2019)、《鬥篷與匕首》(Freeform, 2018–2019)、《地獄風暴》(Hulu, 2020)。',
+  tagline: 'Ambiguous canon, safely skipped',
+  summary: 'Inhumans (ABC, 2017), Runaways (Hulu, 2017–2019), Cloak & Dagger (Freeform, 2018–2019) and Helstrom (Hulu, 2020).',
   sections: [
-    { h: '內容', body: '這些作品由已解散的 Marvel Television 製作，散布在不同電視台與串流平台上。《異人族》評價極差；《叛逃者》與《鬥篷與匕首》有一定口碑但收視不佳。' },
-    { h: '正史地位', body: '目前均未被納入 Disney+ 官方 MCU 時間軸，且與電影主線毫無交集。', unconfirmed: true },
-    { h: '定位', body: '對理解任何 MCU 主線都沒有必要，可直接跳過。' }
+    { h: 'What they are', body: 'Produced by the now-dissolved Marvel Television division and scattered across different networks and streamers. Inhumans was very poorly received; Runaways and Cloak & Dagger had their admirers but small audiences.' },
+    { h: 'Canon status', body: 'None of them appear on the official Disney+ MCU timeline, and none intersect with the films.', unconfirmed: true },
+    { h: 'Where they sit', body: 'Not needed for any MCU storyline.' }
   ],
   related: ['agents-of-shield']
 },
 
-/* ================= Sony 舊蜘蛛人電影（其他宇宙）================= */
+/* ================= Sony's Spider-Man films (other universes) ================= */
 {
-  id: 'raimi-1', no: 130, title: '蜘蛛人', en: 'Spider-Man',
+  id: 'raimi-1', no: 130, title: 'Spider-Man (2002)', en: 'Spider-Man',
   year: 2002, date: '2002', director: 'Sam Raimi',
-  type: 'film', phase: '雷米三部曲', saga: 'sony', cats: ['spidey', 'multiverse'],
+  type: 'film', phase: 'Raimi Trilogy', saga: 'sony', cats: ['spidey', 'multiverse'],
   era: 'other', chrono: 2002, glyph: 'web', accent: ['#b91c1c', '#1e3a8a'],
-  relevance: 'optional', actor: '托比馬奎爾（Tobey Maguire）',
-  tagline: '「能力愈強、責任愈大」的原點',
-  summary: '第一代蜘蛛人電影。彼得被基因改造蜘蛛咬到獲得能力，班叔之死讓他學會那句貫穿所有版本的信條。',
+  relevance: 'optional', actor: 'Tobey Maguire',
+  tagline: 'Where "with great power" comes from',
+  summary: 'The first Spider-Man film. Peter is bitten by a modified spider, and his uncle\'s death teaches him the line every version of the character lives by.',
   sections: [
-    { h: '劇情', body: '彼得被基因改造蜘蛛咬到獲得能力。他一時自私放走了搶匪，那名搶匪隨後殺害了班叔（Uncle Ben）—— 這讓他學到「能力愈強、責任愈大」。' },
-    { h: '反派', body: '綠惡魔 Norman Osborn 是好友哈利的父親，測試軍用血清後人格分裂、發狂，最後死於自己的滑翔翼。' },
-    { h: '為什麼相關', body: '《無家日》把這個宇宙的綠惡魔（Willem Dafoe）拉了進來，他是該片最大的反派。托比版彼得也在《無家日》登場，代號 Peter-Two。', highlight: true }
+    { h: 'The story', body: 'Peter gains his powers from a genetically altered spider. He lets a robber go out of spite, and that man kills Uncle Ben — which is how he learns that with great power comes great responsibility.' },
+    { h: 'The villain', body: 'Norman Osborn, father of his best friend Harry, tests a military serum on himself, fractures into the Green Goblin, and dies on his own glider.' },
+    { h: 'Why it is here', body: "No Way Home pulls this universe's Green Goblin (Willem Dafoe) across as its principal villain, and Tobey Maguire's Peter appears as Peter-Two.", highlight: true }
   ],
   related: ['no-way-home', 'raimi-2', 'raimi-3']
 },
 {
-  id: 'raimi-2', no: 131, title: '蜘蛛人2', en: 'Spider-Man 2',
+  id: 'raimi-2', no: 131, title: 'Spider-Man 2', en: 'Spider-Man 2',
   year: 2004, date: '2004', director: 'Sam Raimi',
-  type: 'film', phase: '雷米三部曲', saga: 'sony', cats: ['spidey', 'multiverse'],
+  type: 'film', phase: 'Raimi Trilogy', saga: 'sony', cats: ['spidey', 'multiverse'],
   era: 'other', chrono: 2004, glyph: 'tentacle', accent: ['#0f766e', '#78350f'],
-  relevance: 'optional', actor: '托比馬奎爾（Tobey Maguire）',
-  tagline: '公認系列最佳',
-  summary: '八爪博士的機械臂控制其心智，最後他選擇自我犧牲贖罪。',
+  relevance: 'optional', actor: 'Tobey Maguire',
+  tagline: 'Widely held to be the best of them',
+  summary: "Doc Ock's mechanical arms take over his mind, and he chooses to die putting right what he caused.",
   sections: [
-    { h: '劇情', body: 'Otto Octavius 的核融合實驗失敗，四條 AI 機械臂與其脊椎融合並反過來控制他的心智。最後他恢復理智，親手把失控的反應爐沉入河底贖罪。' },
-    { h: '為什麼相關', body: '《無家日》中八爪博士（Alfred Molina 原班回歸）是第一個被拉進 MCU 宇宙的反派，也是第一個被彼得「治好」的。', highlight: true }
+    { h: 'The story', body: 'Otto Octavius\'s fusion experiment fails, fusing four AI-driven arms to his spine that then override his judgement. He recovers himself at the end and sinks the runaway reactor into the river with himself attached.' },
+    { h: 'Why it is here', body: 'In No Way Home, Doc Ock (Alfred Molina, reprising the role) is the first villain pulled into the MCU and the first that Peter cures.', highlight: true }
   ],
   related: ['no-way-home', 'raimi-1', 'raimi-3']
 },
 {
-  id: 'raimi-3', no: 132, title: '蜘蛛人3', en: 'Spider-Man 3',
+  id: 'raimi-3', no: 132, title: 'Spider-Man 3', en: 'Spider-Man 3',
   year: 2007, date: '2007', director: 'Sam Raimi',
-  type: 'film', phase: '雷米三部曲', saga: 'sony', cats: ['spidey', 'multiverse'],
+  type: 'film', phase: 'Raimi Trilogy', saga: 'sony', cats: ['spidey', 'multiverse'],
   era: 'other', chrono: 2007, glyph: 'sand', accent: ['#a16207', '#111827'],
-  relevance: 'optional', actor: '托比馬奎爾（Tobey Maguire）',
-  tagline: '沙人、新綠惡魔與猛毒',
-  summary: '三線反派齊發，並首度引入外星共生體猛毒。',
+  relevance: 'optional', actor: 'Tobey Maguire',
+  tagline: 'Sandman, a new Goblin, and Venom',
+  summary: 'Three villains at once, and the first appearance of the alien symbiote.',
   sections: [
-    { h: '劇情', body: '反派包含沙人（Flint Marko，劇情被改寫為殺害班叔的真兇）、成為新綠惡魔的哈利，以及與記者 Eddie Brock 結合的外星共生體「猛毒（Venom）」。' },
-    { h: '為什麼相關', body: '《無家日》把沙人（Thomas Haden Church）拉進 MCU 宇宙，是五大反派之一。' }
+    { h: 'The story', body: 'The antagonists are Sandman (Flint Marko, retconned into Uncle Ben\'s real killer), Harry Osborn as a new Goblin, and the alien symbiote that bonds with reporter Eddie Brock to become Venom.' },
+    { h: 'Why it is here', body: "No Way Home brings Sandman (Thomas Haden Church) across as one of its five villains." }
   ],
   related: ['no-way-home', 'raimi-1', 'raimi-2']
 },
 {
-  id: 'webb-1', no: 133, title: '蜘蛛人：驚奇再起', en: 'The Amazing Spider-Man',
+  id: 'webb-1', no: 133, title: 'The Amazing Spider-Man', en: 'The Amazing Spider-Man',
   year: 2012, date: '2012', director: 'Marc Webb',
-  type: 'film', phase: '驚奇再起兩部曲', saga: 'sony', cats: ['spidey', 'multiverse'],
+  type: 'film', phase: 'Webb Duology', saga: 'sony', cats: ['spidey', 'multiverse'],
   era: 'other', chrono: 2012, glyph: 'lizard', accent: ['#15803d', '#0c4a6e'],
-  relevance: 'optional', actor: '安德魯加菲（Andrew Garfield）',
-  tagline: '蜥蜴人與關史黛西',
-  summary: '重啟版第一集。反派是注射蜥蜴 DNA 變成怪物的 Oscorp 科學家。',
+  relevance: 'optional', actor: 'Andrew Garfield',
+  tagline: 'The Lizard and Gwen Stacy',
+  summary: 'The reboot. The villain is an Oscorp scientist who turns himself into a reptile.',
   sections: [
-    { h: '劇情', body: 'Oscorp 科學家 Curt Connors 為再生斷臂而注射蜥蜴 DNA，變成巨蜥。彼得與同學關史黛西（Gwen Stacy，Emma Stone 飾）相戀。' },
-    { h: '為什麼相關', body: '《無家日》把蜥蜴人（Rhys Ifans）拉進 MCU 宇宙，是五大反派之一。' }
+    { h: 'The story', body: 'Oscorp scientist Curt Connors injects lizard DNA trying to regrow a lost arm and becomes a monster. Peter falls in love with his classmate Gwen Stacy (Emma Stone).' },
+    { h: 'Why it is here', body: "No Way Home pulls this universe's Lizard (Rhys Ifans) across as one of its five villains." }
   ],
   related: ['no-way-home', 'webb-2']
 },
 {
-  id: 'webb-2', no: 134, title: '蜘蛛人：驚奇再起2', en: 'The Amazing Spider-Man 2',
+  id: 'webb-2', no: 134, title: 'The Amazing Spider-Man 2', en: 'The Amazing Spider-Man 2',
   year: 2014, date: '2014', director: 'Marc Webb',
-  type: 'film', phase: '驚奇再起兩部曲', saga: 'sony', cats: ['spidey', 'multiverse'],
+  type: 'film', phase: 'Webb Duology', saga: 'sony', cats: ['spidey', 'multiverse'],
   era: 'other', chrono: 2014, glyph: 'bolt', accent: ['#0891b2', '#1e1b4b'],
-  relevance: 'optional', actor: '安德魯加菲（Andrew Garfield）',
-  tagline: '加菲版蜘蛛人最大的心理創傷',
-  summary: '關史黛西之死。彼得吐絲想救她，但急停的力道扭斷了她的脖子。',
+  relevance: 'optional', actor: 'Andrew Garfield',
+  tagline: "This Spider-Man's defining wound",
+  summary: "Gwen Stacy's death. Peter's web catches her as she falls, and the sudden stop breaks her neck.",
   sections: [
-    { h: '劇情', body: '反派電光人（Max Dillon）與成為新綠惡魔的 Harry Osborn。' },
-    { h: '關鍵悲劇', body: '關史黛西在鐘樓大戰中墜落，彼得吐絲想救她，但急停時的力道扭斷了她的脖子，她仍身亡。這是加菲版蜘蛛人最大的心理創傷。', highlight: true },
-    { h: '為什麼相關', body: '這正是《無家日》中他接住墜落的 MJ、得到救贖的原因 —— 全片最動人的一刻。電光人（Jamie Foxx）也是五大反派之一。', highlight: true }
+    { h: 'The story', body: 'The antagonists are Electro (Max Dillon) and Harry Osborn as a new Green Goblin.' },
+    { h: 'The tragedy', body: 'Gwen falls during the clock tower fight. Peter shoots a web to catch her, and the force of the stop kills her anyway. It is the wound that defines this version of the character.', highlight: true },
+    { h: 'Why it is here', body: 'It is exactly why, in No Way Home, catching MJ as she falls from the Statue of Liberty is his redemption — the single most moving beat in that film. Electro (Jamie Foxx) is also one of the five villains.', highlight: true }
   ],
   related: ['no-way-home', 'webb-1']
 }
 
 ];
 
-/* ---------- 合併所有作品 ---------- */
+/* ---------- Merge all works ---------- */
 window.MCU_TIMELINE = [].concat(
   window.MCU_WORKS_1 || [],
   window.MCU_WORKS_2 || [],

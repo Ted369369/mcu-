@@ -1,5 +1,5 @@
 /* ============================================================
-   MCU 補課指南 — 應用程式邏輯（hash 路由 SPA）
+   Application logic (hash-routed single page app)
    ============================================================ */
 (function () {
   'use strict';
@@ -20,15 +20,15 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  /* ---------- 分類標籤 ---------- */
+  /* ---------- Badge labels ---------- */
   var SAGAS = window.MCU_SAGAS;
 
   var REL = {
-    target:      { cls: 'b-target', label: '最新上映' },
-    core:        { cls: 'b-core',   label: '主線必看' },
-    recommended: { cls: 'b-rec',    label: '建議補' },
-    optional:    { cls: 'b-opt',    label: '選看' },
-    skippable:   { cls: 'b-skip',   label: '可跳過' }
+    target:      { cls: 'b-target', label: 'Latest release' },
+    core:        { cls: 'b-core',   label: 'Essential' },
+    recommended: { cls: 'b-rec',    label: 'Recommended' },
+    optional:    { cls: 'b-opt',    label: 'Optional' },
+    skippable:   { cls: 'b-skip',   label: 'Skippable' }
   };
 
   function relBadge(e) {
@@ -37,19 +37,19 @@
   }
   function typeBadges(e) {
     var h = '';
-    if (e.type === 'series')  h += '<span class="badge b-series">影集' + (e.episodes ? ' ' + esc(e.episodes) : '') + '</span>';
-    if (e.type === 'special') h += '<span class="badge b-series">特別節目</span>';
-    if (e.type === 'oneshot') h += '<span class="badge b-new">One-Shot 短片</span>';
-    if (e.saga === 'sony')     h += '<span class="badge b-legacy">其他宇宙</span>';
-    if (e.saga === 'defenders')h += '<span class="badge b-legacy">捍衛者聯盟</span>';
-    if (e.saga === 'marveltv') h += '<span class="badge b-skip">正史地位模糊</span>';
-    if (e.upcoming) h += '<span class="badge b-new">尚未上映</span>';
-    if (e.warning)  h += '<span class="badge b-warn">資訊已更新</span>';
+    if (e.type === 'series')  h += '<span class="badge b-series">' + (e.episodes ? esc(e.episodes) : 'Series') + '</span>';
+    if (e.type === 'special') h += '<span class="badge b-series">Special</span>';
+    if (e.type === 'oneshot') h += '<span class="badge b-new">One-Shot</span>';
+    if (e.saga === 'sony')     h += '<span class="badge b-legacy">Other universe</span>';
+    if (e.saga === 'defenders')h += '<span class="badge b-legacy">Defenders Saga</span>';
+    if (e.saga === 'marveltv') h += '<span class="badge b-skip">Canon unclear</span>';
+    if (e.upcoming) h += '<span class="badge b-new">Not yet released</span>';
+    if (e.warning)  h += '<span class="badge b-warn">Superseded info</span>';
     return h;
   }
   function starStr(n) {
     if (!n) return '';
-    return '<span class="stars" title="對蜘蛛人4的重要性">' +
+    return '<span class="stars" title="Importance for Spider-Man 4">' +
       new Array(n + 1).join('★') + new Array(5 - n + 1).join('☆') + '</span>';
   }
   function catLabel(id) {
@@ -57,26 +57,26 @@
     return c ? c.label : id;
   }
 
-  /* 由 date 字串（"2021 / 07 / 09"、"2015–2018"、"2011"）推出可排序的鍵值，
-     讓同一年的電影與影集能照真正的上映先後排列 */
+  /* Derive a sortable key from the date string ("2021 / 07 / 09", "2015-2018", "2011")
+     so films and series released in the same year interleave in true order */
   function relKey(e) {
-    var m = String(e.date || e.year).match(/(\d{4})\s*[\/年.-]?\s*(\d{1,2})?\s*[\/月.-]?\s*(\d{1,2})?/);
+    var m = String(e.date || e.year).match(/(\d{4})\s*[\/.-]?\s*(\d{1,2})?\s*[\/.-]?\s*(\d{1,2})?/);
     if (!m) return (e.year || 0) * 10000;
     return (+m[1]) * 10000 + (m[2] ? +m[2] : 0) * 100 + (m[3] ? +m[3] : 0);
   }
 
-  /* ---------- 狀態 ---------- */
+  /* ---------- View state ---------- */
   var state = {
     view: 'home',
     order: 'release',      // release | story
-    cats: [],              // 空 = 全部
+    cats: [],              // empty = show all
     mustOnly: false,
     unwatchedOnly: false,
     chGroup: 'all',
     base: 'home'
   };
 
-  /* ---------- 使用者偏好（存在瀏覽器，不會上傳）---------- */
+  /* ---------- User preferences (stored in the browser, never uploaded) ---------- */
   var store = {
     get: function (k, d) {
       try { var v = localStorage.getItem('mcu.' + k); return v === null ? d : JSON.parse(v); }
@@ -86,7 +86,7 @@
   };
 
   var prefs = {
-    spoiler: store.get('spoiler', true),   // true = 防雷開啟（劇透先遮住）
+    spoiler: store.get('spoiler', true),   // true = spoilers hidden until revealed
     theme:   store.get('theme', 'dark'),
     watched: store.get('watched', {})
   };
@@ -104,12 +104,12 @@
     document.documentElement.setAttribute('data-theme', prefs.theme);
   }
 
-  /* 更新頁首的主題鈕與進度條 */
+  /* Refresh the header theme button and progress bar */
   function syncChrome() {
     var tb = $('#themeBtn');
     if (tb) {
       tb.innerHTML = G(prefs.theme === 'dark' ? 'bulb' : 'hex');
-      tb.setAttribute('title', prefs.theme === 'dark' ? '切換亮色主題' : '切換暗色主題');
+      tb.setAttribute('title', prefs.theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
     updateProgress();
   }
@@ -121,57 +121,64 @@
     if (bar) bar.style.width = pct + '%';
     if (txt) txt.textContent = n + ' / ' + total;
     var wrap = $('#progWrap');
-    if (wrap) wrap.setAttribute('title', '已看過 ' + n + ' 部，共 ' + total + ' 部（' + pct + '%）');
+    if (wrap) wrap.setAttribute('title', n + ' of ' + total + ' watched (' + pct + '%)');
   }
 
-  /* 依實際片長算出方案 A 的總時數（影集另計，避免把單集長度誤當全季）*/
+  /* Total runtime for Route A from real runtimes. Series are counted separately so a
+     single episode length is never mistaken for a whole season. */
   function planMetaText() {
     var A_ = window.MCU_PLAN_A;
     var films = A_.items.filter(function (it) { return byId[it.entry] && byId[it.entry].type === 'film'; });
     var mins = films.reduce(function (s, it) { return s + minutesOf(it.entry); }, 0);
     var series = A_.items.length - films.length;
-    return A_.items.length + ' 部' +
-      (mins ? '・電影約 ' + humanHours(mins) : '') +
-      (series ? '＋' + series + ' 部影集' : '');
+    return A_.items.length + ' titles' +
+      (mins ? ' · about ' + humanHours(mins) + ' of film' : '') +
+      (series ? ' + ' + series + ' series' : '');
   }
 
-  /* 卡片角落的「已看過」小圓鈕 */
+  /* Small watched toggle in the corner of a card */
   function watchDot(id) {
     var w = isWatched(id);
     return '<button class="watchdot' + (w ? ' on' : '') + '" data-watch="' + id + '" ' +
-      'title="' + (w ? '已看過（點擊取消）' : '標記為已看過') + '">' + G(w ? 'check' : 'eye') + '</button>';
+      'title="' + (w ? 'Watched (click to undo)' : 'Mark as watched') + '">' + G(w ? 'check' : 'eye') + '</button>';
   }
 
-  /* 判斷一個段落是否含關鍵劇透 */
-  var SPOILER_RE = /結局|之死|死亡|真相|反轉|轉折|彩蛋|犧牲|背叛|揭露|身分|下場|命運/;
+  /* Does this section give away a major beat? */
+  var SPOILER_RE = new RegExp([
+    'ending', 'finale', 'death', 'dies', 'dead', 'truth', 'twist', 'reveal',
+    'sacrific', 'betray', 'fate', 'identity', 'credit', 'who dies', 'what happens',
+    'final battle', 'realisation', 'realization', 'loose thread', 'the choice',
+    'the rescue', 'the turn', 'blip', 'collecting the stones', 'line everyone',
+    "'s play", 'where the five'
+  ].join('|'), 'i');
   function isSpoilerSection(s) {
     return !!(s.highlight || SPOILER_RE.test(s.h || ''));
   }
 
-  /* 把內容包進防雷罩 */
+  /* Wrap content in a spoiler shield */
   function shield(inner, label) {
     if (!prefs.spoiler) return inner;
     return '<div class="spoil"><div class="spoil-veil">' +
-      G('eye') + '<b>' + esc(label || '這段有劇透') + '</b>' +
-      '<span>點一下顯示</span></div>' +
+      G('eye') + '<b>' + esc(label || 'This section contains spoilers') + '</b>' +
+      '<span>Click to reveal</span></div>' +
       '<div class="spoil-body">' + inner + '</div></div>';
   }
 
-  /* 片長字串 → 分鐘 */
+  /* Runtime string -> minutes */
   function minutesOf(id) {
     var d = window.MCU_DETAILS && window.MCU_DETAILS[id];
     if (!d || !d.runtime) return 0;
-    var m = String(d.runtime).match(/(\d+)\s*分鐘/);
+    var m = String(d.runtime).match(/(\d+)\s*min/);
     return m ? +m[1] : 0;
   }
   function humanHours(mins) {
     if (!mins) return '';
     var h = Math.floor(mins / 60), m = mins % 60;
-    return (h ? h + ' 小時' : '') + (m ? ' ' + m + ' 分' : '');
+    return (h ? h + 'h' : '') + (m ? (h ? ' ' : '') + m + 'm' : '');
   }
 
   /* ============================================================
-     首頁
+     Home view
      ============================================================ */
   function renderHome() {
     var tldr = window.MCU_TLDR.map(function (t, i) {
@@ -195,12 +202,12 @@
     var sm4 = byId['spider-man-4'];
 
     var nav = [
-      { v: 'timeline',   g: 'list',     t: '完整時間線', d: '從遠古的汎達到 2027 年的《秘密戰爭》，' + T.length + ' 部作品的完整劇情，可切換上映順序與劇情年代順序。' },
-      { v: 'phases',     g: 'star',     t: '六個階段',   d: '照漫威官方的「階段」與「傳奇」分類瀏覽 —— 理解 MCU 結構最快的角度。' },
-      { v: 'characters', g: 'spider',   t: '角色圖鑑',   d: C.length + ' 位角色，每一位都有自己的個人時間線 —— 用角色來理解劇情。' },
-      { v: 'concepts',   g: 'gauntlet', t: '核心概念',   d: '彈指、多元宇宙、TVA、量子領域、六顆無限寶石 —— 新手先讀這裡。' },
-      { v: 'sm4',        g: 'spider',   t: '《蜘蛛人4》檔案', d: '最新上映的一部：劇情設定、完整卡司與已知的一切。' },
-      { v: 'guide',      g: 'bulb',     t: '觀影指南',   d: '10 部主線精華清單、觀影順序比較、影集取捨與分階段建議。' }
+      { v: 'timeline',   g: 'list',     t: 'Full timeline', d: 'From ancient Wakanda to Secret Wars in 2027 — full plot detail for all ' + T.length + ' works, switchable between release order and in-story chronology.' },
+      { v: 'phases',     g: 'star',     t: 'The six phases', d: "Browse by Marvel's own Phase and Saga structure — the quickest way to understand how the MCU is built." },
+      { v: 'characters', g: 'spider',   t: 'Character index', d: C.length + ' characters, each with a personal timeline — follow the story through one person.' },
+      { v: 'concepts',   g: 'gauntlet', t: 'Core concepts', d: 'The Snap, the multiverse, the TVA, the Quantum Realm, the six Infinity Stones — start here.' },
+      { v: 'sm4',        g: 'spider',   t: 'Spider-Man 4 dossier', d: 'The most recent release: premise, full cast and everything currently known.' },
+      { v: 'guide',      g: 'bulb',     t: 'Watch guide', d: 'The 10-title spine, release vs chronological order, which series to skip, and a staged plan.' }
     ].map(function (n) {
       return '<button class="kv" data-go="' + n.v + '">' +
         '<span class="ico" style="background:linear-gradient(140deg,var(--red),var(--blue))">' + G(n.g) + '</span>' +
@@ -210,47 +217,47 @@
     return '' +
     '<section class="hero">' + window.heroWebSVG() +
       '<div class="wrap hero-in">' +
-        '<span class="kicker"><span class="dot"></span>2008–2027・六個階段・兩大傳奇</span>' +
-        '<h1>從零開始，<br>看懂<span class="hl">整個漫威電影宇宙</span></h1>' +
-        '<p class="lede">沒看過任何一部漫威作品也沒關係。這裡有全部 ' + T.length + ' 部作品的完整劇情 —— ' +
-          '電影、影集、特別節目、One-Shot 短片、捍衛者聯盟，還有《無家日》引用的舊蜘蛛人電影。' +
-          '你可以照時間線讀、照階段讀，也可以挑一個角色慢慢跟。</p>' +
+        '<span class="kicker"><span class="dot"></span>2008–2027 &middot; Six phases &middot; Two sagas</span>' +
+        '<h1>Start from zero.<br>Understand <span class="hl">the entire Marvel Cinematic Universe</span></h1>' +
+        '<p class="lede">Never seen a single Marvel film? That is fine. Every one of the ' + T.length + ' works here ' +
+          'has a full plot breakdown — films, series, specials, One-Shot shorts, the Defenders Saga, and the older ' +
+          'Spider-Man films No Way Home draws on. Read it by timeline, by phase, or follow one character through.</p>' +
         '<div class="hero-cta">' +
-          '<button class="btn btn-primary" data-go="guide">' + G('bulb') + '我是新手，該從哪看起？</button>' +
-          '<button class="btn btn-ghost" data-go="timeline">' + G('list') + '看完整時間線</button>' +
+          '<button class="btn btn-primary" data-go="guide">' + G('bulb') + 'New here — where do I start?</button>' +
+          '<button class="btn btn-ghost" data-go="timeline">' + G('list') + 'Browse the full timeline</button>' +
         '</div>' +
         '<div class="hero-stats">' +
-          '<div><b>' + T.length + '</b><span>部作品完整解說</span></div>' +
-          '<div><b>' + C.length + '</b><span>位角色可點閱</span></div>' +
-          '<div><b>6</b><span>個階段兩大傳奇</span></div>' +
-          '<div><b>6</b><span>顆無限寶石去向</span></div>' +
+          '<div><b>' + T.length + '</b><span>works explained</span></div>' +
+          '<div><b>' + C.length + '</b><span>characters indexed</span></div>' +
+          '<div><b>6</b><span>phases, two sagas</span></div>' +
+          '<div><b>6</b><span>Infinity Stones tracked</span></div>' +
         '</div>' +
       '</div>' +
     '</section>' +
 
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">TL;DR</span>' +
-      '<h2>三句話回答核心問題</h2></div>' +
+      '<h2>The short version</h2></div>' +
       '<div class="tldr">' + tldr + '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">最短路徑</span>' +
-      '<h2>時間有限？這十部就是整個宇宙的骨架</h2>' +
-      '<p class="sub">' + esc(planMetaText()) + '。點任一部可以直接看該片的完整劇情。</p></div>' +
+      '<div class="sec-head"><span class="eyebrow">Shortest path</span>' +
+      '<h2>Short on time? These ten are the spine</h2>' +
+      '<p class="sub">' + esc(planMetaText()) + '. Click any title for its full plot breakdown.</p></div>' +
       '<div class="path">' + path + '</div>' +
       '<div class="tip">' + G('bulb') + '<div>' + esc(window.MCU_PLAN_A.tip) + '</div></div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Key Findings</span>' +
-      '<h2>重點速覽</h2></div>' +
+      '<h2>Key things to know</h2></div>' +
       '<div class="findings">' + finds + '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Spotlight</span>' +
-      '<h2>《蜘蛛人4：Brand New Day》</h2></div>' +
+      '<h2>Spider-Man: Brand New Day</h2></div>' +
       '<button class="card" data-entry="spider-man-4" style="max-width:none">' +
         '<div class="card-art" style="aspect-ratio:3/1">' + P(sm4) +
           '<div class="veil"></div>' +
@@ -259,20 +266,20 @@
         '</div>' +
         '<div class="card-body"><span class="tagline">' + esc(sm4.tagline) + '</span>' +
         '<p class="sum">' + esc(sm4.summary) + '</p>' +
-        '<div class="card-foot"><span>Phase 6 ・ 2 小時 25 分 ・ PG-13</span>' +
-        '<span class="more">看完整檔案' + G('chevron') + '</span></div></div>' +
+        '<div class="card-foot"><span>Phase 6 · 2h 25m · PG-13</span>' +
+        '<span class="more">Open the dossier' + G('chevron') + '</span></div></div>' +
       '</button>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">怎麼用這個網站</span>' +
-      '<h2>五種入口，挑一個開始</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">How to use this site</span>' +
+      '<h2>Six ways in — pick one</h2></div>' +
       '<div class="grid grid-2">' + nav + '</div>' +
     '</div></section>';
   }
 
   /* ============================================================
-     時間線
+     Timeline view
      ============================================================ */
   function filtered() {
     return T.filter(function (e) {
@@ -307,7 +314,7 @@
     var list = filtered(), html = '';
 
     if (!list.length) {
-      html = '<div class="empty">' + G('search') + '<p>沒有符合篩選條件的作品，試著放寬篩選。</p></div>';
+      html = '<div class="empty">' + G('search') + '<p>No works match these filters. Try loosening them.</p></div>';
     } else if (state.order === 'release') {
       SAGAS.forEach(function (s) {
         var items = list.filter(function (e) { return e.saga === s.id; })
@@ -338,35 +345,35 @@
     return '' +
     '<section class="section" style="padding-bottom:26px"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Timeline</span>' +
-      '<h2>完整時間線</h2>' +
-      '<p class="sub">每一部都可以點開，裡面是完整劇情、關鍵轉折與它跟《蜘蛛人4》的關聯。' +
-      '「上映順序」是給新手的建議看法；「劇情年代」則按故事發生的時間排列。</p></div>' +
+      '<h2>The full timeline</h2>' +
+      '<p class="sub">Open any title for its full plot, the turns that matter, and how it connects to everything else. ' +
+      'Release order is the recommended first watch; chronological order arranges them by when the story happens.</p></div>' +
     '</div></section>' +
 
     '<div class="tl-bar"><div class="wrap tl-bar-in">' +
       '<div class="seg">' +
-        '<button data-order="release"' + (state.order === 'release' ? ' class="on"' : '') + '>上映順序</button>' +
-        '<button data-order="story"' + (state.order === 'story' ? ' class="on"' : '') + '>劇情年代</button>' +
+        '<button data-order="release"' + (state.order === 'release' ? ' class="on"' : '') + '>Release order</button>' +
+        '<button data-order="story"' + (state.order === 'story' ? ' class="on"' : '') + '>Chronological</button>' +
       '</div>' +
       '<div class="chips">' + chips +
-        '<button class="chip' + (state.mustOnly ? ' on' : '') + '" data-must="1">' + G('check') + '只看必看／建議</button>' +
-        '<button class="chip' + (state.unwatchedOnly ? ' on' : '') + '" data-unwatched="1">' + G('eye') + '只看沒看過的</button>' +
+        '<button class="chip' + (state.mustOnly ? ' on' : '') + '" data-must="1">' + G('check') + 'Essential &amp; recommended</button>' +
+        '<button class="chip' + (state.unwatchedOnly ? ' on' : '') + '" data-unwatched="1">' + G('eye') + 'Unwatched only</button>' +
       '</div>' +
-      '<span class="tl-count">' + list.length + ' / ' + T.length + ' 部'
-        + (watchedCount() ? ' ・ 已看 ' + watchedCount() : '') + '</span>' +
+      '<span class="tl-count">' + list.length + ' / ' + T.length
+        + (watchedCount() ? ' · ' + watchedCount() + ' watched' : '') + '</span>' +
     '</div></div>' +
 
     '<div class="wrap"><div class="tl">' + html + '</div></div>';
   }
 
   /* ============================================================
-     角色
+     Characters view
      ============================================================ */
   function renderCharacters() {
     var groups = window.MCU_CHAR_GROUPS;
     var list = state.chGroup === 'all' ? C : C.filter(function (c) { return c.group === state.chGroup; });
 
-    var chips = '<button class="chip' + (state.chGroup === 'all' ? ' on' : '') + '" data-chg="all">全部 ' + C.length + '</button>' +
+    var chips = '<button class="chip' + (state.chGroup === 'all' ? ' on' : '') + '" data-chg="all">All ' + C.length + '</button>' +
       groups.map(function (g) {
         var n = C.filter(function (c) { return c.group === g.id; }).length;
         return '<button class="chip' + (state.chGroup === g.id ? ' on' : '') + '" data-chg="' + g.id + '">' +
@@ -375,9 +382,9 @@
 
     var cards = list.map(function (c) {
       var badges = '';
-      if (c.isNew) badges += '<span class="badge b-new">蜘蛛人4 新角色</span>';
-      if (c.unconfirmed) badges += '<span class="badge b-unconf">未經證實</span>';
-      if (c.warning) badges += '<span class="badge b-warn">資訊已更新</span>';
+      if (c.isNew) badges += '<span class="badge b-new">New in Spider-Man 4</span>';
+      if (c.unconfirmed) badges += '<span class="badge b-unconf">Unconfirmed</span>';
+      if (c.warning) badges += '<span class="badge b-warn">Superseded info</span>';
       return '<button class="ch-card" data-char="' + c.id + '">' +
         '<div class="ch-top">' + A(c) +
           '<div class="ch-name"><b>' + esc(c.name) + '</b><i>' + esc(c.en) + '</i></div></div>' +
@@ -390,16 +397,16 @@
     return '' +
     '<section class="section" style="padding-bottom:26px"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Characters</span>' +
-      '<h2>角色圖鑑</h2>' +
-      '<p class="sub">除了時間線，你也可以用角色來理解劇情。點任一位角色，會看到他／她的' +
-      '<b>個人時間線</b> —— 在哪一部做了什麼、發生了什麼事，以及跟《蜘蛛人4》的關係。</p></div>' +
+      '<h2>Character index</h2>' +
+      '<p class="sub">Instead of the timeline, you can follow the story through a person. Open any character to see their ' +
+      '<b>personal timeline</b> — what they do in each work, what happens to them, and where their arc ends up.</p></div>' +
       '<div class="chips" style="margin-bottom:26px">' + chips + '</div>' +
       '<div class="grid grid-4">' + cards + '</div>' +
     '</div></section>';
   }
 
   /* ============================================================
-     核心概念
+     Concepts view
      ============================================================ */
   function renderConcepts() {
     var terms = K.map(function (k) {
@@ -427,30 +434,30 @@
 
     return '' +
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">新手先讀這個</span>' +
-      '<h2>核心概念關鍵詞</h2>' +
-      '<p class="sub">這 ' + K.length + ' 個名詞是看懂漫威的最低門檻。點任一項可以看到它出現在哪些作品裡。</p></div>' +
+      '<div class="sec-head"><span class="eyebrow">Read this first</span>' +
+      '<h2>Core concepts</h2>' +
+      '<p class="sub">These ' + K.length + ' terms are the minimum needed to follow the MCU. Open any one to see which works it appears in.</p></div>' +
       '<div class="grid grid-2">' + terms + '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Infinity Stones</span>' +
-      '<h2>六顆無限寶石</h2>' +
-      '<p class="sub">六顆源自宇宙大爆炸的超強寶石。集齊六顆可為所欲為 —— 這就是薩諾斯做到的事。</p></div>' +
+      '<h2>The six Infinity Stones</h2>' +
+      '<p class="sub">Six gems formed as the universe was born. Together they let their bearer do anything — which is exactly what Thanos does.</p></div>' +
       '<div class="stones">' + stones + '</div>' +
       '<div class="tip" style="margin-top:22px">' + G('info') +
-        '<div><b>六顆寶石的最終命運：</b>' + esc(window.MCU_STONES_FATE) + '</div></div>' +
+        '<div><b>What ultimately happens to them: </b>' + esc(window.MCU_STONES_FATE) + '</div></div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Factions</span>' +
-      '<h2>組織與勢力</h2></div>' +
+      '<h2>Factions and organisations</h2></div>' +
       '<div class="factions">' + facs + '</div>' +
     '</div></section>';
   }
 
   /* ============================================================
-     階段瀏覽
+     Phases view
      ============================================================ */
   function renderPhases() {
     var html = window.MCU_SAGAS.map(function (saga) {
@@ -471,14 +478,14 @@
             '</div>' +
             '<div class="card-body"><span class="tagline">' + esc(e.tagline) + '</span>' +
             '<p class="sum">' + esc(e.summary) + '</p>' +
-            '<div class="card-foot"><span>' + esc(e.type === 'film' ? '電影' : e.type === 'series' ? '影集' : e.type === 'special' ? '特別節目' : '短片') +
-            '</span><span class="more">看劇情' + G('chevron') + '</span></div></div>' +
+            '<div class="card-foot"><span>' + esc(e.type === 'film' ? 'Film' : e.type === 'series' ? 'Series' : e.type === 'special' ? 'Special' : 'Short') +
+            '</span><span class="more">Read more' + G('chevron') + '</span></div></div>' +
             '</button>';
         }).join('');
 
         return '<div class="phase-block">' +
           '<div class="phase-head">' +
-            '<div><b>' + esc(p.label) + '</b><span>' + esc(p.years) + ' ・ ' + items.length + ' 部</span></div>' +
+            '<div><b>' + esc(p.label) + '</b><span>' + esc(p.years) + ' · ' + items.length + ' titles</span></div>' +
           '</div>' +
           '<p class="phase-desc">' + esc(p.desc) + '</p>' +
           '<div class="grid grid-3">' + cards + '</div>' +
@@ -495,14 +502,14 @@
     }).join('');
 
     return '<section class="section" style="padding-bottom:0"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">Phases</span><h2>六個階段、兩大傳奇</h2>' +
-      '<p class="sub">漫威把作品分成「階段（Phase）」，再把階段歸進「傳奇（Saga）」。' +
-      '這是官方的分類方式，也是理解 MCU 結構最快的角度。</p></div>' +
+      '<div class="sec-head"><span class="eyebrow">Phases</span><h2>Six phases, two sagas</h2>' +
+      '<p class="sub">Marvel groups its releases into Phases, and Phases into Sagas. ' +
+      'It is the official structure, and the fastest way to see how the whole thing fits together.</p></div>' +
     '</div></section>' + html;
   }
 
   /* ============================================================
-     蜘蛛人4 檔案
+     Spider-Man 4 dossier
      ============================================================ */
   function renderSM4() {
     var S = window.MCU_SM4, e = byId['spider-man-4'];
@@ -523,7 +530,7 @@
       return '<button class="cast-row' + (c.key ? ' key' : '') + '"' +
         (ch ? ' data-char="' + ch.id + '"' : ' disabled style="cursor:default"') + '>' +
         av + '<span><div class="actor">' + esc(c.actor) + '</div>' +
-        '<div class="role">' + esc(c.role) + (c.unconfirmed ? ' <span class="badge b-unconf">未證實</span>' : '') + '</div>' +
+        '<div class="role">' + esc(c.role) + (c.unconfirmed ? ' <span class="badge b-unconf">Unconfirmed</span>' : '') + '</div>' +
         (c.note ? '<div class="note">' + esc(c.note) + '</div>' : '') + '</span></button>';
     }).join('');
 
@@ -536,42 +543,42 @@
           '<h1>' + esc(S.title) + '</h1>' +
           '<div class="en">' + esc(S.fullTitle) + '</div>' +
           '<div class="zh">' + esc(S.zhSub) + '</div>' +
-          '<div class="sm4-date">' + G('star') + '2026 年 7 月 31 日北美上映</div>' +
+          '<div class="sm4-date">' + G('star') + 'Released 31 July 2026</div>' +
         '</div>' +
       '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">劇情設定</span><h2>官方大綱與已知劇情</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">Premise</span><h2>Official synopsis and what is known</h2></div>' +
       plot +
       '<div class="tip" style="margin-top:8px">' + G('info') +
-        '<div>本片的直接前提來自《無家日》的結局。<button class="arc-link" data-entry="no-way-home">' +
-        '去看《無家日》完整劇情' + G('chevron') + '</button></div></div>' +
+        '<div>The premise follows directly from the ending of No Way Home. <button class="arc-link" data-entry="no-way-home">' +
+        'Read the full No Way Home breakdown' + G('chevron') + '</button></div></div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">製作資訊</span><h2>基本資料</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">Production</span><h2>The facts</h2></div>' +
       '<div class="facts">' + facts + '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">Cast</span><h2>確認演員與角色</h2>' +
-      '<p class="sub">點有連結的角色可以看他們的完整背景與個人時間線。</p></div>' +
+      '<div class="sec-head"><span class="eyebrow">Cast</span><h2>Confirmed cast</h2>' +
+      '<p class="sub">Linked names open that character\'s full background and personal timeline.</p></div>' +
       '<div class="cast">' + cast + '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">往後看</span><h2>與《末日之戰》的關聯</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">Looking ahead</span><h2>How it connects to Doomsday</h2></div>' +
       '<p style="color:var(--text-2);max-width:70ch">' + esc(S.doomsday) + '</p>' +
       '<div class="rel" style="margin-top:20px">' +
-        '<button data-entry="doomsday">' + G('doom') + '《復仇者聯盟：末日之戰》(2026/12/18)</button>' +
-        '<button data-entry="secret-wars">' + G('star') + '《秘密戰爭》(2027)</button>' +
+        '<button data-entry="doomsday">' + G('doom') + 'Avengers: Doomsday (18 Dec 2026)</button>' +
+        '<button data-entry="secret-wars">' + G('star') + 'Avengers: Secret Wars (2027)</button>' +
       '</div>' +
     '</div></section>';
   }
 
   /* ============================================================
-     觀影指南
+     Watch guide view
      ============================================================ */
   function renderGuide() {
     var A_ = window.MCU_PLAN_A, B = window.MCU_PLAN_B;
@@ -581,9 +588,9 @@
       var mins = e.type === 'film' ? minutesOf(e.id) : 0;
       return '<li><button class="plan-item' + (isWatched(e.id) ? ' watched' : '') + '" data-entry="' + e.id + '">' +
         '<span class="n"></span><span><b>' + esc(e.title) +
-        (mins ? ' <span class="pm">' + mins + ' 分</span>' : '') + '</b>' +
+        (mins ? ' <span class="pm">' + mins + ' min</span>' : '') + '</b>' +
         '<span>' + esc(it.why || e.en) + '</span></span>' +
-        (isWatched(e.id) ? '<span class="pdone">' + G('check') + '已看</span>' : '') +
+        (isWatched(e.id) ? '<span class="pdone">' + G('check') + 'Watched</span>' : '') +
         '<span class="arw">' + G('chevron') + '</span></button></li>';
     }).join('');
 
@@ -617,12 +624,12 @@
     return '' +
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">Recommendations</span>' +
-      '<h2>給新手的實用觀影建議</h2></div>' +
+      '<h2>How to actually watch it</h2></div>' +
 
       '<div class="plan">' +
         '<div class="plan-head"><h3>' + esc(A_.title) + '</h3>' +
         '<span class="plan-meta">' + esc(planMeta) + '</span>' +
-        (planDone ? '<span class="plan-done">' + G('check') + '已完成 ' + planDone + ' / ' + A_.items.length + '</span>' : '') +
+        (planDone ? '<span class="plan-done">' + G('check') + planDone + ' of ' + A_.items.length + ' done</span>' : '') +
         '</div>' +
         '<p>' + esc(A_.intro) + '</p>' +
         '<ol class="plan-list">' + items + '</ol>' +
@@ -631,31 +638,31 @@
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">方案 B</span><h2>' + esc(B.title) + '</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">Route B</span><h2>' + esc(B.title) + '</h2></div>' +
       '<div class="cmp">' + cmp + '</div>' +
-      '<div class="tip" style="margin-top:20px">' + G('check') + '<div><b>結論：</b>' + esc(B.conclusion) + '</div></div>' +
+      '<div class="tip" style="margin-top:20px">' + G('check') + '<div><b>Bottom line: </b>' + esc(B.conclusion) + '</div></div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">影集取捨</span><h2>哪些影集要看、哪些可以跳過</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">The series</span><h2>Which shows to watch and which to skip</h2></div>' +
       '<div class="tiers">' + tiers + '</div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">Action Plan</span><h2>分階段行動建議</h2></div>' +
+      '<div class="sec-head"><span class="eyebrow">Action Plan</span><h2>A staged plan</h2></div>' +
       '<div class="steps">' + steps + '</div>' +
       '<div class="tip" style="margin-top:20px">' + G('info') + '<div>' + esc(window.MCU_STEPS_NOTE) + '</div></div>' +
     '</div></section>' +
 
     '<section class="section"><div class="wrap">' +
-      '<div class="sec-head"><span class="eyebrow">Caveats</span><h2>注意事項與資訊可信度</h2>' +
-      '<p class="sub">這一節很重要 —— 網路上有很多已經過時或未經證實的漫威資訊。</p></div>' +
+      '<div class="sec-head"><span class="eyebrow">Caveats</span><h2>Caveats and reliability</h2>' +
+      '<p class="sub">Worth reading — a lot of Marvel information online is out of date or was never confirmed.</p></div>' +
       '<div class="steps">' + cavs + '</div>' +
     '</div></section>';
   }
 
   /* ============================================================
-     詳情彈窗
+     Detail modal
      ============================================================ */
   var modal, sheet;
 
@@ -675,7 +682,7 @@
     if (/^(e|c|k)\//.test(h)) go(state.base || 'home', true);
   }
 
-  /* 依目前排序找出前一部／後一部 */
+  /* Previous / next work in the active sort order */
   function neighbors(id) {
     var list = T.slice().sort(function (a, b) {
       return state.order === 'story'
@@ -699,27 +706,27 @@
       return isSpoilerSection(s) ? shield(blk, s.h) : blk;
     }).join('');
 
-    /* 看之前需要知道什麼 */
+    /* Prerequisites */
     var prereqBlk = d.prereq
       ? '<div class="prereq">' + G('bulb') +
-        '<div><b>看之前需要知道什麼</b><p>' + esc(d.prereq) + '</p></div></div>'
+        '<div><b>What you need to know first</b><p>' + esc(d.prereq) + '</p></div></div>'
       : '';
 
-    /* 規格列 */
+    /* Spec row */
     var specs = [];
-    if (d.runtime) specs.push({ k: '片長', v: d.runtime });
-    if (d.rating) specs.push({ k: '分級', v: d.rating });
-    if (e.director) specs.push({ k: '導演', v: e.director });
-    if (e.episodes && !d.runtime) specs.push({ k: '集數', v: e.episodes });
+    if (d.runtime) specs.push({ k: 'Runtime', v: d.runtime });
+    if (d.rating) specs.push({ k: 'Rating', v: d.rating });
+    if (e.director) specs.push({ k: 'Director', v: e.director });
+    if (e.episodes && !d.runtime) specs.push({ k: 'Episodes', v: e.episodes });
     var specBlk = specs.length
       ? '<div class="specs">' + specs.map(function (s) {
           return '<div><span>' + esc(s.k) + '</span><b>' + esc(s.v) + '</b></div>';
         }).join('') + '</div>'
       : '';
 
-    /* 主要卡司 */
+    /* Main cast */
     var castBlk = (d.cast && d.cast.length)
-      ? '<div class="blk"><h4>主要卡司</h4><div class="castlist">' +
+      ? '<div class="blk"><h4>Main cast</h4><div class="castlist">' +
         d.cast.map(function (c) {
           var ch = c.id && chById[c.id];
           return '<' + (ch ? 'button' : 'div') + ' class="castchip"' + (ch ? ' data-char="' + ch.id + '"' : '') + '>' +
@@ -729,39 +736,39 @@
         }).join('') + '</div></div>'
       : '';
 
-    /* 彩蛋 */
+    /* Credit scenes */
     var creditsBlk = '';
     if (d.credits && d.credits.length) {
-      var inner = '<div class="blk"><h4>片中／片尾彩蛋</h4>' +
+      var inner = '<div class="blk"><h4>Credit scenes</h4>' +
         d.credits.map(function (c) {
           return '<div class="credit' + (c.key ? ' key' : '') + '">' +
-            '<span class="ctag">' + (c.type === 'mid' ? '片中彩蛋' : '片尾彩蛋') + '</span>' +
+            '<span class="ctag">' + (c.type === 'mid' ? 'Mid-credits' : 'Post-credits') + '</span>' +
             '<p>' + esc(c.text) + '</p></div>';
         }).join('') +
         (d.warning ? '<div class="credit-warn">' + G('warn') + esc(d.warning) + '</div>' : '') +
         '</div>';
-      creditsBlk = shield(inner, '彩蛋內容');
+      creditsBlk = shield(inner, 'Credit scenes');
     }
 
-    /* 名台詞 */
+    /* Memorable quotes */
     var quoteBlk = (d.quotes && d.quotes.length)
-      ? '<div class="blk"><h4>名台詞</h4>' +
+      ? '<div class="blk"><h4>Memorable lines</h4>' +
         d.quotes.map(function (q) { return '<blockquote class="quote">' + esc(q) + '</blockquote>'; }).join('') +
         '</div>'
       : '';
 
-    /* 誰死了 */
+    /* Deaths */
     var deathBlk = (d.deaths && d.deaths.length)
-      ? shield('<div class="blk"><h4>本片中的死亡</h4><div class="deaths">' +
+      ? shield('<div class="blk"><h4>Who dies</h4><div class="deaths">' +
           d.deaths.map(function (x) { return '<span class="death">' + esc(x) + '</span>'; }).join('') +
-          '</div></div>', '角色死亡名單')
+          '</div></div>', 'Character deaths')
       : '';
 
     var noteBlk = d.note ? '<div class="tip">' + G('info') + '<div>' + esc(d.note) + '</div></div>' : '';
 
     var stones = '';
     if (e.stones && e.stones.length) {
-      stones = '<div class="blk"><h4>本片出現的無限寶石</h4><div class="stone-pills">' +
+      stones = '<div class="blk"><h4>Infinity Stones in this work</h4><div class="stone-pills">' +
         e.stones.map(function (sid) {
           var s = window.MCU_STONES.filter(function (x) { return x.id === sid; })[0];
           return s ? '<span class="stone-pill"><span class="dot" style="background:' + s.color + '"></span>' +
@@ -771,7 +778,7 @@
 
     var chars = C.filter(function (c) { return (c.appears || []).indexOf(id) >= 0; });
     var charBlk = chars.length
-      ? '<div class="blk"><h4>本片登場角色（' + chars.length + '）</h4><div class="rel">' +
+      ? '<div class="blk"><h4>Characters appearing (' + chars.length + ')</h4><div class="rel">' +
         chars.map(function (c) {
           return '<button data-char="' + c.id + '">' + G(c.glyph) + esc(c.name) + '</button>';
         }).join('') + '</div></div>'
@@ -779,7 +786,7 @@
 
     var rel = (e.related || []).filter(function (r) { return byId[r]; });
     var relBlk = rel.length
-      ? '<div class="blk"><h4>相關作品</h4><div class="rel">' +
+      ? '<div class="blk"><h4>Related works</h4><div class="rel">' +
         rel.map(function (r) {
           var x = byId[r];
           return '<button data-entry="' + r + '">' + G(x.glyph) + esc(x.title) + '</button>';
@@ -789,18 +796,18 @@
     var nb = neighbors(id);
     var navBlk = '<div class="sheet-nav">' +
       (nb.prev ? '<button class="snav" data-entry="' + nb.prev.id + '">' + G('chevron') +
-        '<span><i>上一部</i><b>' + esc(nb.prev.title) + '</b></span></button>' : '<span></span>') +
+        '<span><i>Previous</i><b>' + esc(nb.prev.title) + '</b></span></button>' : '<span></span>') +
       (nb.next ? '<button class="snav next" data-entry="' + nb.next.id + '">' +
-        '<span><i>下一部</i><b>' + esc(nb.next.title) + '</b></span>' + G('chevron') + '</button>' : '<span></span>') +
+        '<span><i>Next</i><b>' + esc(nb.next.title) + '</b></span>' + G('chevron') + '</button>' : '<span></span>') +
       '</div>';
 
     var w = isWatched(id);
     var watchBtn = '<button class="watchbtn' + (w ? ' on' : '') + '" data-watch="' + id + '">' +
-      G(w ? 'check' : 'eye') + (w ? '已看過' : '標記為已看過') + '</button>';
+      G(w ? 'check' : 'eye') + (w ? 'Watched' : 'Mark as watched') + '</button>';
 
     openSheet('' +
       '<div class="sheet-art">' + P(e, { tall: true }) + '<div class="veil"></div>' +
-        '<button class="sheet-close" aria-label="關閉">' + G('close') + '</button>' +
+        '<button class="sheet-close" aria-label="Close">' + G('close') + '</button>' +
         '<div class="sheet-hd"><div class="meta">' +
           '<span class="badge b-opt">' + (e.date || e.year) + '</span>' +
           relBadge(e) + typeBadges(e) + starStr(e.stars) +
@@ -812,11 +819,11 @@
         '<div class="sheet-toolbar">' + watchBtn +
           '<button class="spoilbtn' + (prefs.spoiler ? ' on' : '') + '" data-spoiler="1">' +
           G(prefs.spoiler ? 'eye' : 'check') +
-          (prefs.spoiler ? '防雷模式：開' : '防雷模式：關') + '</button>' +
+          (prefs.spoiler ? 'Spoiler shield: on' : 'Spoiler shield: off') + '</button>' +
         '</div>' +
         '<div class="sheet-tagline">' + esc(e.tagline) + '</div>' +
         specBlk + prereqBlk +
-        '<div class="blk"><h4>一句話劇情</h4><p>' + esc(e.summary) + '</p></div>' +
+        '<div class="blk"><h4>In one line</h4><p>' + esc(e.summary) + '</p></div>' +
         secs + quoteBlk + creditsBlk + deathBlk + noteBlk +
         stones + castBlk + charBlk + relBlk + navBlk +
       '</div>');
@@ -826,13 +833,13 @@
     var c = chById[id]; if (!c) return;
 
     var facts = (c.facts && c.facts.length)
-      ? '<div class="blk"><h4>關鍵重點</h4><ul class="facts-list">' +
+      ? '<div class="blk"><h4>Key points</h4><ul class="facts-list">' +
         c.facts.map(function (f) { return '<li>' + G('check') + '<span>' + esc(f) + '</span></li>'; }).join('') +
         '</ul></div>'
       : '';
 
     var arc = (c.arc && c.arc.length)
-      ? '<div class="blk"><h4>' + esc(c.name.split(' /')[0]) + '的個人時間線</h4><div class="arc">' +
+      ? '<div class="blk"><h4>' + esc(c.name.split(' /')[0]) + ' — personal timeline</h4><div class="arc">' +
         c.arc.map(function (a) {
           var e = byId[a.entry];
           var cls = a.highlight ? ' hl' : a.warning ? ' warn' : '';
@@ -845,16 +852,16 @@
       : '';
 
     var badges = '';
-    if (c.isNew) badges += '<span class="badge b-new">蜘蛛人4 新角色</span>';
-    if (c.unconfirmed) badges += '<span class="badge b-unconf">未經證實</span>';
-    if (c.warning) badges += '<span class="badge b-warn">資訊已更新</span>';
+    if (c.isNew) badges += '<span class="badge b-new">New in Spider-Man 4</span>';
+    if (c.unconfirmed) badges += '<span class="badge b-unconf">Unconfirmed</span>';
+    if (c.warning) badges += '<span class="badge b-warn">Superseded info</span>';
 
     var grp = window.MCU_CHAR_GROUPS.filter(function (g) { return g.id === c.group; })[0];
-    var roleZh = { hero: '英雄', villain: '反派', ally: '盟友／配角', antihero: '反英雄' }[c.role] || '';
+    var roleZh = { hero: 'Hero', villain: 'Villain', ally: 'Ally', antihero: 'Antihero' }[c.role] || '';
 
     openSheet('' +
       '<div class="sheet-art">' + P({ accent: c.accent, glyph: c.glyph }, { tall: true }) + '<div class="veil"></div>' +
-        '<button class="sheet-close" aria-label="關閉">' + G('close') + '</button>' +
+        '<button class="sheet-close" aria-label="Close">' + G('close') + '</button>' +
         '<div class="sheet-hd"><div class="meta">' +
           (grp ? '<span class="badge b-opt">' + esc(grp.label) + '</span>' : '') +
           (roleZh ? '<span class="badge b-opt role-' + c.role + '">' + roleZh + '</span>' : '') +
@@ -864,7 +871,7 @@
       '</div>' +
       '<div class="sheet-bd">' +
         '<div class="sheet-tagline">' + esc(c.tagline) + '</div>' +
-        '<div class="blk"><h4>角色背景</h4><p>' + esc(c.bio) + '</p></div>' +
+        '<div class="blk"><h4>Background</h4><p>' + esc(c.bio) + '</p></div>' +
         facts + arc +
       '</div>');
   }
@@ -875,14 +882,14 @@
 
     openSheet('' +
       '<div class="sheet-art">' + P({ accent: k.accent, glyph: k.glyph }, { tall: true }) + '<div class="veil"></div>' +
-        '<button class="sheet-close" aria-label="關閉">' + G('close') + '</button>' +
-        '<div class="sheet-hd"><div class="meta"><span class="badge b-opt">核心概念</span></div>' +
+        '<button class="sheet-close" aria-label="Close">' + G('close') + '</button>' +
+        '<div class="sheet-hd"><div class="meta"><span class="badge b-opt">Core concept</span></div>' +
         '<h2>' + esc(k.term) + '</h2><div class="en">' + esc(k.en) + '</div></div>' +
       '</div>' +
       '<div class="sheet-bd">' +
-        '<div class="blk"><h4>解釋</h4><p>' + esc(k.def) + '</p></div>' +
-        (k.note ? '<div class="blk hl"><h4>為什麼重要</h4><p>' + esc(k.note) + '</p></div>' : '') +
-        (rel.length ? '<div class="blk"><h4>出現在這些作品</h4><div class="rel">' +
+        '<div class="blk"><h4>Definition</h4><p>' + esc(k.def) + '</p></div>' +
+        (k.note ? '<div class="blk hl"><h4>Why it matters</h4><p>' + esc(k.note) + '</p></div>' : '') +
+        (rel.length ? '<div class="blk"><h4>Appears in</h4><div class="rel">' +
           rel.map(function (r) {
             var x = byId[r];
             return '<button data-entry="' + r + '">' + G(x.glyph) + esc(x.title) + '</button>';
@@ -891,12 +898,12 @@
   }
 
   /* ============================================================
-     搜尋
+     Search
      ============================================================ */
   var searchIdx = [];
   T.forEach(function (e) {
     searchIdx.push({
-      t: 'entry', id: e.id, kind: '作品',
+      t: 'entry', id: e.id, kind: 'Works',
       name: e.title, sub: e.en + ' ・ ' + (e.date || e.year),
       glyph: e.glyph, accent: e.accent,
       hay: (e.title + ' ' + e.en + ' ' + e.tagline + ' ' + e.summary + ' ' + e.year).toLowerCase()
@@ -904,7 +911,7 @@
   });
   C.forEach(function (c) {
     searchIdx.push({
-      t: 'char', id: c.id, kind: '角色',
+      t: 'char', id: c.id, kind: 'Characters',
       name: c.name, sub: c.en + ' ・ ' + c.actor,
       glyph: c.glyph, accent: c.accent,
       hay: (c.name + ' ' + c.en + ' ' + c.actor + ' ' + c.tagline + ' ' + c.bio).toLowerCase()
@@ -912,7 +919,7 @@
   });
   K.forEach(function (k) {
     searchIdx.push({
-      t: 'key', id: k.id, kind: '概念',
+      t: 'key', id: k.id, kind: 'Concepts',
       name: k.term, sub: k.en,
       glyph: k.glyph, accent: k.accent,
       hay: (k.term + ' ' + k.en + ' ' + k.def).toLowerCase()
@@ -926,7 +933,7 @@
 
     var hits = searchIdx.filter(function (x) { return x.hay.indexOf(q) >= 0; }).slice(0, 24);
     if (!hits.length) {
-      box.innerHTML = '<div class="res-empty">找不到「' + esc(q) + '」相關內容</div>';
+      box.innerHTML = '<div class="res-empty">Nothing found for &ldquo;' + esc(q) + '&rdquo;</div>';
       box.classList.add('open'); return;
     }
 
@@ -942,22 +949,22 @@
   }
 
   /* ============================================================
-     路由
+     Router
      ============================================================ */
   var VIEWS = {
-    home:       { render: renderHome,       title: '首頁' },
-    timeline:   { render: renderTimeline,   title: '完整時間線' },
-    phases:     { render: renderPhases,     title: '六個階段' },
-    characters: { render: renderCharacters, title: '角色圖鑑' },
-    concepts:   { render: renderConcepts,   title: '核心概念' },
-    sm4:        { render: renderSM4,        title: '蜘蛛人4 檔案' },
-    guide:      { render: renderGuide,      title: '觀影指南' }
+    home:       { render: renderHome,       title: 'Home' },
+    timeline:   { render: renderTimeline,   title: 'Timeline' },
+    phases:     { render: renderPhases,     title: 'Phases' },
+    characters: { render: renderCharacters, title: 'Characters' },
+    concepts:   { render: renderConcepts,   title: 'Concepts' },
+    sm4:        { render: renderSM4,        title: 'Spider-Man 4' },
+    guide:      { render: renderGuide,      title: 'Watch Guide' }
   };
 
   function paint(view) {
     var v = VIEWS[view] || VIEWS.home;
     $('#app').innerHTML = v.render();
-    document.title = v.title + ' ｜ MCU 完全指南';
+    document.title = v.title + ' | The Complete MCU Guide';
     $$('.nav a').forEach(function (a) {
       a.classList.toggle('on', a.getAttribute('data-go') === view);
     });
@@ -998,21 +1005,21 @@
   }
 
   /* ============================================================
-     事件
+     Event handling
      ============================================================ */
   function bind() {
     document.addEventListener('click', function (ev) {
       var t = ev.target;
 
-      /* 關閉彈窗 */
+      /* Close the modal */
       if (t.closest('.sheet-close')) { closeSheet(); return; }
       if (t === modal) { closeSheet(); return; }
 
-      /* 揭開防雷罩 */
+      /* Reveal a spoiler shield */
       var veil = t.closest('.spoil-veil');
       if (veil) { veil.parentElement.classList.add('open'); return; }
 
-      /* 標記已看過（卡片與彈窗都可用）*/
+      /* Toggle watched (works on cards and in the modal) */
       var wBtn = t.closest('[data-watch]');
       if (wBtn) {
         ev.preventDefault(); ev.stopPropagation();
@@ -1021,10 +1028,10 @@
         var nowOn = isWatched(wid);
         wBtn.classList.toggle('on', nowOn);
         if (wBtn.classList.contains('watchbtn')) {
-          wBtn.innerHTML = G(nowOn ? 'check' : 'eye') + (nowOn ? '已看過' : '標記為已看過');
+          wBtn.innerHTML = G(nowOn ? 'check' : 'eye') + (nowOn ? 'Watched' : 'Mark as watched');
         } else {
           wBtn.innerHTML = G(nowOn ? 'check' : 'eye');
-          wBtn.setAttribute('title', nowOn ? '已看過（點擊取消）' : '標記為已看過');
+          wBtn.setAttribute('title', nowOn ? 'Watched (click to undo)' : 'Mark as watched');
         }
         var card = wBtn.closest('.card, .tl-card, .tl-item');
         if (card) card.classList.toggle('watched', nowOn);
@@ -1032,7 +1039,7 @@
         return;
       }
 
-      /* 防雷模式開關 */
+      /* Spoiler shield toggle */
       if (t.closest('[data-spoiler]')) {
         prefs.spoiler = !prefs.spoiler;
         store.set('spoiler', prefs.spoiler);
@@ -1042,7 +1049,7 @@
         return;
       }
 
-      /* 亮／暗色主題 */
+      /* Light / dark theme */
       if (t.closest('#themeBtn')) {
         prefs.theme = prefs.theme === 'dark' ? 'light' : 'dark';
         store.set('theme', prefs.theme);
@@ -1050,13 +1057,13 @@
         return;
       }
 
-      /* 只看沒看過的 */
+      /* Unwatched-only filter */
       if (t.closest('[data-unwatched]')) {
         state.unwatchedOnly = !state.unwatchedOnly;
         paint('timeline'); return;
       }
 
-      /* 開啟詳情 */
+      /* Open a detail view */
       var eBtn = t.closest('[data-entry]');
       if (eBtn) { state.base = state.view; location.hash = '#/e/' + eBtn.getAttribute('data-entry'); closeSearch(); return; }
 
@@ -1066,11 +1073,11 @@
       var kBtn = t.closest('[data-key]');
       if (kBtn) { state.base = state.view; location.hash = '#/k/' + kBtn.getAttribute('data-key'); closeSearch(); return; }
 
-      /* 導覽 */
+      /* Navigation */
       var g = t.closest('[data-go]');
       if (g) { ev.preventDefault(); go(g.getAttribute('data-go')); $('#nav').classList.remove('open'); return; }
 
-      /* 時間線控制 */
+      /* Timeline controls */
       var o = t.closest('[data-order]');
       if (o) { state.order = o.getAttribute('data-order'); paint('timeline'); return; }
 
@@ -1084,17 +1091,17 @@
 
       if (t.closest('[data-must]')) { state.mustOnly = !state.mustOnly; paint('timeline'); return; }
 
-      /* 角色分組 */
+      /* Character grouping */
       var chg = t.closest('[data-chg]');
       if (chg) { state.chGroup = chg.getAttribute('data-chg'); paint('characters'); return; }
 
-      /* 漢堡選單 */
+      /* Mobile menu */
       if (t.closest('#burger')) { $('#nav').classList.toggle('open'); return; }
 
-      /* 回到頂端 */
+      /* Back to top */
       if (t.closest('#totop')) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
 
-      /* 點外面關搜尋 */
+      /* Click outside closes search */
       if (!t.closest('.hdr-search') && !t.closest('#results')) closeSearch();
     });
 
@@ -1120,7 +1127,7 @@
     }, { passive: true });
   }
 
-  /* ---------- 啟動 ---------- */
+  /* ---------- Boot ---------- */
   document.addEventListener('DOMContentLoaded', function () {
     modal = $('#modal'); sheet = $('#sheet');
     $('#burger').innerHTML = G('menu');

@@ -1,10 +1,11 @@
 /* ============================================================
-   MCU 補課指南 — 原創 SVG 美術系統
-   所有圖像皆為本站自繪的向量圖形，不使用任何電影劇照，
-   因此網站完全自足（離線可用、無外部請求、無版權問題）。
+   Original SVG artwork system
+   Every image is vector artwork drawn for this site. No film stills are used,
+   so the site is fully self-contained: it works offline, makes no external requests,
+   and raises no rights questions.
    ============================================================ */
 
-/* 線條式圖徽：viewBox 0 0 100 100，以 stroke 繪製 */
+/* Line-drawn emblems on a 0 0 100 100 viewBox, stroked rather than filled */
 window.MCU_GLYPHS = {
 
   spider: '<circle cx="50" cy="50" r="11"/><ellipse cx="50" cy="34" rx="7" ry="8"/><path d="M39 44 18 28 8 34M39 50 14 50 4 58M40 57 17 70 10 82M43 63 32 82 26 94M61 44 82 28 92 34M61 50 86 50 96 58M60 57 83 70 90 82M57 63 68 82 74 94"/>',
@@ -91,7 +92,7 @@ window.MCU_GLYPHS = {
 
   skip: '<path d="M22 24 52 50 22 76z"/><path d="M56 24 86 50 56 76z"/><path d="M14 24v52"/>',
 
-  /* --- 介面用圖示 --- */
+  /* --- Interface icons --- */
   search:  '<circle cx="44" cy="44" r="26"/><path d="M64 64l24 24"/>',
   close:   '<path d="M26 26 74 74M74 26 26 74"/>',
   menu:    '<path d="M16 30h68M16 50h68M16 70h68"/>',
@@ -104,7 +105,7 @@ window.MCU_GLYPHS = {
   github:  '<path d="M50 8a42 42 0 0 0-13 82c-2-1-2-6-2-8-9 2-12-4-13-7-1-2-3-5-5-6-2-1 0-2 2-2 4 0 7 5 8 7 3 4 8 3 11 2 0-3 2-6 3-7-9-1-15-6-15-15 0-4 1-8 4-11-1-2-1-6 0-9 0 0 4 0 8 4a24 24 0 0 1 12 0c4-4 8-4 8-4 1 3 1 7 0 9 3 3 4 7 4 11 0 9-6 14-15 15 2 2 3 5 3 8v12"/>'
 };
 
-/* ---------- 圖徽 SVG ---------- */
+/* ---------- Emblem SVG ---------- */
 window.glyphSVG = function (name, cls) {
   var g = window.MCU_GLYPHS[name] || window.MCU_GLYPHS.star;
   return '<svg class="glyph ' + (cls || '') + '" viewBox="0 0 100 100" aria-hidden="true" ' +
@@ -112,7 +113,7 @@ window.glyphSVG = function (name, cls) {
     g + '</svg>';
 };
 
-/* ---------- 生成海報式banner ---------- */
+/* ---------- Generated poster banner ---------- */
 var _artId = 0;
 
 window.posterSVG = function (entry, opts) {
@@ -141,18 +142,18 @@ window.posterSVG = function (entry, opts) {
     '<rect width="' + w + '" height="' + h + '" fill="url(#g' + id + ')"/>' +
     '<rect width="' + w + '" height="' + h + '" fill="url(#p' + id + ')"/>' +
     '<rect width="' + w + '" height="' + h + '" fill="url(#v' + id + ')"/>' +
-    /* 大圖徽：center 模式置中（用於窄版縮圖，避免被裁切） */
+    /* Large emblem; centre mode is used for narrow thumbnails so it is not cropped */
     '<g transform="translate(' + (opts.center ? (w / 2 - 60) : (w - 150)) + ' ' + (h / 2 - 60) + ') scale(1.2)" ' +
       'fill="none" stroke="#fff" stroke-opacity="0.5" stroke-width="3.2" ' +
       'stroke-linecap="round" stroke-linejoin="round">' + glyph + '</g>' +
-    /* 左下裝飾線 */
+    /* Decorative rules, lower left */
     '<g stroke="#fff" stroke-opacity="0.22" stroke-width="1.5">' +
       '<path d="M0 ' + (h - 40) + 'h120M0 ' + (h - 28) + 'h70M0 ' + (h - 16) + 'h180"/>' +
     '</g>' +
   '</svg>';
 };
 
-/* ---------- 角色頭像式圖形 ---------- */
+/* ---------- Character avatar ---------- */
 window.avatarSVG = function (ch) {
   var id = 'c' + (++_artId);
   var a = (ch.accent && ch.accent[0]) || '#dc2626';
@@ -174,7 +175,7 @@ window.avatarSVG = function (ch) {
   '</svg>';
 };
 
-/* ---------- 寶石圖形 ---------- */
+/* ---------- Infinity Stone rendering ---------- */
 window.stoneSVG = function (stone) {
   var id = 's' + (++_artId);
   return '' +
@@ -193,7 +194,7 @@ window.stoneSVG = function (stone) {
   '</svg>';
 };
 
-/* ---------- 首頁英雄區背景蛛網 ---------- */
+/* ---------- Hero web backdrop ---------- */
 window.heroWebSVG = function () {
   var rings = '', spokes = '', i, r, ang, x, y;
   for (i = 1; i <= 7; i++) {

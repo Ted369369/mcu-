@@ -1,121 +1,128 @@
-# MCU 完全指南｜漫威電影宇宙全解析
+# The Complete MCU Guide
 
-為**完全沒接觸過漫威**的新手做的漫威電影宇宙百科。涵蓋六個階段、兩大傳奇，從 2008 年的《鋼鐵人》到 2027 年的《秘密戰爭》。
+A newcomer's reference for the Marvel Cinematic Universe, covering six phases and two sagas — from *Iron Man* in 2008 through to *Secret Wars* in 2027.
 
-> 線上版：<https://ted369369.github.io/mcu-/>
+> Live site: <https://ted369369.github.io/mcu-/>
 
 ---
 
-## 收錄範圍
+## What it covers
 
-**87 部作品**，每一部都有完整劇情、關鍵轉折與交互連結：
+**87 works**, each with a full plot breakdown, the turns that matter, and cross-links to everything related:
 
-| 分類 | 數量 | 內容 |
+| Type | Count | Contents |
 | --- | --- | --- |
-| 電影 | 45 | Phase 1–6 全部 40 部，加上 Sony 舊蜘蛛人電影 5 部 |
-| 影集 | 32 | Disney+ 全系列，加上 Netflix 捍衛者聯盟與 Marvel TV 舊作 |
-| 特別節目 | 5 | 狼人之夜、聖誕特輯、我是格魯特、制裁者特別篇等 |
-| One-Shot 短片 | 5 | 2011–2014 隨藍光發行的一夜短片 |
+| Films | 45 | All 40 MCU films across Phases 1–6, plus the 5 Sony Spider-Man films |
+| Series | 32 | The full Disney+ run, the Netflix Defenders Saga, and the older Marvel Television shows |
+| Specials | 5 | Werewolf by Night, the Holiday Special, I Am Groot, the Punisher special |
+| One-Shots | 5 | The 2011–2014 shorts released with the Blu-rays |
 
-### 依傳奇分
+### By saga
 
-- **無限傳奇 Infinity Saga**（Phase 1–3，23 部）—— 薩諾斯與六顆無限寶石
-- **多元宇宙傳奇 Multiverse Saga**（Phase 4–6，45 部）—— 末日博士與平行宇宙
-- **Marvel One-Shots**（5 部）
-- **捍衛者聯盟 Defenders Saga**（6 部）—— 已納入 Disney+ 官方 MCU 時間軸
-- **Marvel Television 舊作**（3 項）—— 正史地位模糊，站內明確標註
-- **Sony 舊蜘蛛人電影**（5 部）—— 《無家日》引用的其他宇宙
+- **The Infinity Saga** (Phases 1–3, 23 works) — Thanos and the six Infinity Stones
+- **The Multiverse Saga** (Phases 4–6, 45 works) — Doctor Doom and the collapsing multiverse
+- **Marvel One-Shots** (5)
+- **The Defenders Saga** (6) — now on the official Disney+ MCU timeline
+- **Marvel Television** (3) — included, and clearly flagged as ambiguous canon
+- **Sony's Spider-Man films** (5) — the universes *No Way Home* draws on
 
 ---
 
-## 網站有什麼
+## The site
 
-| 頁面 | 內容 |
+| Page | Contents |
 | --- | --- |
-| **首頁** | TL;DR、重點速覽、10 部主線精華路徑、六種入口 |
-| **時間線** | 87 部作品，可切換「上映順序 / 劇情年代」，可依 8 種分類篩選 |
-| **階段** | 照漫威官方的 Phase 與 Saga 分類瀏覽，共 11 個階段區塊 |
-| **角色** | 116 位角色，每一位都有**個人時間線** |
-| **概念** | 22 個核心名詞、六顆無限寶石的來歷與最終命運、18 個組織勢力 |
-| **蜘蛛人4** | 最新上映作品的完整檔案：劇情設定、製作資訊、完整卡司 |
-| **觀影指南** | 主線精華清單、觀影順序比較、影集取捨、分階段建議、注意事項 |
+| **Home** | The short version, key things to know, the 10-title spine, six ways in |
+| **Timeline** | All 87 works, switchable between release order and in-story chronology, filterable by eight categories |
+| **Phases** | Browse by Marvel's own Phase and Saga structure — 11 blocks |
+| **Characters** | 116 characters, each with a personal timeline |
+| **Concepts** | 22 core terms, the six Infinity Stones and their fates, 18 factions |
+| **Spider-Man 4** | Full dossier on the most recent release |
+| **Watch Guide** | The essential spine, release vs chronological order, which series to skip, a staged plan, and caveats |
 
-### 三種理解劇情的方式
+### Three ways to follow the story
 
-1. **照時間線讀** —— 上映順序（推薦新手）或劇情年代順序。
-2. **照階段讀** —— 用漫威官方的結構理解整個宇宙怎麼組成的。
-3. **挑一個角色跟** —— 點任一角色，看他／她在每一部作品裡發生的事，串成個人故事線。
+1. **By timeline** — release order (recommended for a first watch) or in-story chronology.
+2. **By phase** — Marvel's own structure, which is the fastest way to see how it all fits.
+3. **By character** — open anyone and see what happens to them in each work, as one continuous arc.
 
-作品與角色**雙向連結**：看電影詳情可跳到登場角色，看角色可跳回作品。概念與寶石也連到相關作品。
+Works and characters are **linked in both directions**, and concepts and Stones link through to the works they appear in.
 
----
+### Reader features
 
-## 技術
-
-純靜態網站，**零依賴、零外部請求**：
-
-```
-index.html                      # 單頁應用外殼
-assets/css/style.css            # 設計系統
-assets/js/data-works-1.js       # 無限傳奇 Phase 1–3
-assets/js/data-works-2.js       # 多元宇宙傳奇 Phase 4–6
-assets/js/data-works-3.js       # One-Shots / 捍衛者聯盟 / Marvel TV / Sony
-assets/js/data-characters.js    # 角色（第一批）
-assets/js/data-characters-2.js  # 角色（第二批）
-assets/js/data-extra.js         # 分類、概念、寶石、階段、觀影指南
-assets/js/art.js                # 原創 SVG 美術系統
-assets/js/app.js                # hash 路由 SPA + 搜尋
-```
-
-- 沒有 build step、沒有 npm、沒有框架 —— 直接打開 `index.html` 就能跑
-- 沒有 CDN、沒有外部字體、沒有外部圖片 —— 離線可用
-- 響應式、支援鍵盤操作（`/` 聚焦搜尋、`Esc` 關閉）
-- 深層連結可分享：`#/e/no-way-home`、`#/c/peter-parker`、`#/k/multiverse`
-
-### 關於圖片
-
-站內**所有圖像都是本站自繪的原創 SVG 向量圖形** —— `assets/js/art.js` 裡的 50 個手繪圖徽，加上程式生成的漸層海報與寶石。
-
-刻意不使用電影劇照或預告截圖：那些是有版權的素材，放進一個公開網站並不妥當。改用原創圖形的好處是網站完全自足、離線可用、載入極快、不會有圖片失效或版權問題。
+- **Spoiler shield** (on by default) — endings, deaths, reveals and credit scenes are blurred until you click, with a global toggle.
+- **Watched tracking** — mark anything watched; stored in your browser, with a header progress bar and an unwatched-only filter.
+- **Light and dark themes**, remembered between visits.
+- **Previous / next** navigation between works inside the detail view.
+- Keyboard support: `/` focuses search, `Esc` closes.
 
 ---
 
-## 本機預覽
+## Technical
+
+A static site with **no dependencies and no external requests**:
+
+```
+index.html                      # single-page app shell
+assets/css/style.css            # design system
+assets/js/data-works-1.js       # Infinity Saga, Phases 1-3
+assets/js/data-works-2.js       # Multiverse Saga, Phases 4-6
+assets/js/data-works-3.js       # One-Shots / Defenders / Marvel TV / Sony
+assets/js/data-details.js       # runtimes, cast, credit scenes, quotes, deaths
+assets/js/data-characters.js    # characters, part 1
+assets/js/data-characters-2.js  # characters, part 2
+assets/js/data-extra.js         # taxonomy, concepts, Stones, phases, watch guide
+assets/js/art.js                # original SVG artwork system
+assets/js/app.js                # hash router and search
+```
+
+- No build step, no npm, no framework — open `index.html` and it runs
+- No CDN, no external fonts, no remote images — works offline
+- Responsive, and deep links are shareable: `#/e/no-way-home`, `#/c/peter-parker`, `#/k/multiverse`
+
+### About the images
+
+Every image is **original vector artwork drawn for this site** — the 50 hand-drawn emblems in `assets/js/art.js`, plus procedurally generated gradient posters and gems.
+
+Film stills and promotional images are deliberately not used. They are copyrighted material, and putting them on a public site is not something to do casually. Original artwork also means the site is entirely self-contained: it works offline, loads fast, and nothing can break or expire.
+
+---
+
+## Running it locally
 
 ```bash
 python -m http.server 8000
 ```
 
-然後開 <http://localhost:8000>。（直接雙擊 `index.html` 也可以。）
+Then open <http://localhost:8000>. Opening `index.html` directly works too.
 
-## 要改內容
+## Editing content
 
-劇情文字全部集中在 `assets/js/data-*.js`，改完存檔重新整理就好，不需要編譯。
+All the prose lives in `assets/js/data-*.js`. Edit, save, reload — there is nothing to compile.
 
-改了任何檔案後，把 `index.html` 裡的 `?v=5` 往上加（`?v=6`…），別人的瀏覽器才會拿到新版而不是快取。
-
----
-
-## 資料來源與可信度
-
-作品清單、上映日期、導演與卡司依 Wikipedia 的 MCU Phase One–Six 條目與 Avengers: Doomsday 條目查證；劇情整理自各作品內容。
-
-⚠️ **請注意：**
-
-- 2008–2025 年已上映作品的劇情為確定內容。
-- **2026–2027 年的作品**（《蜘蛛人4》《末日之戰》《秘密戰爭》及部分影集）資訊來自預告、官方大綱與媒體報導，最終請以正片為準。
-- **征服者康（Kang）已不是主線大魔王** —— 因演員法律問題改由末日博士接棒。任何把康當成《末日之戰》反派的資料都已過時。
-- **Sadie Sink 在《蜘蛛人4》的角色身分尚未經官方證實** —— 琴葛雷／關史黛西／蜘蛛格溫等說法都是未經證實的傳聞。
-- **Marvel Television 舊作**（《神盾局特工》《卡特探員》等）尚未被納入 Disney+ 官方 MCU 時間軸，站內已標註。相對地，Netflix 的捍衛者聯盟系列已正式納入。
-- 「劇情年代」順序是依官方時間軸與作品內線索整理的近似值；部分作品（《洛基》發生在時間之外、《What If...?》橫跨多宇宙）本質上無法放進單一年份，站內已另行標註。
-- 譯名採台灣通用譯法；部分角色官方譯名可能略有差異。
-
-站內「觀影指南」頁面末尾有完整的注意事項說明。
-
-**本站含大量劇透** —— 為了讓完全沒看過的人也能理解世界觀，所有作品的關鍵轉折與結局都直接寫出來了。
+After changing any file, bump the `?v=10` query in `index.html` (to `?v=11`, and so on) so returning visitors get the new version instead of a cached one.
 
 ---
 
-## 免責聲明
+## Sources and reliability
 
-本站為非營利的個人整理與粉絲導讀，與 Marvel Studios、Sony Pictures、The Walt Disney Company 均無關聯，亦未獲其授權或背書。所有作品名稱、角色名稱與商標均屬各自權利人所有。
+The work list, release dates, directors and cast were checked against Wikipedia's MCU Phase One–Six articles and the *Avengers: Doomsday* article. Plot summaries are drawn from the works themselves.
+
+**Please note:**
+
+- Everything up to and including 2025 has been released and is settled.
+- **2026–2027 titles** (*Spider-Man 4*, *Doomsday*, *Secret Wars* and some series) draw on trailers, official synopses and press coverage — treat the finished films as authoritative.
+- **Kang is no longer the overarching villain.** Following the actor's legal case, Marvel replaced him with Doctor Doom. Any source still calling Kang the *Doomsday* villain is out of date.
+- **Sadie Sink's role in *Spider-Man 4* has not been announced.** Speculation about Jean Grey, Gwen Stacy or Spider-Gwen is rumour.
+- **Marvel Television's older shows** (*Agents of S.H.I.E.L.D.*, *Agent Carter* and the rest) are not on the official Disney+ timeline, and are flagged as such throughout. The Netflix Defenders Saga, by contrast, is now canon.
+- Chronological ordering follows the official timeline and on-screen evidence. A few works genuinely resist a single date — *Loki* happens outside of time, *What If…?* spans universes — and those are flagged individually.
+
+The Watch Guide page carries the full set of caveats.
+
+**This site contains heavy spoilers.** So that someone who has seen none of it can still follow the world, every major twist and ending is stated outright. Spoiler shielding is on by default.
+
+---
+
+## Disclaimer
+
+This is a non-commercial fan reference. It is not affiliated with, authorised by, or endorsed by Marvel Studios, Sony Pictures or The Walt Disney Company. All titles, character names and trademarks belong to their respective owners.

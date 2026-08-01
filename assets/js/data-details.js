@@ -1,99 +1,99 @@
 /* ============================================================
-   作品細節層 — 片長、主要卡司、片中／片尾彩蛋、名台詞、前置知識
-   以 work id 為鍵，由 app.js 合併進時間線資料
-   credits: type 'mid' = 片中彩蛋、'post' = 片尾彩蛋
+   Per-work detail layer — runtime, cast, credit scenes,
+   quotes, deaths and prerequisites.
+   Keyed by work id and merged in by app.js.
+   credits: type 'mid' = mid-credits, 'post' = post-credits
    ============================================================ */
 
 window.MCU_DETAILS = {
 
 /* ================= PHASE 1 ================= */
 'iron-man': {
-  runtime: '126 分鐘', rating: 'PG-13',
-  prereq: '不需要任何前置知識 —— 這裡就是起點。',
+  runtime: '126 min', rating: 'PG-13',
+  prereq: 'No prior knowledge needed — this is the starting point.',
   cast: [
-    { a: 'Robert Downey Jr.', r: 'Tony Stark / 鋼鐵人', id: 'tony-stark' },
+    { a: 'Robert Downey Jr.', r: 'Tony Stark / Iron Man', id: 'tony-stark' },
     { a: 'Gwyneth Paltrow', r: 'Pepper Potts', id: 'pepper' },
     { a: 'Terrence Howard', r: 'James Rhodes', id: 'rhodey' },
-    { a: 'Jeff Bridges', r: 'Obadiah Stane / 鋼鐵獠牙' },
+    { a: 'Jeff Bridges', r: 'Obadiah Stane / Iron Monger' },
     { a: 'Jon Favreau', r: 'Happy Hogan', id: 'happy' },
     { a: 'Samuel L. Jackson', r: 'Nick Fury', id: 'nick-fury' }
   ],
   credits: [
-    { type: 'post', text: '尼克福瑞在東尼家中現身：「你以為你是這世界上唯一的超級英雄嗎？我來跟你談談『復仇者計畫』。」—— MCU 的第一顆彩蛋，整個宇宙的種子。', key: true }
+    { type: 'post', text: 'Nick Fury is waiting in the house: "You think you\'re the only superhero in the world? I\'m here to talk to you about the Avenger Initiative." The first Marvel credit scene, and the seed of the entire universe.', key: true }
   ],
   quotes: ['I am Iron Man.'],
-  deaths: ['Obadiah Stane', 'Ho Yinsen（殷森）']
+  deaths: ['Obadiah Stane', 'Ho Yinsen']
 },
 'incredible-hulk': {
-  runtime: '112 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識。唯一要記得的是片尾那個腦袋開始變形的科學家。',
+  runtime: '112 min', rating: 'PG-13',
+  prereq: 'None needed. The only thing to hold on to is the scientist whose head starts changing at the end.',
   cast: [
-    { a: 'Edward Norton', r: 'Bruce Banner / 浩克', id: 'hulk' },
+    { a: 'Edward Norton', r: 'Bruce Banner / Hulk', id: 'hulk' },
     { a: 'Liv Tyler', r: 'Betty Ross' },
-    { a: 'Tim Roth', r: 'Emil Blonsky / 憎惡' },
+    { a: 'Tim Roth', r: 'Emil Blonsky / Abomination' },
     { a: 'William Hurt', r: 'Thaddeus Ross', id: 'ross' },
-    { a: 'Tim Blake Nelson', r: 'Samuel Sterns / 智謀者', id: 'the-leader' }
+    { a: 'Tim Blake Nelson', r: 'Samuel Sterns / The Leader', id: 'the-leader' }
   ],
   credits: [
-    { type: 'post', text: '東尼史塔克找上正在酒吧買醉的羅斯將軍，說「我們正在組一個團隊」。（一夜短片《顧問》後來揭露這其實是神盾局的計謀。）' }
+    { type: 'post', text: 'Tony Stark finds General Ross drinking in a bar and tells him a team is being assembled. The one-shot The Consultant later reveals this was a S.H.I.E.L.D. tactic to make the talks fail.' }
   ],
-  note: 'MCU 中唯一由 Edward Norton 飾演班納的電影，之後改由 Mark Ruffalo 接演。'
+  note: 'The only MCU film with Edward Norton as Banner; Mark Ruffalo takes over from The Avengers.'
 },
 'iron-man-2': {
-  runtime: '124 分鐘', rating: 'PG-13',
-  prereq: '看過《鋼鐵人》即可。',
+  runtime: '124 min', rating: 'PG-13',
+  prereq: 'Iron Man.',
   cast: [
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
-    { a: 'Don Cheadle', r: 'James Rhodes / 戰爭機器', id: 'rhodey' },
-    { a: 'Scarlett Johansson', r: 'Natasha Romanoff / 黑寡婦', id: 'black-widow-char' },
-    { a: 'Mickey Rourke', r: 'Ivan Vanko / 鞭狼' },
+    { a: 'Don Cheadle', r: 'James Rhodes / War Machine', id: 'rhodey' },
+    { a: 'Scarlett Johansson', r: 'Natasha Romanoff / Black Widow', id: 'black-widow-char' },
+    { a: 'Mickey Rourke', r: 'Ivan Vanko / Whiplash' },
     { a: 'Sam Rockwell', r: 'Justin Hammer' },
     { a: 'Gwyneth Paltrow', r: 'Pepper Potts', id: 'pepper' }
   ],
   credits: [
-    { type: 'post', text: '寇森探員在新墨西哥沙漠中發現一把插在坑裡的鎚子 —— 雷神的妙爾尼爾。直接接上《雷神索爾》。', key: true }
+    { type: 'post', text: "Agent Coulson reports a hammer embedded in a crater in the New Mexico desert — Thor's Mjolnir. Leads straight into Thor.", key: true }
   ]
 },
 'thor': {
-  runtime: '115 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識，但看過《鋼鐵人2》會知道那把鎚子怎麼來的。',
+  runtime: '115 min', rating: 'PG-13',
+  prereq: 'None, though Iron Man 2 explains where the hammer came from.',
   cast: [
     { a: 'Chris Hemsworth', r: 'Thor', id: 'thor-char' },
     { a: 'Tom Hiddleston', r: 'Loki', id: 'loki-char' },
     { a: 'Natalie Portman', r: 'Jane Foster', id: 'jane-foster' },
     { a: 'Anthony Hopkins', r: 'Odin' },
     { a: 'Idris Elba', r: 'Heimdall' },
-    { a: 'Jeremy Renner', r: 'Clint Barton / 鷹眼（客串）', id: 'hawkeye-char' }
+    { a: 'Jeremy Renner', r: 'Clint Barton (cameo)', id: 'hawkeye-char' }
   ],
   credits: [
-    { type: 'post', text: '尼克福瑞向 Erik Selvig 展示特斯拉方塊，而躲在暗處操控 Selvig 的正是還沒死的洛基。空間寶石首度現身。', key: true }
-  ],
-  quotes: ['阿斯嘉不是一個地方，而是一群人。（此句實為《諸神黃昏》，本片為鋪陳）']
+    { type: 'post', text: 'Nick Fury shows Erik Selvig the Tesseract, while a not-quite-dead Loki manipulates Selvig from the shadows. The Space Stone arrives.', key: true }
+  ]
 },
 'captain-america': {
-  runtime: '124 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識。這是時間軸上最早的真人電影之一。',
+  runtime: '124 min', rating: 'PG-13',
+  prereq: 'None. This is one of the earliest points on the timeline.',
   cast: [
-    { a: 'Chris Evans', r: 'Steve Rogers / 美國隊長', id: 'steve-rogers' },
+    { a: 'Chris Evans', r: 'Steve Rogers / Captain America', id: 'steve-rogers' },
     { a: 'Hayley Atwell', r: 'Peggy Carter', id: 'peggy' },
     { a: 'Sebastian Stan', r: 'Bucky Barnes', id: 'bucky' },
-    { a: 'Hugo Weaving', r: 'Johann Schmidt / 紅骷髏' },
+    { a: 'Hugo Weaving', r: 'Johann Schmidt / Red Skull' },
     { a: 'Dominic Cooper', r: 'Howard Stark', id: 'howard-stark' },
-    { a: 'Stanley Tucci', r: 'Abraham Erskine 博士' }
+    { a: 'Stanley Tucci', r: 'Dr Abraham Erskine' }
   ],
   credits: [
-    { type: 'post', text: '尼克福瑞找上剛甦醒的史蒂夫：「你睡了將近七十年。」並播出《復仇者聯盟》的前導預告。' }
+    { type: 'post', text: 'Nick Fury tells a newly thawed Steve he has been asleep for nearly seventy years, followed by the teaser for The Avengers.' }
   ],
-  quotes: ['我可以整天耗下去。（I can do this all day.）'],
-  deaths: ['Abraham Erskine', 'Bucky Barnes（實為被九頭蛇擷取）', 'Red Skull（實為被空間寶石傳送）']
+  quotes: ['I can do this all day.'],
+  deaths: ['Abraham Erskine', 'Bucky Barnes (in fact recovered by HYDRA)', 'Red Skull (in fact teleported by the Space Stone)']
 },
 'avengers-1': {
-  runtime: '143 分鐘', rating: 'PG-13',
-  prereq: '看過《鋼鐵人》《雷神索爾》《美國隊長》最理想，但本片會把每個人重新介紹一次。',
+  runtime: '143 min', rating: 'PG-13',
+  prereq: 'Ideally Iron Man, Thor and Captain America, though the film reintroduces everyone.',
   cast: [
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
     { a: 'Chris Evans', r: 'Steve Rogers', id: 'steve-rogers' },
-    { a: 'Mark Ruffalo', r: 'Bruce Banner / 浩克', id: 'hulk' },
+    { a: 'Mark Ruffalo', r: 'Bruce Banner / Hulk', id: 'hulk' },
     { a: 'Chris Hemsworth', r: 'Thor', id: 'thor-char' },
     { a: 'Scarlett Johansson', r: 'Natasha Romanoff', id: 'black-widow-char' },
     { a: 'Jeremy Renner', r: 'Clint Barton', id: 'hawkeye-char' },
@@ -101,31 +101,31 @@ window.MCU_DETAILS = {
     { a: 'Clark Gregg', r: 'Phil Coulson', id: 'coulson' }
   ],
   credits: [
-    { type: 'mid', text: '「其他」向主人回報：挑戰人類等於求死。鏡頭轉向 —— 薩諾斯首度露出正臉並露出笑容。', key: true },
-    { type: 'post', text: '六人默默地在半毀的餐廳裡吃沙威瑪，全程無台詞。' }
+    { type: 'mid', text: 'The Other reports back that challenging humans means courting death. The camera turns — and Thanos smiles for the first time.', key: true },
+    { type: 'post', text: 'The six of them eat shawarma in a half-destroyed restaurant in complete silence.' }
   ],
-  quotes: ['我有一支軍隊。／我們有浩克。'],
-  deaths: ['Phil Coulson（後於影集中復活）']
+  quotes: ['I have an army. / We have a Hulk.'],
+  deaths: ['Phil Coulson (later revived in Agents of S.H.I.E.L.D.)']
 },
 
 /* ================= PHASE 2 ================= */
 'iron-man-3': {
-  runtime: '130 分鐘', rating: 'PG-13',
-  prereq: '看過《復仇者聯盟》—— 東尼的 PTSD 全來自紐約大戰。',
+  runtime: '130 min', rating: 'PG-13',
+  prereq: "The Avengers — Tony's PTSD comes entirely from the Battle of New York.",
   cast: [
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
     { a: 'Gwyneth Paltrow', r: 'Pepper Potts', id: 'pepper' },
     { a: 'Don Cheadle', r: 'James Rhodes', id: 'rhodey' },
     { a: 'Guy Pearce', r: 'Aldrich Killian' },
-    { a: 'Ben Kingsley', r: 'Trevor Slattery / 假滿大人', id: 'trevor' }
+    { a: 'Ben Kingsley', r: 'Trevor Slattery / the fake Mandarin', id: 'trevor' }
   ],
   credits: [
-    { type: 'post', text: '整部片其實是東尼在對布魯斯班納敘述 —— 而班納全程睡著了。「我又不是那種醫生。」' }
+    { type: 'post', text: 'The entire film turns out to have been Tony narrating to Bruce Banner — who fell asleep early on. "I\'m not that kind of doctor."' }
   ]
 },
 'thor-2': {
-  runtime: '112 分鐘', rating: 'PG-13',
-  prereq: '看過《雷神索爾》與《復仇者聯盟》。',
+  runtime: '112 min', rating: 'PG-13',
+  prereq: 'Thor and The Avengers.',
   cast: [
     { a: 'Chris Hemsworth', r: 'Thor', id: 'thor-char' },
     { a: 'Tom Hiddleston', r: 'Loki', id: 'loki-char' },
@@ -134,121 +134,120 @@ window.MCU_DETAILS = {
     { a: 'Rene Russo', r: 'Frigga' }
   ],
   credits: [
-    { type: 'mid', text: '阿斯嘉人把乙太交給「收藏者（Collector）」保管，並說「把兩顆無限寶石放在一起太危險」—— 正式揭露乙太就是現實寶石。', key: true },
-    { type: 'post', text: '索爾回到地球與 Jane 重逢；同時約頓海姆有怪獸還在亂跑。' }
+    { type: 'mid', text: 'The Asgardians hand the Aether to the Collector, noting that two Infinity Stones in one place is asking for trouble — confirming the Aether is the Reality Stone.', key: true },
+    { type: 'post', text: 'Thor returns to Earth and Jane, while a Jotunheim creature is still loose on the planet.' }
   ],
-  deaths: ['Frigga（索爾之母）', 'Malekith']
+  deaths: ["Frigga (Thor's mother)", 'Malekith']
 },
 'winter-soldier': {
-  runtime: '136 分鐘', rating: 'PG-13',
-  prereq: '看過《美國隊長》與《復仇者聯盟》。這部的衝擊來自你已經相信神盾局是好人。',
+  runtime: '136 min', rating: 'PG-13',
+  prereq: 'Captain America and The Avengers. The impact depends on you already trusting S.H.I.E.L.D.',
   cast: [
     { a: 'Chris Evans', r: 'Steve Rogers', id: 'steve-rogers' },
     { a: 'Scarlett Johansson', r: 'Natasha Romanoff', id: 'black-widow-char' },
-    { a: 'Sebastian Stan', r: 'Bucky Barnes / 酷寒戰士', id: 'bucky' },
-    { a: 'Anthony Mackie', r: 'Sam Wilson / 獵鷹', id: 'sam-wilson' },
+    { a: 'Sebastian Stan', r: 'Bucky Barnes / Winter Soldier', id: 'bucky' },
+    { a: 'Anthony Mackie', r: 'Sam Wilson / Falcon', id: 'sam-wilson' },
     { a: 'Samuel L. Jackson', r: 'Nick Fury', id: 'nick-fury' },
     { a: 'Robert Redford', r: 'Alexander Pierce' }
   ],
   credits: [
-    { type: 'mid', text: '男爵 Strucker 的九頭蛇基地中關著兩個「奇蹟」—— 快銀與緋紅女巫首度亮相，洛基的權杖也在他手上。', key: true },
-    { type: 'post', text: '巴奇在史密森尼博物館看著自己的展覽，開始想起自己是誰。' }
+    { type: 'mid', text: "Baron Strucker's HYDRA base holds two 'miracles' — the first look at Quicksilver and Scarlet Witch, with Loki's sceptre in his possession.", key: true },
+    { type: 'post', text: 'Bucky stands in the Smithsonian looking at an exhibit about himself, beginning to remember.' }
   ],
-  quotes: ['我這一輩子都在完成任務。']
+  quotes: ["I've been to war. I've done the mission."]
 },
 'gotg-1': {
-  runtime: '121 分鐘', rating: 'PG-13',
-  prereq: '完全不需要前置知識 —— 這是 MCU 最適合單獨看的一部。',
+  runtime: '121 min', rating: 'PG-13',
+  prereq: 'None at all — the easiest MCU film to watch cold.',
   cast: [
-    { a: 'Chris Pratt', r: 'Peter Quill / 星爵', id: 'star-lord' },
+    { a: 'Chris Pratt', r: 'Peter Quill / Star-Lord', id: 'star-lord' },
     { a: 'Zoe Saldaña', r: 'Gamora', id: 'gamora' },
     { a: 'Dave Bautista', r: 'Drax', id: 'drax' },
-    { a: 'Bradley Cooper', r: 'Rocket（配音）', id: 'rocket' },
-    { a: 'Vin Diesel', r: 'Groot（配音）', id: 'groot' },
+    { a: 'Bradley Cooper', r: 'Rocket (voice)', id: 'rocket' },
+    { a: 'Vin Diesel', r: 'Groot (voice)', id: 'groot' },
     { a: 'Michael Rooker', r: 'Yondu', id: 'yondu' },
     { a: 'Karen Gillan', r: 'Nebula', id: 'nebula' },
     { a: 'Lee Pace', r: 'Ronan', id: 'ronan' }
   ],
   credits: [
-    { type: 'post', text: '收藏者在毀損的收藏室裡喝酒，鴨子霍華跟他說話。' }
+    { type: 'post', text: 'The Collector drinks among his wrecked collection while Howard the Duck talks at him.' }
   ],
   quotes: ['We are Groot.'],
-  deaths: ['Groot（以幼苗重生）', 'Ronan']
+  deaths: ['Groot (regrows from a cutting)', 'Ronan']
 },
 'age-of-ultron': {
-  runtime: '141 分鐘', rating: 'PG-13',
-  prereq: '看過《復仇者聯盟》與《酷寒戰士》。',
+  runtime: '141 min', rating: 'PG-13',
+  prereq: 'The Avengers and The Winter Soldier.',
   cast: [
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
     { a: 'Chris Evans', r: 'Steve Rogers', id: 'steve-rogers' },
     { a: 'Mark Ruffalo', r: 'Bruce Banner', id: 'hulk' },
     { a: 'Elizabeth Olsen', r: 'Wanda Maximoff', id: 'wanda' },
-    { a: 'Aaron Taylor-Johnson', r: 'Pietro Maximoff / 快銀', id: 'quicksilver' },
+    { a: 'Aaron Taylor-Johnson', r: 'Pietro Maximoff / Quicksilver', id: 'quicksilver' },
     { a: 'Paul Bettany', r: 'Vision', id: 'vision' },
-    { a: 'James Spader', r: 'Ultron（配音）', id: 'ultron' }
+    { a: 'James Spader', r: 'Ultron (voice)', id: 'ultron' }
   ],
   credits: [
-    { type: 'mid', text: '薩諾斯打開保險庫、戴上無限手套：「好吧，還是我自己來。」', key: true }
+    { type: 'mid', text: 'Thanos opens a vault, puts on the Infinity Gauntlet, and says he will do it himself.', key: true }
   ],
-  quotes: ['你沒辦法看穿我的心思，你可以看透所有人 —— 除了我。'],
-  deaths: ['Pietro Maximoff（快銀）']
+  deaths: ['Pietro Maximoff (Quicksilver)']
 },
 'ant-man': {
-  runtime: '117 分鐘', rating: 'PG-13',
-  prereq: '幾乎不需要前置知識，是很好的單獨入門。',
+  runtime: '117 min', rating: 'PG-13',
+  prereq: 'Almost none; a good standalone entry point.',
   cast: [
-    { a: 'Paul Rudd', r: 'Scott Lang / 蟻人', id: 'scott-lang' },
+    { a: 'Paul Rudd', r: 'Scott Lang / Ant-Man', id: 'scott-lang' },
     { a: 'Evangeline Lilly', r: 'Hope van Dyne', id: 'hope' },
     { a: 'Michael Douglas', r: 'Hank Pym', id: 'hank-pym' },
-    { a: 'Corey Stoll', r: 'Darren Cross / 黃蜂人' },
+    { a: 'Corey Stoll', r: 'Darren Cross / Yellowjacket' },
     { a: 'Michael Peña', r: 'Luis' }
   ],
   credits: [
-    { type: 'mid', text: 'Hank 向 Hope 展示初代黃蜂女戰衣：「該讓它出來了。」' },
-    { type: 'post', text: '史蒂夫與獵鷹找到被困住的巴奇，決定不通報東尼 —— 直接鋪陳《英雄內戰》。', key: true }
+    { type: 'mid', text: 'Hank shows Hope the original Wasp suit: "It\'s about damn time."' },
+    { type: 'post', text: 'Steve and Sam have found Bucky and decide not to call Tony — direct setup for Civil War.', key: true }
   ]
 },
 
 /* ================= PHASE 3 ================= */
 'civil-war': {
-  runtime: '147 分鐘', rating: 'PG-13',
-  prereq: '看過《奧創紀元》《酷寒戰士》最理想 —— 索科維亞協議與巴奇的過去是全片前提。',
+  runtime: '147 min', rating: 'PG-13',
+  prereq: "Ideally Age of Ultron and The Winter Soldier — the Accords and Bucky's past are the whole premise.",
   cast: [
     { a: 'Chris Evans', r: 'Steve Rogers', id: 'steve-rogers' },
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
     { a: 'Sebastian Stan', r: 'Bucky Barnes', id: 'bucky' },
-    { a: 'Chadwick Boseman', r: "T'Challa / 黑豹", id: 'tchalla' },
-    { a: 'Tom Holland', r: 'Peter Parker / 蜘蛛人', id: 'peter-parker' },
+    { a: 'Chadwick Boseman', r: "T'Challa / Black Panther", id: 'tchalla' },
+    { a: 'Tom Holland', r: 'Peter Parker / Spider-Man', id: 'peter-parker' },
     { a: 'Daniel Brühl', r: 'Helmut Zemo', id: 'zemo' },
     { a: 'Paul Rudd', r: 'Scott Lang', id: 'scott-lang' }
   ],
   credits: [
-    { type: 'mid', text: '巴奇在汎達自願重新進入冷凍，直到有辦法解除洗腦。' },
-    { type: 'post', text: '彼得在房間裡研究東尼給的裝備，May 嬸嬸在門外詢問他的傷。' }
+    { type: 'mid', text: 'Bucky voluntarily goes back into cryostasis in Wakanda until his conditioning can be undone.' },
+    { type: 'post', text: 'Peter examines the gear Tony gave him while May asks about his injuries through the door.' }
   ],
-  quotes: ['他是我的朋友。／我也是。'],
-  deaths: ["T'Chaka（汎達國王）"]
+  quotes: ["He's my friend. / So was I."],
+  deaths: ["T'Chaka, King of Wakanda"]
 },
 'doctor-strange': {
-  runtime: '115 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識，是魔法線的獨立起點。',
+  runtime: '115 min', rating: 'PG-13',
+  prereq: 'None; a standalone entry point for the magic side.',
   cast: [
     { a: 'Benedict Cumberbatch', r: 'Stephen Strange', id: 'doctor-strange-char' },
-    { a: 'Tilda Swinton', r: '古一法師', id: 'ancient-one' },
+    { a: 'Tilda Swinton', r: 'The Ancient One', id: 'ancient-one' },
     { a: 'Benedict Wong', r: 'Wong', id: 'wong' },
     { a: 'Chiwetel Ejiofor', r: 'Karl Mordo' },
     { a: 'Mads Mikkelsen', r: 'Kaecilius' }
   ],
   credits: [
-    { type: 'mid', text: '索爾造訪紐約至聖所，史傳奇答應幫他找奧丁 —— 接上《諸神黃昏》。' },
-    { type: 'post', text: 'Mordo 奪走一名法師的魔力：「這世界的法師太多了。」' }
+    { type: 'mid', text: 'Thor visits the New York Sanctum and Strange agrees to help him find Odin — leading into Ragnarok.' },
+    { type: 'post', text: 'Mordo strips a sorcerer of his power: "Too many sorcerers."' }
   ],
   quotes: ["Dormammu, I've come to bargain."],
-  deaths: ['古一法師（The Ancient One）']
+  deaths: ['The Ancient One']
 },
 'gotg-2': {
-  runtime: '136 分鐘', rating: 'PG-13',
-  prereq: '看過《星際異攻隊》。',
+  runtime: '136 min', rating: 'PG-13',
+  prereq: 'Guardians of the Galaxy.',
   cast: [
     { a: 'Chris Pratt', r: 'Peter Quill', id: 'star-lord' },
     { a: 'Kurt Russell', r: 'Ego', id: 'ego' },
@@ -257,69 +256,69 @@ window.MCU_DETAILS = {
     { a: 'Karen Gillan', r: 'Nebula', id: 'nebula' }
   ],
   credits: [
-    { type: 'post', text: '共五顆彩蛋，其中最重要的是主權星族長 Ayesha 打造出「亞當（Adam Warlock）」—— 他在《星際異攻隊3》登場。', key: true }
+    { type: 'post', text: 'Five scenes in total; the important one has the Sovereign creating Adam Warlock, who appears in Vol. 3.', key: true }
   ],
-  quotes: ['他也許是你父親，但他不是你爸爸。'],
+  quotes: ["He may have been your father, but he wasn't your daddy."],
   deaths: ['Yondu', 'Ego']
 },
 'homecoming': {
-  runtime: '133 分鐘', rating: 'PG-13',
-  prereq: '看過《英雄內戰》認識彼得與東尼的關係即可。',
+  runtime: '133 min', rating: 'PG-13',
+  prereq: "Civil War, for Peter and Tony's relationship.",
   cast: [
-    { a: 'Tom Holland', r: 'Peter Parker / 蜘蛛人', id: 'peter-parker' },
-    { a: 'Michael Keaton', r: 'Adrian Toomes / 禿鷹', id: 'vulture' },
+    { a: 'Tom Holland', r: 'Peter Parker / Spider-Man', id: 'peter-parker' },
+    { a: 'Michael Keaton', r: 'Adrian Toomes / Vulture', id: 'vulture' },
     { a: 'Jacob Batalon', r: 'Ned Leeds', id: 'ned' },
     { a: 'Zendaya', r: 'Michelle Jones (MJ)', id: 'mj' },
-    { a: 'Marisa Tomei', r: 'May 嬸嬸', id: 'may' },
+    { a: 'Marisa Tomei', r: 'Aunt May', id: 'may' },
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
     { a: 'Jon Favreau', r: 'Happy Hogan', id: 'happy' },
     { a: 'Laura Harrier', r: 'Liz Toomes', id: 'liz' }
   ],
   credits: [
-    { type: 'mid', text: '入獄的禿鷹遇到 Mac Gargan（漫畫中的「蠍子」）。Gargan 打探蜘蛛人的身分，禿鷹選擇不透露以報答救命之恩。', key: true },
-    { type: 'post', text: '美國隊長對著鏡頭談「耐心」的教育短片 —— 一個純粹的玩笑。' }
+    { type: 'mid', text: 'In prison Toomes meets Mac Gargan — the comics\' Scorpion — who asks about Spider-Man\'s identity. Toomes says he does not know, repaying the man who saved his life.', key: true },
+    { type: 'post', text: 'Captain America delivers a public service message about patience. It is purely a joke.' }
   ],
-  quotes: ['如果沒有那套戰衣你就什麼都不是，那你更不配擁有它。']
+  quotes: ["If you're nothing without the suit, then you shouldn't have it."]
 },
 'thor-3': {
-  runtime: '130 分鐘', rating: 'PG-13',
-  prereq: '看過前兩部雷神與《奧創紀元》。',
+  runtime: '130 min', rating: 'PG-13',
+  prereq: 'The first two Thor films and Age of Ultron.',
   cast: [
     { a: 'Chris Hemsworth', r: 'Thor', id: 'thor-char' },
     { a: 'Tom Hiddleston', r: 'Loki', id: 'loki-char' },
     { a: 'Cate Blanchett', r: 'Hela', id: 'hela' },
     { a: 'Tessa Thompson', r: 'Valkyrie', id: 'valkyrie' },
-    { a: 'Mark Ruffalo', r: 'Bruce Banner / 浩克', id: 'hulk' },
-    { a: 'Jeff Goldblum', r: 'Grandmaster' }
+    { a: 'Mark Ruffalo', r: 'Bruce Banner / Hulk', id: 'hulk' },
+    { a: 'Jeff Goldblum', r: 'The Grandmaster' }
   ],
   credits: [
-    { type: 'mid', text: '阿斯嘉難民船前方出現一艘巨艦 —— 薩諾斯的「聖言號」。直接接上《無限之戰》開場。', key: true },
-    { type: 'post', text: 'Grandmaster 面對薩卡星的革命群眾，厚著臉皮說這場革命也算他有功。' }
+    { type: 'mid', text: "An enormous warship blocks the Asgardian refugee vessel — Thanos's Sanctuary II. Infinity War opens on this exact moment.", key: true },
+    { type: 'post', text: 'The Grandmaster, facing a revolution on Sakaar, tries to take credit for it.' }
   ],
-  quotes: ['阿斯嘉不是一個地方，而是一群人。'],
+  quotes: ['Asgard is not a place. It never was. This could be Asgard. Asgard is where our people stand.'],
   deaths: ['Odin', 'Hela', 'Skurge']
 },
 'black-panther': {
-  runtime: '134 分鐘', rating: 'PG-13',
-  prereq: '看過《英雄內戰》認識 T\'Challa 即可。',
+  runtime: '134 min', rating: 'PG-13',
+  prereq: "Civil War, to know who T'Challa is.",
   cast: [
-    { a: 'Chadwick Boseman', r: "T'Challa / 黑豹", id: 'tchalla' },
+    { a: 'Chadwick Boseman', r: "T'Challa / Black Panther", id: 'tchalla' },
     { a: 'Michael B. Jordan', r: 'Erik Killmonger', id: 'killmonger' },
     { a: 'Letitia Wright', r: 'Shuri', id: 'shuri' },
-    { a: 'Lupita Nyong\'o', r: 'Nakia' },
+    { a: "Lupita Nyong'o", r: 'Nakia' },
     { a: 'Danai Gurira', r: 'Okoye' },
     { a: 'Winston Duke', r: "M'Baku" }
   ],
   credits: [
-    { type: 'mid', text: "T'Challa 在聯合國宣布向世界開放汎達。" },
-    { type: 'post', text: '巴奇在汎達甦醒，孩子們叫他「白狼」。' }
+    { type: 'mid', text: "T'Challa announces at the UN that Wakanda is opening itself to the world." },
+    { type: 'post', text: 'Bucky wakes in Wakanda, where the children call him the White Wolf.' }
   ],
-  quotes: ['把我葬在海裡，跟那些從船上跳下去的祖先一起 —— 因為他們知道，死亡好過為奴。'],
+  quotes: ['Bury me in the ocean with my ancestors who jumped from ships, because they knew death was better than bondage.'],
   deaths: ['Erik Killmonger', 'Zuri']
 },
 'infinity-war': {
-  runtime: '149 分鐘', rating: 'PG-13',
-  prereq: '這部是十年的總結。至少要看過《復仇者聯盟》《奧創紀元》《英雄內戰》《諸神黃昏》《星際異攻隊》。',
+  runtime: '149 min', rating: 'PG-13',
+  prereq: 'This is the payoff for a decade. At minimum: The Avengers, Age of Ultron, Civil War, Ragnarok and Guardians of the Galaxy.',
   cast: [
     { a: 'Josh Brolin', r: 'Thanos', id: 'thanos' },
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
@@ -331,29 +330,29 @@ window.MCU_DETAILS = {
     { a: 'Elizabeth Olsen', r: 'Wanda Maximoff', id: 'wanda' }
   ],
   credits: [
-    { type: 'post', text: '尼克福瑞與 Maria Hill 在化為灰燼前，福瑞按下一個呼叫器 —— 螢幕上出現驚奇隊長的標誌。', key: true }
+    { type: 'post', text: 'As Nick Fury and Maria Hill turn to dust, Fury triggers a pager — and the Captain Marvel insignia appears on the screen.', key: true }
   ],
-  quotes: ['我早該直接瞄準頭的。／史塔克先生，我不想走……'],
-  deaths: ['Loki', 'Heimdall', 'Gamora', 'Vision', '以及彈指帶走的半數生命']
+  quotes: ['I should have gone for the head.', "Mr Stark, I don't feel so good."],
+  deaths: ['Loki', 'Heimdall', 'Gamora', 'Vision', 'and half of all life in the universe']
 },
 'ant-man-2': {
-  runtime: '118 分鐘', rating: 'PG-13',
-  prereq: '看過《蟻人》與《英雄內戰》。',
+  runtime: '118 min', rating: 'PG-13',
+  prereq: 'Ant-Man and Civil War.',
   cast: [
     { a: 'Paul Rudd', r: 'Scott Lang', id: 'scott-lang' },
-    { a: 'Evangeline Lilly', r: 'Hope van Dyne / 黃蜂女', id: 'hope' },
+    { a: 'Evangeline Lilly', r: 'Hope van Dyne / Wasp', id: 'hope' },
     { a: 'Michael Douglas', r: 'Hank Pym', id: 'hank-pym' },
     { a: 'Michelle Pfeiffer', r: 'Janet van Dyne', id: 'janet' },
-    { a: 'Hannah John-Kamen', r: 'Ava Starr / 幽靈', id: 'ghost' }
+    { a: 'Hannah John-Kamen', r: 'Ava Starr / Ghost', id: 'ghost' }
   ],
   credits: [
-    { type: 'mid', text: 'Scott 進入量子領域採集能量，Hank、Janet、Hope 在外接應 —— 然後三人同時化為灰燼，Scott 被困在裡面。整部《終局之戰》就是從這裡開始的。', key: true },
-    { type: 'post', text: '空無一人的房子裡，緊急廣播還在播放。' }
+    { type: 'mid', text: 'Scott enters the Quantum Realm to harvest energy while Hank, Janet and Hope monitor from outside — and all three turn to dust, stranding him. The whole of Endgame proceeds from this scene.', key: true },
+    { type: 'post', text: 'An empty house, with an emergency broadcast still playing.' }
   ]
 },
 'captain-marvel': {
-  runtime: '123 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識。看過《無限之戰》片尾彩蛋會更有感。',
+  runtime: '123 min', rating: 'PG-13',
+  prereq: 'None. It lands better if you have seen the Infinity War post-credits scene.',
   cast: [
     { a: 'Brie Larson', r: 'Carol Danvers', id: 'captain-marvel-char' },
     { a: 'Samuel L. Jackson', r: 'Nick Fury', id: 'nick-fury' },
@@ -362,13 +361,13 @@ window.MCU_DETAILS = {
     { a: 'Lashana Lynch', r: 'Maria Rambeau' }
   ],
   credits: [
-    { type: 'mid', text: '倖存的復仇者盯著福瑞的呼叫器發呆，卡蘿丹佛斯突然出現在他們面前：「福瑞呢？」', key: true },
-    { type: 'post', text: '貓咪 Goose 跳上福瑞的辦公桌，吐出特斯拉方塊。' }
+    { type: 'mid', text: 'The surviving Avengers are staring at the pager when Carol Danvers appears behind them: "Where\'s Fury?"', key: true },
+    { type: 'post', text: 'Goose the cat jumps onto Fury\'s desk and coughs up the Tesseract.' }
   ]
 },
 'endgame': {
-  runtime: '181 分鐘', rating: 'PG-13',
-  prereq: '必須看過《無限之戰》。看過《蟻人與黃蜂女》會知道 Scott 為什麼在量子領域。',
+  runtime: '181 min', rating: 'PG-13',
+  prereq: 'Infinity War is required. Ant-Man and the Wasp explains why Scott is in the Quantum Realm.',
   cast: [
     { a: 'Robert Downey Jr.', r: 'Tony Stark', id: 'tony-stark' },
     { a: 'Chris Evans', r: 'Steve Rogers', id: 'steve-rogers' },
@@ -380,63 +379,63 @@ window.MCU_DETAILS = {
     { a: 'Josh Brolin', r: 'Thanos', id: 'thanos' }
   ],
   credits: [
-    { type: 'post', text: '沒有彩蛋 —— 只有黑畫面中傳來的敲打金屬聲，那是東尼在山洞裡打造第一套鋼鐵裝的聲音。整整十一年的致敬。', key: true }
+    { type: 'post', text: 'There is no credit scene — only a black screen and the sound of hammering metal, which is Tony building the first suit in a cave. Eleven years, answered with a sound effect.', key: true }
   ],
   quotes: ['I love you 3000.', 'Avengers... assemble.', 'I am Iron Man.'],
-  deaths: ['Natasha Romanoff（黑寡婦）', 'Tony Stark（鋼鐵人）', 'Thanos', '2014 年的 Gamora 除外']
+  deaths: ['Natasha Romanoff', 'Tony Stark', 'Thanos', 'the 2014 Gamora survives']
 },
 'far-from-home': {
-  runtime: '129 分鐘', rating: 'PG-13',
-  prereq: '必須看過《終局之戰》—— 全片的情緒基礎是東尼之死。',
+  runtime: '129 min', rating: 'PG-13',
+  prereq: "Endgame is required — the whole emotional premise is Tony's death.",
   cast: [
     { a: 'Tom Holland', r: 'Peter Parker', id: 'peter-parker' },
-    { a: 'Jake Gyllenhaal', r: 'Quentin Beck / 神秘客', id: 'mysterio' },
+    { a: 'Jake Gyllenhaal', r: 'Quentin Beck / Mysterio', id: 'mysterio' },
     { a: 'Zendaya', r: 'MJ', id: 'mj' },
     { a: 'Jacob Batalon', r: 'Ned Leeds', id: 'ned' },
     { a: 'Samuel L. Jackson', r: 'Nick Fury', id: 'nick-fury' },
     { a: 'Jon Favreau', r: 'Happy Hogan', id: 'happy' }
   ],
   credits: [
-    { type: 'mid', text: '神秘客預錄的假影片被《號角日報》的 J. Jonah Jameson 播出 —— 誣陷蜘蛛人是兇手，並向全世界公布彼得帕克的身分。直接引爆《無家日》。', key: true },
-    { type: 'post', text: '揭露片中的「尼克福瑞」其實是史克魯人 Talos 假扮的，真正的福瑞正在太空站度假。' }
+    { type: 'mid', text: "Beck's pre-recorded fake footage is broadcast by J. Jonah Jameson of The Daily Bugle, framing Spider-Man for his death and naming Peter Parker to the world. It detonates No Way Home.", key: true },
+    { type: 'post', text: 'The Nick Fury in the film was Talos in disguise; the real Fury is on a Skrull space station.' }
   ]
 },
 
 /* ================= PHASE 4 ================= */
 'black-widow': {
-  runtime: '134 分鐘', rating: 'PG-13',
-  prereq: '看過《英雄內戰》。故事發生在該片之後、《無限之戰》之前。',
+  runtime: '134 min', rating: 'PG-13',
+  prereq: 'Civil War. It is set between that film and Infinity War.',
   cast: [
     { a: 'Scarlett Johansson', r: 'Natasha Romanoff', id: 'black-widow-char' },
     { a: 'Florence Pugh', r: 'Yelena Belova', id: 'yelena' },
-    { a: 'David Harbour', r: 'Alexei / 紅衛兵', id: 'alexei' },
+    { a: 'David Harbour', r: 'Alexei / Red Guardian', id: 'alexei' },
     { a: 'Rachel Weisz', r: 'Melina' },
     { a: 'Julia Louis-Dreyfus', r: 'Valentina', id: 'valentina' }
   ],
   credits: [
-    { type: 'post', text: '葉蓮娜在娜塔莎墓前被瓦倫提娜找上，對方指著手機上克林特的照片說「這就是害死你姊姊的人」—— 接上影集《鷹眼》。', key: true }
+    { type: 'post', text: "At Natasha's grave Valentina shows Yelena a photo of Clint Barton and tells her that is the man who killed her sister — leading into Hawkeye.", key: true }
   ]
 },
 'shang-chi': {
-  runtime: '132 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識。看過《鋼鐵人3》會懂那個「假滿大人」的笑話。',
+  runtime: '132 min', rating: 'PG-13',
+  prereq: 'None, though Iron Man 3 explains the "fake Mandarin" joke.',
   cast: [
     { a: 'Simu Liu', r: 'Shang-Chi', id: 'shang-chi-char' },
-    { a: 'Tony Leung（梁朝偉）', r: 'Xu Wenwu / 文武', id: 'wenwu' },
+    { a: 'Tony Leung', r: 'Xu Wenwu', id: 'wenwu' },
     { a: 'Awkwafina', r: 'Katy' },
-    { a: 'Meng\'er Zhang', r: 'Xu Xialing' },
-    { a: 'Michelle Yeoh（楊紫瓊）', r: 'Ying Nan' },
+    { a: "Meng'er Zhang", r: 'Xu Xialing' },
+    { a: 'Michelle Yeoh', r: 'Ying Nan' },
     { a: 'Ben Kingsley', r: 'Trevor Slattery', id: 'trevor' }
   ],
   credits: [
-    { type: 'mid', text: 'Wong 帶尚氣與 Katy 見卡蘿丹佛斯與布魯斯班納。三人都無法辨識十環的來源，並發現它「正在向某處發送訊號」。', key: true },
-    { type: 'post', text: 'Xialing 接管了十環幫，並在父親的舊基地訓練女性戰士。' }
+    { type: 'mid', text: 'Wong brings Shang-Chi and Katy to meet Carol Danvers and Bruce Banner. None of them can identify the rings, and they realise the rings are broadcasting a signal.', key: true },
+    { type: 'post', text: "Xialing has taken over the Ten Rings and is training women at her father's old compound." }
   ],
-  deaths: ['Xu Wenwu（文武）', '居食者']
+  deaths: ['Xu Wenwu', 'The Dweller-in-Darkness']
 },
 'eternals': {
-  runtime: '156 分鐘', rating: 'PG-13',
-  prereq: '不需要前置知識，是相當獨立的一部。',
+  runtime: '156 min', rating: 'PG-13',
+  prereq: 'None; it is largely self-contained.',
   cast: [
     { a: 'Gemma Chan', r: 'Sersi', id: 'sersi' },
     { a: 'Richard Madden', r: 'Ikaris', id: 'ikaris' },
@@ -446,68 +445,68 @@ window.MCU_DETAILS = {
     { a: 'Brian Tyree Henry', r: 'Phastos' }
   ],
   credits: [
-    { type: 'mid', text: '引入 Eros / Starfox（Harry Styles）—— 薩諾斯的兄弟，與 Pip 一同現身。' },
-    { type: 'post', text: 'Dane Whitman 準備拿起「黑騎士之劍」時被一個聲音打斷 —— 那是 Blade（Mahershala Ali）的聲音。', key: true }
+    { type: 'mid', text: "Introduces Eros / Starfox (Harry Styles), Thanos's brother, alongside Pip the Troll." },
+    { type: 'post', text: 'Dane Whitman reaches for the Ebony Blade and is interrupted by a voice — Blade (Mahershala Ali).', key: true }
   ],
   deaths: ['Ajak', 'Gilgamesh', 'Ikaris']
 },
 'no-way-home': {
-  runtime: '148 分鐘', rating: 'PG-13',
-  prereq: '必須看過《離家日》。看過舊蜘蛛人電影會大幅加分，但非必要。',
+  runtime: '148 min', rating: 'PG-13',
+  prereq: 'Far From Home is required. The older Spider-Man films add a great deal but are not necessary.',
   cast: [
     { a: 'Tom Holland', r: 'Peter Parker', id: 'peter-parker' },
     { a: 'Zendaya', r: 'MJ', id: 'mj' },
     { a: 'Benedict Cumberbatch', r: 'Stephen Strange', id: 'doctor-strange-char' },
-    { a: 'Willem Dafoe', r: 'Norman Osborn / 綠惡魔', id: 'green-goblin' },
-    { a: 'Alfred Molina', r: 'Otto Octavius / 八爪博士', id: 'doc-ock' },
-    { a: 'Jamie Foxx', r: 'Max Dillon / 電光人', id: 'electro' },
+    { a: 'Willem Dafoe', r: 'Norman Osborn / Green Goblin', id: 'green-goblin' },
+    { a: 'Alfred Molina', r: 'Otto Octavius / Doc Ock', id: 'doc-ock' },
+    { a: 'Jamie Foxx', r: 'Max Dillon / Electro', id: 'electro' },
     { a: 'Tobey Maguire', r: 'Peter Parker (Peter-Two)', id: 'peter-two' },
     { a: 'Andrew Garfield', r: 'Peter Parker (Peter-Three)', id: 'peter-three' },
-    { a: 'Marisa Tomei', r: 'May 嬸嬸', id: 'may' },
+    { a: 'Marisa Tomei', r: 'Aunt May', id: 'may' },
     { a: 'Charlie Cox', r: 'Matt Murdock', id: 'daredevil-char' }
   ],
   credits: [
-    { type: 'mid', text: 'Eddie Brock（猛毒）在酒吧裡聽人講述復仇者的事，正要去找蜘蛛人時就被送回原宇宙 —— 但他留下了一小塊共生體。', key: true },
-    { type: 'post', text: '《奇異博士2：失控多重宇宙》的完整預告。' }
+    { type: 'mid', text: 'Eddie Brock hears about the Avengers in a bar and is pulled home just as he decides to find Spider-Man — leaving a fragment of the symbiote behind.', key: true },
+    { type: 'post', text: 'The full trailer for Doctor Strange in the Multiverse of Madness.' }
   ],
-  quotes: ['能力愈強，責任愈大。（With great power there must also come great responsibility.）'],
-  deaths: ['May 嬸嬸']
+  quotes: ['With great power there must also come great responsibility.'],
+  deaths: ['Aunt May']
 },
 'multiverse-of-madness': {
-  runtime: '126 分鐘', rating: 'PG-13',
-  prereq: '必須看過《汪達幻視》與《無家日》，否則汪達的動機完全無法理解。',
+  runtime: '126 min', rating: 'PG-13',
+  prereq: "WandaVision and No Way Home are both required, or Wanda's motivation makes no sense.",
   cast: [
     { a: 'Benedict Cumberbatch', r: 'Stephen Strange', id: 'doctor-strange-char' },
     { a: 'Elizabeth Olsen', r: 'Wanda Maximoff', id: 'wanda' },
     { a: 'Xochitl Gomez', r: 'America Chavez', id: 'america-chavez' },
     { a: 'Benedict Wong', r: 'Wong', id: 'wong' },
-    { a: 'Patrick Stewart', r: 'Charles Xavier（Earth-838）' }
+    { a: 'Patrick Stewart', r: 'Charles Xavier (Earth-838)' }
   ],
   credits: [
-    { type: 'mid', text: 'Clea（Charlize Theron）開啟一道通往黑暗次元的傳送門，要史傳奇跟她去修補他造成的「宇宙撞擊」。', key: true },
-    { type: 'post', text: '披薩球小販終於解除了史傳奇的咒語，對鏡頭說「結束了」。' }
+    { type: 'mid', text: 'Clea (Charlize Theron) opens a portal to the Dark Dimension and tells Strange he has caused an incursion that he now has to fix.', key: true },
+    { type: 'post', text: 'The pizza ball vendor is finally released from Strange\'s spell: "It\'s over."' }
   ],
-  deaths: ['光照會全員（Earth-838）', 'Wanda Maximoff（疑似）']
+  deaths: ['The entire Illuminati of Earth-838', 'Wanda Maximoff (presumed)']
 },
 'thor-4': {
-  runtime: '118 分鐘', rating: 'PG-13',
-  prereq: '看過《諸神黃昏》與《終局之戰》。',
+  runtime: '118 min', rating: 'PG-13',
+  prereq: 'Ragnarok and Endgame.',
   cast: [
     { a: 'Chris Hemsworth', r: 'Thor', id: 'thor-char' },
-    { a: 'Natalie Portman', r: 'Jane Foster / 女雷神', id: 'jane-foster' },
+    { a: 'Natalie Portman', r: 'Jane Foster / Mighty Thor', id: 'jane-foster' },
     { a: 'Christian Bale', r: 'Gorr', id: 'gorr' },
     { a: 'Tessa Thompson', r: 'Valkyrie', id: 'valkyrie' },
     { a: 'Russell Crowe', r: 'Zeus' }
   ],
   credits: [
-    { type: 'mid', text: '宙斯派兒子海克力斯（Brett Goldstein）去殺索爾，為神明報仇。' },
-    { type: 'post', text: 'Jane Foster 抵達瓦爾哈拉，由海姆達爾迎接她。' }
+    { type: 'mid', text: 'Zeus sends his son Hercules (Brett Goldstein) to kill Thor in revenge for the gods.' },
+    { type: 'post', text: 'Jane Foster arrives in Valhalla and is welcomed by Heimdall.' }
   ],
   deaths: ['Jane Foster', 'Gorr']
 },
 'wakanda-forever': {
-  runtime: '161 分鐘', rating: 'PG-13',
-  prereq: '看過《黑豹》。',
+  runtime: '161 min', rating: 'PG-13',
+  prereq: 'Black Panther.',
   cast: [
     { a: 'Letitia Wright', r: 'Shuri', id: 'shuri' },
     { a: 'Tenoch Huerta Mejía', r: 'Namor', id: 'namor' },
@@ -516,15 +515,15 @@ window.MCU_DETAILS = {
     { a: 'Dominique Thorne', r: 'Riri Williams', id: 'riri' }
   ],
   credits: [
-    { type: 'post', text: "Nakia 向 Shuri 介紹她與 T'Challa 的兒子 —— 男孩的名字也叫 T'Challa。", key: true }
+    { type: 'post', text: "Nakia introduces Shuri to her son by T'Challa — a boy also named T'Challa.", key: true }
   ],
-  deaths: ["T'Challa（片外病逝）", 'Ramonda']
+  deaths: ["T'Challa (died off screen)", 'Ramonda']
 },
 
 /* ================= PHASE 5 ================= */
 'quantumania': {
-  runtime: '124 分鐘', rating: 'PG-13',
-  prereq: '看過兩部《蟻人》與《終局之戰》。看過《洛基》第一季會知道康是誰。',
+  runtime: '124 min', rating: 'PG-13',
+  prereq: 'Both Ant-Man films and Endgame. Loki season one explains who Kang is.',
   cast: [
     { a: 'Paul Rudd', r: 'Scott Lang', id: 'scott-lang' },
     { a: 'Evangeline Lilly', r: 'Hope van Dyne', id: 'hope' },
@@ -533,31 +532,31 @@ window.MCU_DETAILS = {
     { a: 'Kathryn Newton', r: 'Cassie Lang', id: 'cassie' }
   ],
   credits: [
-    { type: 'mid', text: '康議會集結 —— 數以千計的康變體齊聚，宣告要對多元宇宙動手。', key: true },
-    { type: 'post', text: 'Loki 與 Mobius 在 1901 年的劇院看著台上的「Victor Timely」（康的另一個變體）表演。' }
+    { type: 'mid', text: 'The Council of Kangs convenes — thousands of variants agreeing to move against the multiverse.', key: true },
+    { type: 'post', text: 'Loki and Mobius watch "Victor Timely", another Kang variant, perform on stage in 1901.' }
   ],
-  warning: '⚠ 康已被漫威棄用，這些彩蛋的後續劇情已不會照原計畫發展。'
+  warning: 'Kang has since been dropped by Marvel, so these scenes no longer lead where they were meant to.'
 },
 'gotg-3': {
-  runtime: '150 分鐘', rating: 'PG-13',
-  prereq: '看過前兩部《星際異攻隊》與《無限之戰》《終局之戰》。',
+  runtime: '150 min', rating: 'PG-13',
+  prereq: 'The first two Guardians films, plus Infinity War and Endgame.',
   cast: [
     { a: 'Chris Pratt', r: 'Peter Quill', id: 'star-lord' },
-    { a: 'Bradley Cooper', r: 'Rocket（配音）', id: 'rocket' },
+    { a: 'Bradley Cooper', r: 'Rocket (voice)', id: 'rocket' },
     { a: 'Karen Gillan', r: 'Nebula', id: 'nebula' },
     { a: 'Pom Klementieff', r: 'Mantis', id: 'mantis' },
-    { a: 'Chukwudi Iwuji', r: '至高進化', id: 'high-evolutionary' },
+    { a: 'Chukwudi Iwuji', r: 'The High Evolutionary', id: 'high-evolutionary' },
     { a: 'Will Poulter', r: 'Adam Warlock' }
   ],
   credits: [
-    { type: 'mid', text: '新一代異攻隊在火箭的帶領下集結。' },
-    { type: 'post', text: '字卡：「星爵將會回歸（The Legendary Star-Lord will return）」。' }
+    { type: 'mid', text: 'A new generation of Guardians assembles under Rocket.' },
+    { type: 'post', text: 'A title card: "The Legendary Star-Lord will return."' }
   ],
-  deaths: ['至高進化的實驗動物們（Lylla、Teefs、Floor）']
+  deaths: ["The High Evolutionary's test animals — Lylla, Teefs and Floor"]
 },
 'the-marvels': {
-  runtime: '105 分鐘', rating: 'PG-13',
-  prereq: '看過《驚奇隊長》《汪達幻視》《驚奇女士》最完整。',
+  runtime: '105 min', rating: 'PG-13',
+  prereq: 'Captain Marvel, WandaVision and Ms. Marvel for the full picture.',
   cast: [
     { a: 'Brie Larson', r: 'Carol Danvers', id: 'captain-marvel-char' },
     { a: 'Teyonah Parris', r: 'Monica Rambeau', id: 'monica' },
@@ -566,94 +565,94 @@ window.MCU_DETAILS = {
     { a: 'Samuel L. Jackson', r: 'Nick Fury', id: 'nick-fury' }
   ],
   credits: [
-    { type: 'post', text: '莫妮卡在平行宇宙醒來，身旁是 X 戰警的「野獸」（Kelsey Grammer）與 Charles Xavier 的變體 —— 正式確認 X 戰警宇宙的存在。', key: true }
+    { type: 'post', text: 'Monica wakes in a parallel universe beside Beast (Kelsey Grammer) and a variant of Charles Xavier — confirming the X-Men universe.', key: true }
   ]
 },
 'deadpool-wolverine': {
-  runtime: '128 分鐘', rating: 'R（限制級）',
-  prereq: '看過《洛基》第一季了解 TVA。不需要看過福斯的 X 戰警系列，但看過會多出大量笑點。',
+  runtime: '128 min', rating: 'R',
+  prereq: 'Loki season one for the TVA. No knowledge of the Fox X-Men films is required, but it multiplies the jokes.',
   cast: [
-    { a: 'Ryan Reynolds', r: 'Wade Wilson / 死侍', id: 'deadpool' },
-    { a: 'Hugh Jackman', r: 'Logan / 金鋼狼', id: 'wolverine' },
+    { a: 'Ryan Reynolds', r: 'Wade Wilson / Deadpool', id: 'deadpool' },
+    { a: 'Hugh Jackman', r: 'Logan / Wolverine', id: 'wolverine' },
     { a: 'Emma Corrin', r: 'Cassandra Nova', id: 'cassandra-nova' },
-    { a: 'Matthew Macfadyen', r: 'Mr. Paradox' }
+    { a: 'Matthew Macfadyen', r: 'Mr Paradox' }
   ],
   credits: [
-    { type: 'post', text: '死侍播放福斯時代 X 戰警的幕後花絮片段，向那個時代告別。' }
+    { type: 'post', text: 'Deadpool plays behind-the-scenes footage from the Fox X-Men era as a send-off to that whole period.' }
   ],
-  note: 'MCU 第一部 R 級電影，暴力與髒話密度極高。'
+  note: "The MCU's first R-rated film, with a very high density of violence and swearing."
 },
 'brave-new-world': {
-  runtime: '118 分鐘', rating: 'PG-13',
-  prereq: '看過《獵鷹與酷寒戰士》。看過 2008《無敵浩克》會懂智謀者是誰、看過《永恆族》會懂天神島。',
+  runtime: '118 min', rating: 'PG-13',
+  prereq: 'The Falcon and the Winter Soldier. The Incredible Hulk explains The Leader, and Eternals explains the Celestial Island.',
   cast: [
-    { a: 'Anthony Mackie', r: 'Sam Wilson / 美國隊長', id: 'sam-wilson' },
-    { a: 'Harrison Ford', r: 'Thaddeus Ross / 紅浩克', id: 'ross' },
-    { a: 'Tim Blake Nelson', r: 'Samuel Sterns / 智謀者', id: 'the-leader' },
-    { a: 'Danny Ramirez', r: 'Joaquin Torres / 獵鷹' },
+    { a: 'Anthony Mackie', r: 'Sam Wilson / Captain America', id: 'sam-wilson' },
+    { a: 'Harrison Ford', r: 'Thaddeus Ross / Red Hulk', id: 'ross' },
+    { a: 'Tim Blake Nelson', r: 'Samuel Sterns / The Leader', id: 'the-leader' },
+    { a: 'Danny Ramirez', r: 'Joaquin Torres / Falcon' },
     { a: 'Carl Lumbly', r: 'Isaiah Bradley', id: 'isaiah' }
   ],
   credits: [
-    { type: 'post', text: '獄中的智謀者對山姆說，他已經看見無數種未來 —— 而其中有「來自其他世界的訪客」正在接近。', key: true }
+    { type: 'post', text: 'From his cell, The Leader tells Sam he has seen countless futures — and that visitors from other worlds are on their way.', key: true }
   ]
 },
 'thunderbolts': {
-  runtime: '126 分鐘', rating: 'PG-13',
-  prereq: '看過《黑寡婦》《獵鷹與酷寒戰士》《蟻人與黃蜂女》認識這群人的來歷。',
+  runtime: '126 min', rating: 'PG-13',
+  prereq: 'Black Widow, The Falcon and the Winter Soldier and Ant-Man and the Wasp, for who these people are.',
   cast: [
     { a: 'Florence Pugh', r: 'Yelena Belova', id: 'yelena' },
     { a: 'Sebastian Stan', r: 'Bucky Barnes', id: 'bucky' },
-    { a: 'David Harbour', r: 'Alexei / 紅衛兵', id: 'alexei' },
+    { a: 'David Harbour', r: 'Alexei / Red Guardian', id: 'alexei' },
     { a: 'Wyatt Russell', r: 'John Walker', id: 'john-walker' },
-    { a: 'Hannah John-Kamen', r: 'Ava Starr / 幽靈', id: 'ghost' },
-    { a: 'Lewis Pullman', r: 'Bob / 哨兵', id: 'bob-sentry' },
+    { a: 'Hannah John-Kamen', r: 'Ava Starr / Ghost', id: 'ghost' },
+    { a: 'Lewis Pullman', r: 'Bob / Sentry', id: 'bob-sentry' },
     { a: 'Julia Louis-Dreyfus', r: 'Valentina', id: 'valentina' }
   ],
   credits: [
-    { type: 'post', text: '十四個月後，這支被命名為「新復仇者」的隊伍面對天空裂開 —— 一艘印有「4」標誌的太空船穿越而來。接上驚奇 4 超人。', key: true }
+    { type: 'post', text: 'Fourteen months later, the team now called the New Avengers watches the sky tear open as a ship marked "4" comes through. Straight into the Fantastic Four.', key: true }
   ],
-  note: '片名的星號在片尾被正式改寫為 The New Avengers。'
+  note: 'The asterisk in the title is formally rewritten to The New Avengers on screen.'
 },
 'fantastic-four': {
-  runtime: '約 115 分鐘', rating: 'PG-13',
-  prereq: '不需要任何 MCU 前置知識 —— 它發生在完全獨立的平行宇宙 Earth-828。',
+  runtime: '115 min', rating: 'PG-13',
+  prereq: 'No MCU knowledge needed at all — it takes place in a separate universe, Earth-828.',
   cast: [
-    { a: 'Pedro Pascal', r: 'Reed Richards / 神奇先生', id: 'reed-richards' },
-    { a: 'Vanessa Kirby', r: 'Sue Storm / 隱形女', id: 'reed-richards' },
-    { a: 'Joseph Quinn', r: 'Johnny Storm / 霹靂火', id: 'reed-richards' },
-    { a: 'Ebon Moss-Bachrach', r: 'Ben Grimm / 石頭人', id: 'reed-richards' },
-    { a: 'Ralph Ineson', r: 'Galactus / 吞星', id: 'galactus' },
-    { a: 'Julia Garner', r: 'Shalla-Bal / 銀色衝浪手', id: 'silver-surfer' }
+    { a: 'Pedro Pascal', r: 'Reed Richards / Mister Fantastic', id: 'reed-richards' },
+    { a: 'Vanessa Kirby', r: 'Sue Storm / Invisible Woman', id: 'reed-richards' },
+    { a: 'Joseph Quinn', r: 'Johnny Storm / Human Torch', id: 'reed-richards' },
+    { a: 'Ebon Moss-Bachrach', r: 'Ben Grimm / The Thing', id: 'reed-richards' },
+    { a: 'Ralph Ineson', r: 'Galactus', id: 'galactus' },
+    { a: 'Julia Garner', r: 'Shalla-Bal / Silver Surfer', id: 'silver-surfer' }
   ],
   credits: [
-    { type: 'mid', text: '時間快轉四年後，一名手持末日博士銀色面具的神秘披風人物出現在 Sue 的兒子 Franklin 身邊 —— 末日博士首度現身，直接鋪陳《末日之戰》。', key: true }
+    { type: 'mid', text: "Four years later, a cloaked figure holding a silver Doctor Doom mask appears beside Sue's son Franklin — Doom's entrance, and the setup for Doomsday.", key: true }
   ]
 },
 
 /* ================= PHASE 6 ================= */
 'spider-man-4': {
-  runtime: '145 分鐘（2 小時 25 分）', rating: 'PG-13',
-  prereq: '必須看過《無家日》—— 全片的前提是那道讓全世界忘記彼得的咒語。',
+  runtime: '145 min', rating: 'PG-13',
+  prereq: 'No Way Home is required — the entire premise is the spell that erased Peter from the world.',
   cast: [
-    { a: 'Tom Holland', r: 'Peter Parker / 蜘蛛人', id: 'peter-parker' },
+    { a: 'Tom Holland', r: 'Peter Parker / Spider-Man', id: 'peter-parker' },
     { a: 'Zendaya', r: 'MJ', id: 'mj' },
     { a: 'Jacob Batalon', r: 'Ned Leeds', id: 'ned' },
-    { a: 'Mark Ruffalo', r: 'Bruce Banner / 浩克', id: 'hulk' },
-    { a: 'Jon Bernthal', r: 'Frank Castle / 制裁者', id: 'punisher' },
-    { a: 'Sadie Sink', r: '神秘反派（身分未公開）', id: 'sadie-villain' },
-    { a: 'Michael Mando', r: 'Mac Gargan / 蠍子', id: 'scorpion' },
-    { a: 'Liza Colón-Zayas', r: '警探 Jean DeWolff', id: 'jean-dewolff' },
-    { a: 'Marvin Jones III', r: 'Tombstone / 墓碑', id: 'tombstone' }
+    { a: 'Mark Ruffalo', r: 'Bruce Banner / Hulk', id: 'hulk' },
+    { a: 'Jon Bernthal', r: 'Frank Castle / The Punisher', id: 'punisher' },
+    { a: 'Sadie Sink', r: 'Undisclosed villain', id: 'sadie-villain' },
+    { a: 'Michael Mando', r: 'Mac Gargan / Scorpion', id: 'scorpion' },
+    { a: 'Liza Colón-Zayas', r: 'Detective Jean DeWolff', id: 'jean-dewolff' },
+    { a: 'Marvin Jones III', r: 'Tombstone', id: 'tombstone' }
   ],
   credits: [
-    { type: 'post', text: '片尾以 007 式的字卡「Spider-Man Will Return」作結。' }
+    { type: 'post', text: 'The film closes on a Bond-style card reading "Spider-Man Will Return".' }
   ]
 },
 'doomsday': {
-  runtime: '約 165 分鐘', rating: '未定',
-  prereq: '看過《洛基》兩季、《驚奇4超人》《雷霆特攻隊》最完整。',
+  runtime: '165 min', rating: 'TBC',
+  prereq: 'Both seasons of Loki, The Fantastic Four and Thunderbolts for the full picture.',
   cast: [
-    { a: 'Robert Downey Jr.', r: 'Victor von Doom / 末日博士', id: 'doctor-doom' },
+    { a: 'Robert Downey Jr.', r: 'Victor von Doom / Doctor Doom', id: 'doctor-doom' },
     { a: 'Chris Evans', r: 'Steve Rogers', id: 'steve-rogers' },
     { a: 'Chris Hemsworth', r: 'Thor', id: 'thor-char' },
     { a: 'Anthony Mackie', r: 'Sam Wilson', id: 'sam-wilson' },
@@ -669,13 +668,13 @@ window.MCU_DETAILS = {
     { a: 'Tenoch Huerta Mejía', r: 'Namor', id: 'namor' },
     { a: 'Channing Tatum', r: 'Gambit' }
   ],
-  note: '尚未上映，卡司依官方公布整理。'
+  note: 'Not yet released; cast list per official announcements.'
 },
 
-/* ================= 重要影集 ================= */
+/* ================= KEY SERIES ================= */
 'wandavision': {
-  runtime: '9 集，每集 24–48 分鐘', rating: 'TV-14',
-  prereq: '看過《奧創紀元》與《無限之戰》—— 你必須知道幻視已經死了。',
+  runtime: '9 episodes, 24–48 min each', rating: 'TV-14',
+  prereq: 'Age of Ultron and Infinity War — you need to know Vision is dead.',
   cast: [
     { a: 'Elizabeth Olsen', r: 'Wanda Maximoff', id: 'wanda' },
     { a: 'Paul Bettany', r: 'Vision', id: 'vision' },
@@ -683,14 +682,14 @@ window.MCU_DETAILS = {
     { a: 'Teyonah Parris', r: 'Monica Rambeau', id: 'monica' }
   ],
   credits: [
-    { type: 'mid', text: '莫妮卡被告知「有人想跟你談談」—— 對方是史克魯人，代表福瑞在太空找她。' },
-    { type: 'post', text: '汪達在山中小屋讀《黑暗神書》，同時聽見兩個兒子在另一個地方呼救。', key: true }
+    { type: 'mid', text: 'Monica is told someone wants to speak to her — a Skrull, sent by Fury from space.' },
+    { type: 'post', text: 'Wanda studies the Darkhold in a mountain cabin while hearing her sons calling for her somewhere else.', key: true }
   ],
   quotes: ['What is grief, if not love persevering?']
 },
 'loki-s1': {
-  runtime: '6 集，每集 40–55 分鐘', rating: 'TV-14',
-  prereq: '看過《終局之戰》—— 這個洛基是 2012 年帶著方塊逃走的變體。',
+  runtime: '6 episodes, 40–55 min each', rating: 'TV-14',
+  prereq: 'Endgame — this is the Loki who escaped with the Tesseract in 2012.',
   cast: [
     { a: 'Tom Hiddleston', r: 'Loki', id: 'loki-char' },
     { a: 'Owen Wilson', r: 'Mobius', id: 'mobius' },
@@ -699,24 +698,24 @@ window.MCU_DETAILS = {
     { a: 'Gugu Mbatha-Raw', r: 'Ravonna Renslayer' }
   ],
   credits: [
-    { type: 'post', text: '第一季結尾直接顯示「Loki will return in season 2」的檔案戳章。' }
+    { type: 'post', text: 'The season ends with a TVA file stamped "Loki will return in season 2".' }
   ],
-  note: '整個多元宇宙傳奇的起點就在第六集最後五分鐘。'
+  note: 'The whole Multiverse Saga begins in the last five minutes of episode six.'
 },
 'loki-s2': {
-  runtime: '6 集', rating: 'TV-14',
-  prereq: '必須看過第一季。',
+  runtime: '6 episodes', rating: 'TV-14',
+  prereq: 'Season one is required.',
   cast: [
     { a: 'Tom Hiddleston', r: 'Loki', id: 'loki-char' },
     { a: 'Owen Wilson', r: 'Mobius', id: 'mobius' },
     { a: 'Ke Huy Quan', r: 'O.B.' },
     { a: 'Jonathan Majors', r: 'Victor Timely', id: 'kang' }
   ],
-  quotes: ['我知道我想要什麼了。我想要一個好的結局。']
+  quotes: ['I know what kind of god I need to be. For you. For all of us.']
 },
 'falcon-winter-soldier': {
-  runtime: '6 集', rating: 'TV-14',
-  prereq: '看過《終局之戰》—— 山姆拿到盾牌是本劇的起點。',
+  runtime: '6 episodes', rating: 'TV-14',
+  prereq: 'Endgame — Sam receiving the shield is the starting point.',
   cast: [
     { a: 'Anthony Mackie', r: 'Sam Wilson', id: 'sam-wilson' },
     { a: 'Sebastian Stan', r: 'Bucky Barnes', id: 'bucky' },
@@ -725,34 +724,34 @@ window.MCU_DETAILS = {
     { a: 'Carl Lumbly', r: 'Isaiah Bradley', id: 'isaiah' }
   ],
   credits: [
-    { type: 'post', text: 'John Walker 被瓦倫提娜招募，穿上黑色戰衣成為「美國密探」。' }
+    { type: 'post', text: 'Valentina recruits John Walker and hands him a black suit — U.S. Agent.' }
   ]
 },
 'daredevil-born-again': {
-  runtime: '9 集', rating: 'TV-MA',
-  prereq: '看過 Netflix《夜魔俠》最完整，但本劇有為新觀眾重新introduce。',
+  runtime: '9 episodes', rating: 'TV-MA',
+  prereq: "Netflix's Daredevil gives the fullest picture, though the show reintroduces things for new viewers.",
   cast: [
     { a: 'Charlie Cox', r: 'Matt Murdock', id: 'daredevil-char' },
     { a: "Vincent D'Onofrio", r: 'Wilson Fisk', id: 'kingpin' },
-    { a: 'Jon Bernthal', r: 'Frank Castle / 制裁者', id: 'punisher' }
+    { a: 'Jon Bernthal', r: 'Frank Castle / The Punisher', id: 'punisher' }
   ],
-  note: 'TV-MA 級。制裁者在本劇回歸，隨後首度登上大銀幕（《蜘蛛人4》）。'
+  note: 'TV-MA. The Punisher returns here before his big-screen debut in Spider-Man 4.'
 },
 'agatha': {
-  runtime: '9 集', rating: 'TV-14',
-  prereq: '必須看過《汪達幻視》。',
+  runtime: '9 episodes', rating: 'TV-14',
+  prereq: 'WandaVision is required.',
   cast: [
     { a: 'Kathryn Hahn', r: 'Agatha Harkness', id: 'agatha-char' },
     { a: 'Joe Locke', r: 'Billy Maximoff / Wiccan', id: 'billy' },
     { a: 'Aubrey Plaza', r: 'Rio Vidal' }
   ],
   credits: [
-    { type: 'post', text: 'Billy 開始尋找他失散的雙胞胎兄弟 Tommy。', key: true }
+    { type: 'post', text: 'Billy begins searching for his lost twin brother Tommy.', key: true }
   ]
 },
 'hawkeye': {
-  runtime: '6 集', rating: 'TV-14',
-  prereq: '看過《終局之戰》—— 克林特的罪惡感來自娜塔莎之死。',
+  runtime: '6 episodes', rating: 'TV-14',
+  prereq: "Endgame — Clint's guilt comes from Natasha's death.",
   cast: [
     { a: 'Jeremy Renner', r: 'Clint Barton', id: 'hawkeye-char' },
     { a: 'Hailee Steinfeld', r: 'Kate Bishop', id: 'kate-bishop' },
@@ -762,87 +761,87 @@ window.MCU_DETAILS = {
   ]
 },
 'ms-marvel': {
-  runtime: '6 集', rating: 'TV-14',
-  prereq: '不需要前置知識。',
+  runtime: '6 episodes', rating: 'TV-14',
+  prereq: 'None.',
   cast: [
     { a: 'Iman Vellani', r: 'Kamala Khan', id: 'kamala' }
   ],
   credits: [
-    { type: 'post', text: '卡瑪拉的手鐲發光，她瞬間消失、卡蘿丹佛斯出現在她房間 —— 直接接上《驚奇隊長2》。', key: true }
+    { type: 'post', text: "Kamala's bangle flares and she vanishes, with Carol Danvers appearing in her bedroom — straight into The Marvels.", key: true }
   ]
 },
 'daredevil-netflix': {
-  runtime: '3 季 39 集', rating: 'TV-MA',
-  prereq: '不需要 MCU 前置知識，完全獨立。',
+  runtime: '3 seasons, 39 episodes', rating: 'TV-MA',
+  prereq: 'None; entirely self-contained.',
   cast: [
     { a: 'Charlie Cox', r: 'Matt Murdock', id: 'daredevil-char' },
     { a: "Vincent D'Onofrio", r: 'Wilson Fisk', id: 'kingpin' },
-    { a: 'Jon Bernthal', r: 'Frank Castle（第二季）', id: 'punisher' },
+    { a: 'Jon Bernthal', r: 'Frank Castle (season 2)', id: 'punisher' },
     { a: 'Elden Henson', r: 'Foggy Nelson' },
     { a: 'Deborah Ann Woll', r: 'Karen Page' }
   ],
-  note: 'TV-MA 級，暴力程度遠高於 MCU 電影。第一季走廊長鏡頭是影集史上的經典場面之一。'
+  note: 'TV-MA, and much more violent than the films. The season one corridor fight is one of the most celebrated action sequences on television.'
 },
 'punisher-netflix': {
-  runtime: '2 季 26 集', rating: 'TV-MA',
-  prereq: '看過《夜魔俠》第二季認識 Frank Castle。',
+  runtime: '2 seasons, 26 episodes', rating: 'TV-MA',
+  prereq: "Daredevil season two, where Frank Castle first appears.",
   cast: [
     { a: 'Jon Bernthal', r: 'Frank Castle', id: 'punisher' }
   ],
-  note: 'TV-MA 級，暴力程度極高。'
+  note: 'TV-MA, and extremely violent.'
 },
 
-/* ================= Sony 舊蜘蛛人 ================= */
+/* ================= SONY SPIDER-MAN ================= */
 'raimi-1': {
-  runtime: '121 分鐘', rating: 'PG-13',
-  prereq: '完全獨立，不屬於 MCU。',
+  runtime: '121 min', rating: 'PG-13',
+  prereq: 'Entirely standalone; not part of the MCU.',
   cast: [
     { a: 'Tobey Maguire', r: 'Peter Parker', id: 'peter-two' },
-    { a: 'Willem Dafoe', r: 'Norman Osborn / 綠惡魔', id: 'green-goblin' },
+    { a: 'Willem Dafoe', r: 'Norman Osborn / Green Goblin', id: 'green-goblin' },
     { a: 'Kirsten Dunst', r: 'Mary Jane Watson' },
     { a: 'James Franco', r: 'Harry Osborn', id: 'harry' },
     { a: 'Cliff Robertson', r: 'Uncle Ben', id: 'uncle-ben' }
   ],
-  quotes: ['能力愈強，責任愈大。'],
+  quotes: ['With great power comes great responsibility.'],
   deaths: ['Uncle Ben', 'Norman Osborn']
 },
 'raimi-2': {
-  runtime: '127 分鐘', rating: 'PG-13',
-  prereq: '看過第一集。',
+  runtime: '127 min', rating: 'PG-13',
+  prereq: 'The first film.',
   cast: [
     { a: 'Tobey Maguire', r: 'Peter Parker', id: 'peter-two' },
-    { a: 'Alfred Molina', r: 'Otto Octavius / 八爪博士', id: 'doc-ock' },
+    { a: 'Alfred Molina', r: 'Otto Octavius / Doc Ock', id: 'doc-ock' },
     { a: 'Kirsten Dunst', r: 'Mary Jane Watson' }
   ],
   deaths: ['Otto Octavius']
 },
 'raimi-3': {
-  runtime: '139 分鐘', rating: 'PG-13',
-  prereq: '看過前兩集。',
+  runtime: '139 min', rating: 'PG-13',
+  prereq: 'The first two films.',
   cast: [
     { a: 'Tobey Maguire', r: 'Peter Parker', id: 'peter-two' },
-    { a: 'Thomas Haden Church', r: 'Flint Marko / 沙人', id: 'sandman' },
-    { a: 'Topher Grace', r: 'Eddie Brock / 猛毒', id: 'venom' },
+    { a: 'Thomas Haden Church', r: 'Flint Marko / Sandman', id: 'sandman' },
+    { a: 'Topher Grace', r: 'Eddie Brock / Venom', id: 'venom' },
     { a: 'James Franco', r: 'Harry Osborn', id: 'harry' }
   ],
   deaths: ['Harry Osborn', 'Eddie Brock']
 },
 'webb-1': {
-  runtime: '136 分鐘', rating: 'PG-13',
-  prereq: '完全獨立的重啟版。',
+  runtime: '136 min', rating: 'PG-13',
+  prereq: 'A standalone reboot.',
   cast: [
     { a: 'Andrew Garfield', r: 'Peter Parker', id: 'peter-three' },
     { a: 'Emma Stone', r: 'Gwen Stacy', id: 'gwen' },
-    { a: 'Rhys Ifans', r: 'Curt Connors / 蜥蜴人', id: 'lizard' }
+    { a: 'Rhys Ifans', r: 'Curt Connors / The Lizard', id: 'lizard' }
   ]
 },
 'webb-2': {
-  runtime: '142 分鐘', rating: 'PG-13',
-  prereq: '看過第一集。',
+  runtime: '142 min', rating: 'PG-13',
+  prereq: 'The first film.',
   cast: [
     { a: 'Andrew Garfield', r: 'Peter Parker', id: 'peter-three' },
     { a: 'Emma Stone', r: 'Gwen Stacy', id: 'gwen' },
-    { a: 'Jamie Foxx', r: 'Max Dillon / 電光人', id: 'electro' },
+    { a: 'Jamie Foxx', r: 'Max Dillon / Electro', id: 'electro' },
     { a: 'Dane DeHaan', r: 'Harry Osborn', id: 'harry' }
   ],
   deaths: ['Gwen Stacy']
