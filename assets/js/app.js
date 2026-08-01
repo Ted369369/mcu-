@@ -71,9 +71,104 @@
     order: 'release',      // release | story
     cats: [],              // 空 = 全部
     mustOnly: false,
+    unwatchedOnly: false,
     chGroup: 'all',
     base: 'home'
   };
+
+  /* ---------- 使用者偏好（存在瀏覽器，不會上傳）---------- */
+  var store = {
+    get: function (k, d) {
+      try { var v = localStorage.getItem('mcu.' + k); return v === null ? d : JSON.parse(v); }
+      catch (e) { return d; }
+    },
+    set: function (k, v) { try { localStorage.setItem('mcu.' + k, JSON.stringify(v)); } catch (e) {} }
+  };
+
+  var prefs = {
+    spoiler: store.get('spoiler', true),   // true = 防雷開啟（劇透先遮住）
+    theme:   store.get('theme', 'dark'),
+    watched: store.get('watched', {})
+  };
+
+  function isWatched(id) { return !!prefs.watched[id]; }
+  function toggleWatched(id) {
+    if (prefs.watched[id]) delete prefs.watched[id];
+    else prefs.watched[id] = 1;
+    store.set('watched', prefs.watched);
+  }
+  function watchedCount() {
+    return T.filter(function (e) { return isWatched(e.id); }).length;
+  }
+  function applyTheme() {
+    document.documentElement.setAttribute('data-theme', prefs.theme);
+  }
+
+  /* 更新頁首的主題鈕與進度條 */
+  function syncChrome() {
+    var tb = $('#themeBtn');
+    if (tb) {
+      tb.innerHTML = G(prefs.theme === 'dark' ? 'bulb' : 'hex');
+      tb.setAttribute('title', prefs.theme === 'dark' ? '切換亮色主題' : '切換暗色主題');
+    }
+    updateProgress();
+  }
+
+  function updateProgress() {
+    var n = watchedCount(), total = T.length;
+    var pct = total ? Math.round(n / total * 100) : 0;
+    var bar = $('#progBar'), txt = $('#progTxt');
+    if (bar) bar.style.width = pct + '%';
+    if (txt) txt.textContent = n + ' / ' + total;
+    var wrap = $('#progWrap');
+    if (wrap) wrap.setAttribute('title', '已看過 ' + n + ' 部，共 ' + total + ' 部（' + pct + '%）');
+  }
+
+  /* 依實際片長算出方案 A 的總時數（影集另計，避免把單集長度誤當全季）*/
+  function planMetaText() {
+    var A_ = window.MCU_PLAN_A;
+    var films = A_.items.filter(function (it) { return byId[it.entry] && byId[it.entry].type === 'film'; });
+    var mins = films.reduce(function (s, it) { return s + minutesOf(it.entry); }, 0);
+    var series = A_.items.length - films.length;
+    return A_.items.length + ' 部' +
+      (mins ? '・電影約 ' + humanHours(mins) : '') +
+      (series ? '＋' + series + ' 部影集' : '');
+  }
+
+  /* 卡片角落的「已看過」小圓鈕 */
+  function watchDot(id) {
+    var w = isWatched(id);
+    return '<button class="watchdot' + (w ? ' on' : '') + '" data-watch="' + id + '" ' +
+      'title="' + (w ? '已看過（點擊取消）' : '標記為已看過') + '">' + G(w ? 'check' : 'eye') + '</button>';
+  }
+
+  /* 判斷一個段落是否含關鍵劇透 */
+  var SPOILER_RE = /結局|之死|死亡|真相|反轉|轉折|彩蛋|犧牲|背叛|揭露|身分|下場|命運/;
+  function isSpoilerSection(s) {
+    return !!(s.highlight || SPOILER_RE.test(s.h || ''));
+  }
+
+  /* 把內容包進防雷罩 */
+  function shield(inner, label) {
+    if (!prefs.spoiler) return inner;
+    return '<div class="spoil"><div class="spoil-veil">' +
+      G('eye') + '<b>' + esc(label || '這段有劇透') + '</b>' +
+      '<span>點一下顯示</span></div>' +
+      '<div class="spoil-body">' + inner + '</div></div>';
+  }
+
+  /* 片長字串 → 分鐘 */
+  function minutesOf(id) {
+    var d = window.MCU_DETAILS && window.MCU_DETAILS[id];
+    if (!d || !d.runtime) return 0;
+    var m = String(d.runtime).match(/(\d+)\s*分鐘/);
+    return m ? +m[1] : 0;
+  }
+  function humanHours(mins) {
+    if (!mins) return '';
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (h ? h + ' 小時' : '') + (m ? ' ' + m + ' 分' : '');
+  }
 
   /* ============================================================
      首頁
@@ -142,7 +237,7 @@
     '<section class="section"><div class="wrap">' +
       '<div class="sec-head"><span class="eyebrow">最短路徑</span>' +
       '<h2>時間有限？這十部就是整個宇宙的骨架</h2>' +
-      '<p class="sub">' + esc(window.MCU_PLAN_A.meta) + '。點任一部可以直接看該片的完整劇情。</p></div>' +
+      '<p class="sub">' + esc(planMetaText()) + '。點任一部可以直接看該片的完整劇情。</p></div>' +
       '<div class="path">' + path + '</div>' +
       '<div class="tip">' + G('bulb') + '<div>' + esc(window.MCU_PLAN_A.tip) + '</div></div>' +
     '</div></section>' +
@@ -181,6 +276,7 @@
      ============================================================ */
   function filtered() {
     return T.filter(function (e) {
+      if (state.unwatchedOnly && isWatched(e.id)) return false;
       if (state.mustOnly && e.relevance !== 'core' && e.relevance !== 'target' && e.relevance !== 'recommended') return false;
       if (state.cats.length) {
         var hit = (e.cats || []).some(function (c) { return state.cats.indexOf(c) >= 0; });
@@ -191,16 +287,20 @@
   }
 
   function tlCard(e) {
-    return '<button class="tl-card' + (e.isTarget ? ' is-target' : '') + '" data-entry="' + e.id + '">' +
+    var d = (window.MCU_DETAILS && window.MCU_DETAILS[e.id]) || {};
+    return '<div class="tl-card-wrap' + (isWatched(e.id) ? ' watched' : '') + '">' +
+      watchDot(e.id) +
+      '<button class="tl-card' + (e.isTarget ? ' is-target' : '') + '" data-entry="' + e.id + '">' +
       '<div class="tl-art">' + P(e, { center: true }) + '<div class="fade"></div></div>' +
       '<div class="tl-body">' +
         '<div class="tl-meta"><span class="yr">' + (e.date || e.year) + '</span>' +
-          relBadge(e) + typeBadges(e) + starStr(e.stars) + '</div>' +
+          relBadge(e) + typeBadges(e) + starStr(e.stars) +
+          (d.runtime ? '<span class="rt">' + G('tva') + esc(d.runtime) + '</span>' : '') + '</div>' +
         '<h3>' + esc(e.title) + '</h3>' +
         '<div class="en">' + esc(e.en) + ' ・ ' + esc(e.phase) + '</div>' +
         '<div class="tagline">' + esc(e.tagline) + '</div>' +
         '<p class="sum">' + esc(e.summary) + '</p>' +
-      '</div></button>';
+      '</div></button></div>';
   }
 
   function renderTimeline() {
@@ -250,8 +350,10 @@
       '</div>' +
       '<div class="chips">' + chips +
         '<button class="chip' + (state.mustOnly ? ' on' : '') + '" data-must="1">' + G('check') + '只看必看／建議</button>' +
+        '<button class="chip' + (state.unwatchedOnly ? ' on' : '') + '" data-unwatched="1">' + G('eye') + '只看沒看過的</button>' +
       '</div>' +
-      '<span class="tl-count">' + list.length + ' / ' + T.length + ' 部</span>' +
+      '<span class="tl-count">' + list.length + ' / ' + T.length + ' 部'
+        + (watchedCount() ? ' ・ 已看 ' + watchedCount() : '') + '</span>' +
     '</div></div>' +
 
     '<div class="wrap"><div class="tl">' + html + '</div></div>';
@@ -476,11 +578,17 @@
 
     var items = A_.items.map(function (it) {
       var e = byId[it.entry];
-      return '<li><button class="plan-item" data-entry="' + e.id + '">' +
-        '<span class="n"></span><span><b>' + esc(e.title) + '</b>' +
+      var mins = e.type === 'film' ? minutesOf(e.id) : 0;
+      return '<li><button class="plan-item' + (isWatched(e.id) ? ' watched' : '') + '" data-entry="' + e.id + '">' +
+        '<span class="n"></span><span><b>' + esc(e.title) +
+        (mins ? ' <span class="pm">' + mins + ' 分</span>' : '') + '</b>' +
         '<span>' + esc(it.why || e.en) + '</span></span>' +
+        (isWatched(e.id) ? '<span class="pdone">' + G('check') + '已看</span>' : '') +
         '<span class="arw">' + G('chevron') + '</span></button></li>';
     }).join('');
+
+    var planMeta = planMetaText();
+    var planDone = A_.items.filter(function (it) { return isWatched(it.entry); }).length;
 
     var cmp = B.compare.map(function (c) {
       return '<div class="cmp-card' + (c.recommended ? ' best' : '') + '">' +
@@ -513,7 +621,9 @@
 
       '<div class="plan">' +
         '<div class="plan-head"><h3>' + esc(A_.title) + '</h3>' +
-        '<span class="plan-meta">' + esc(A_.meta) + '</span></div>' +
+        '<span class="plan-meta">' + esc(planMeta) + '</span>' +
+        (planDone ? '<span class="plan-done">' + G('check') + '已完成 ' + planDone + ' / ' + A_.items.length + '</span>' : '') +
+        '</div>' +
         '<p>' + esc(A_.intro) + '</p>' +
         '<ol class="plan-list">' + items + '</ol>' +
         '<div class="tip">' + G('bulb') + '<div>' + esc(A_.tip) + '</div></div>' +
@@ -565,15 +675,89 @@
     if (/^(e|c|k)\//.test(h)) go(state.base || 'home', true);
   }
 
+  /* 依目前排序找出前一部／後一部 */
+  function neighbors(id) {
+    var list = T.slice().sort(function (a, b) {
+      return state.order === 'story'
+        ? (a.chrono - b.chrono) || a.no - b.no
+        : (relKey(a) - relKey(b)) || a.no - b.no;
+    });
+    var i = list.findIndex ? list.findIndex(function (x) { return x.id === id; })
+                           : (function () { for (var k = 0; k < list.length; k++) if (list[k].id === id) return k; return -1; })();
+    return { prev: i > 0 ? list[i - 1] : null, next: i >= 0 && i < list.length - 1 ? list[i + 1] : null };
+  }
+
   function entrySheet(id) {
     var e = byId[id]; if (!e) return;
+    var d = (window.MCU_DETAILS && window.MCU_DETAILS[id]) || {};
 
     var secs = (e.sections || []).map(function (s) {
       var body = s.list
         ? '<ul>' + s.list.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'
         : '<p>' + esc(s.body) + '</p>';
-      return '<div class="blk' + (s.highlight ? ' hl' : '') + '"><h4>' + esc(s.h) + '</h4>' + body + '</div>';
+      var blk = '<div class="blk' + (s.highlight ? ' hl' : '') + '"><h4>' + esc(s.h) + '</h4>' + body + '</div>';
+      return isSpoilerSection(s) ? shield(blk, s.h) : blk;
     }).join('');
+
+    /* 看之前需要知道什麼 */
+    var prereqBlk = d.prereq
+      ? '<div class="prereq">' + G('bulb') +
+        '<div><b>看之前需要知道什麼</b><p>' + esc(d.prereq) + '</p></div></div>'
+      : '';
+
+    /* 規格列 */
+    var specs = [];
+    if (d.runtime) specs.push({ k: '片長', v: d.runtime });
+    if (d.rating) specs.push({ k: '分級', v: d.rating });
+    if (e.director) specs.push({ k: '導演', v: e.director });
+    if (e.episodes && !d.runtime) specs.push({ k: '集數', v: e.episodes });
+    var specBlk = specs.length
+      ? '<div class="specs">' + specs.map(function (s) {
+          return '<div><span>' + esc(s.k) + '</span><b>' + esc(s.v) + '</b></div>';
+        }).join('') + '</div>'
+      : '';
+
+    /* 主要卡司 */
+    var castBlk = (d.cast && d.cast.length)
+      ? '<div class="blk"><h4>主要卡司</h4><div class="castlist">' +
+        d.cast.map(function (c) {
+          var ch = c.id && chById[c.id];
+          return '<' + (ch ? 'button' : 'div') + ' class="castchip"' + (ch ? ' data-char="' + ch.id + '"' : '') + '>' +
+            (ch ? A(ch) : '<span class="castdot"></span>') +
+            '<span><b>' + esc(c.r) + '</b><i>' + esc(c.a) + '</i></span>' +
+            '</' + (ch ? 'button' : 'div') + '>';
+        }).join('') + '</div></div>'
+      : '';
+
+    /* 彩蛋 */
+    var creditsBlk = '';
+    if (d.credits && d.credits.length) {
+      var inner = '<div class="blk"><h4>片中／片尾彩蛋</h4>' +
+        d.credits.map(function (c) {
+          return '<div class="credit' + (c.key ? ' key' : '') + '">' +
+            '<span class="ctag">' + (c.type === 'mid' ? '片中彩蛋' : '片尾彩蛋') + '</span>' +
+            '<p>' + esc(c.text) + '</p></div>';
+        }).join('') +
+        (d.warning ? '<div class="credit-warn">' + G('warn') + esc(d.warning) + '</div>' : '') +
+        '</div>';
+      creditsBlk = shield(inner, '彩蛋內容');
+    }
+
+    /* 名台詞 */
+    var quoteBlk = (d.quotes && d.quotes.length)
+      ? '<div class="blk"><h4>名台詞</h4>' +
+        d.quotes.map(function (q) { return '<blockquote class="quote">' + esc(q) + '</blockquote>'; }).join('') +
+        '</div>'
+      : '';
+
+    /* 誰死了 */
+    var deathBlk = (d.deaths && d.deaths.length)
+      ? shield('<div class="blk"><h4>本片中的死亡</h4><div class="deaths">' +
+          d.deaths.map(function (x) { return '<span class="death">' + esc(x) + '</span>'; }).join('') +
+          '</div></div>', '角色死亡名單')
+      : '';
+
+    var noteBlk = d.note ? '<div class="tip">' + G('info') + '<div>' + esc(d.note) + '</div></div>' : '';
 
     var stones = '';
     if (e.stones && e.stones.length) {
@@ -602,6 +786,18 @@
         }).join('') + '</div></div>'
       : '';
 
+    var nb = neighbors(id);
+    var navBlk = '<div class="sheet-nav">' +
+      (nb.prev ? '<button class="snav" data-entry="' + nb.prev.id + '">' + G('chevron') +
+        '<span><i>上一部</i><b>' + esc(nb.prev.title) + '</b></span></button>' : '<span></span>') +
+      (nb.next ? '<button class="snav next" data-entry="' + nb.next.id + '">' +
+        '<span><i>下一部</i><b>' + esc(nb.next.title) + '</b></span>' + G('chevron') + '</button>' : '<span></span>') +
+      '</div>';
+
+    var w = isWatched(id);
+    var watchBtn = '<button class="watchbtn' + (w ? ' on' : '') + '" data-watch="' + id + '">' +
+      G(w ? 'check' : 'eye') + (w ? '已看過' : '標記為已看過') + '</button>';
+
     openSheet('' +
       '<div class="sheet-art">' + P(e, { tall: true }) + '<div class="veil"></div>' +
         '<button class="sheet-close" aria-label="關閉">' + G('close') + '</button>' +
@@ -613,9 +809,16 @@
         (e.actor ? ' ・ ' + esc(e.actor) : '') + '</div></div>' +
       '</div>' +
       '<div class="sheet-bd">' +
+        '<div class="sheet-toolbar">' + watchBtn +
+          '<button class="spoilbtn' + (prefs.spoiler ? ' on' : '') + '" data-spoiler="1">' +
+          G(prefs.spoiler ? 'eye' : 'check') +
+          (prefs.spoiler ? '防雷模式：開' : '防雷模式：關') + '</button>' +
+        '</div>' +
         '<div class="sheet-tagline">' + esc(e.tagline) + '</div>' +
+        specBlk + prereqBlk +
         '<div class="blk"><h4>一句話劇情</h4><p>' + esc(e.summary) + '</p></div>' +
-        secs + stones + charBlk + relBlk +
+        secs + quoteBlk + creditsBlk + deathBlk + noteBlk +
+        stones + castBlk + charBlk + relBlk + navBlk +
       '</div>');
   }
 
@@ -805,6 +1008,54 @@
       if (t.closest('.sheet-close')) { closeSheet(); return; }
       if (t === modal) { closeSheet(); return; }
 
+      /* 揭開防雷罩 */
+      var veil = t.closest('.spoil-veil');
+      if (veil) { veil.parentElement.classList.add('open'); return; }
+
+      /* 標記已看過（卡片與彈窗都可用）*/
+      var wBtn = t.closest('[data-watch]');
+      if (wBtn) {
+        ev.preventDefault(); ev.stopPropagation();
+        var wid = wBtn.getAttribute('data-watch');
+        toggleWatched(wid);
+        var nowOn = isWatched(wid);
+        wBtn.classList.toggle('on', nowOn);
+        if (wBtn.classList.contains('watchbtn')) {
+          wBtn.innerHTML = G(nowOn ? 'check' : 'eye') + (nowOn ? '已看過' : '標記為已看過');
+        } else {
+          wBtn.innerHTML = G(nowOn ? 'check' : 'eye');
+          wBtn.setAttribute('title', nowOn ? '已看過（點擊取消）' : '標記為已看過');
+        }
+        var card = wBtn.closest('.card, .tl-card, .tl-item');
+        if (card) card.classList.toggle('watched', nowOn);
+        updateProgress();
+        return;
+      }
+
+      /* 防雷模式開關 */
+      if (t.closest('[data-spoiler]')) {
+        prefs.spoiler = !prefs.spoiler;
+        store.set('spoiler', prefs.spoiler);
+        syncChrome();
+        var openId = (location.hash.match(/^#\/e\/(.+)$/) || [])[1];
+        if (openId) entrySheet(openId); else paint(state.view);
+        return;
+      }
+
+      /* 亮／暗色主題 */
+      if (t.closest('#themeBtn')) {
+        prefs.theme = prefs.theme === 'dark' ? 'light' : 'dark';
+        store.set('theme', prefs.theme);
+        applyTheme(); syncChrome();
+        return;
+      }
+
+      /* 只看沒看過的 */
+      if (t.closest('[data-unwatched]')) {
+        state.unwatchedOnly = !state.unwatchedOnly;
+        paint('timeline'); return;
+      }
+
       /* 開啟詳情 */
       var eBtn = t.closest('[data-entry]');
       if (eBtn) { state.base = state.view; location.hash = '#/e/' + eBtn.getAttribute('data-entry'); closeSearch(); return; }
@@ -877,8 +1128,10 @@
     $('#brandGlyph').innerHTML = G('spider');
     $('#ftrGlyph').innerHTML = G('spider');
     $('#totop').innerHTML = G('chevron');
+    applyTheme();
     bind();
     route();
+    syncChrome();
   });
 
 })();
